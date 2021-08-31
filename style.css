@@ -1,0 +1,17 @@
+picture{
+    border:1px solid red;
+}
+
+@media screen and (max-width:767px) {
+    picture{
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width:768px) {
+    picture{
+        width: 757px;
+        height: auto;
+    }
+}
