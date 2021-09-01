@@ -1,22 +1,31 @@
 //fonctions et constantes
-const getId= ($value) =>{
+function getId($value){
    return document.getElementById($value);
 }
 
-const toggle= ($cible,$class)=>{
+function toggle($cible,$class){
     $cible.classList.toggle($class);
 }
 
 
 //variables
-let navbar = getId('navbarContent')
+let toggler=getId('toggler');
+let navbar = getId('navbarContent');
+let logo=getId('logo');
 
 
+toggler.addEventListener('click',function(){
+    toggle(navbar, 'collapse');
+    console.log('ok');
+});
 
-navbar.addEventListener('click',function(){
-    toggle(navbar, 'navbar-collapse');
-})
+logo.addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log('logo ok');
+    
+});
 
-fetch("http://localhost:3000/api/teddies");
+
+//fetch("http://localhost:3000/api/teddies");
 
 
