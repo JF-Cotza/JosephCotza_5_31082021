@@ -15,5 +15,8 @@
     "url": "https://github.com/JF-Cotza/JosephCotza_5_31082021/issues"
   },
   "homepage": "https://github.com/JF-Cotza/JosephCotza_5_31082021#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.1.0"
+  }
 }
