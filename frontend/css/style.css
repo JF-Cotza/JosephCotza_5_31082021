@@ -1,4 +1,46 @@
 @charset "UTF-8";
+body {
+  background-color: white;
+}
+
+.stealth {
+  visibility: collapse;
+}
+
+.card-body ul {
+  list-style: none;
+  background: red;
+}
+
+.card-body ul li {
+  background-color: yellow;
+}
+
+.col-12 {
+  background: yellowgreen;
+}
+
+.col-9 {
+  background: blue;
+}
+
+.col-3 {
+  background: aqua;
+}
+
+.truncate-overflow {
+  height: 60px;
+  overflow: auto;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  margin: 0;
+  padding: 0;
+}
+
+.heigth-1 {
+  height: 40px;
+}
+
 /*!
  * Bootstrap v5.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

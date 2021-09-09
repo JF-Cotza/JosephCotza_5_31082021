@@ -1,19 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- ajout du favicon -->
+    <link rel="shortcut icon"
+        href="node_modules/bootstrap-icons/icons/cart.svg"
+        type="image/x-icon">
+    <!-- ajout de bootstrap -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Oursico - index</title>
 </head>
+
 <body>
-    
+    <div class="container">
+        <h1>Oursico</h1>
+        <div class="card">
+            <img src="imageUrl" alt="">
+            <div class="card-body">
+                <div class="row">
+                    <div class='stealth col-12'>
+                        <div class="id">1234</div>
+                    </div>
+                <div class='row'>
+                    <div class="col-12 d-flex">
+                        <h2 class='col-9 heigth-1'>nom du modéle</h2>
+                        <div class="price col-3 text-end heigth-1">59,00 €</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 detail  truncate-overflow">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt eveniet aut et iis quisquam animi sit repudiandae ratione impedit neque laudantium! Consequuntur quis cumque mollitia dolore voluptate iure delectus ratione?
+                    </div>
+                </div>
+                <div class="option row">
+                    <div class="col-3">couleur 1</div>
+                    <div class="col-3">couleur 2</div>
+                    <div class="col-3">couleur 3</div>
+                    <div class="col-3">couleur 4</div>
+                </div>
+            </div> <!-- fin card-body -->
+        </div> <!-- fin card  -->
 
 
-    <!-- Development version -->
+<!-- template de la carte pour les objets -->
+        <template id=card>
+            
+           
+
+        </template>
+<!-- fermeture du container-->
+    </div>
+
+    <!-- script jquery -->
     <script
-        src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>   
-    <!-- Production version -->
-    <!--<script src="https://unpkg.com/@popperjs/core@2"></script>-->
+        src="javascript/jQuery/jquery-3.6.0.js"></script>
+    <!-- script popper -->
+    <script
+        src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <!-- script bootstrap -->
+    <script src="../backend/app.js"></script>
+    <!-- script -->
+    <script src="javascript/script.js"></script>
 </body>
+
 </html>
