@@ -1,0 +1,80 @@
+//propriétés
+.stealth{
+    visibility: collapse;
+}
+
+.card-body ul{
+    list-style: none;
+    background: red;
+}
+
+.card-body ul li{
+    background-color: yellow;
+}
+
+.rounded-lg{
+    border-radius: 50%;
+}
+
+.col-12{
+    background: yellowgreen;
+}
+
+
+.truncate-overflow{
+    overflow: auto;
+    white-space: wrap;
+    text-overflow: ellipsis;
+    margin:0;
+    padding: 0;
+}
+
+.heigth-1{
+    height: 40px;
+}
+
+.rounded-lg{
+    border-radius: $radius;
+}
+
+.grey-1{
+    background-color: $secundary-color;
+}
+
+.grey-2{
+    background-color: darken($color: $secundary-color, $amount: 10%);
+}
+
+.details{
+    height: 150px;
+}
+
+.border-solid, .border-left, .border-right{
+    border:2px solid black;    
+    
+}
+
+.border-solid{
+    border-radius: 10px;
+    background: $secundary-color;
+}
+
+.border-left{
+    border-top-left-radius: 10px ;
+    border-bottom-left-radius: 10px ;
+    text-align: center;
+}
+
+.border-right{
+    border-top-right-radius: 10px ;
+    border-bottom-right-radius: 10px ;
+    text-align: center;
+}
+
+
+.input{
+    display: none;
+    +label{
+        color:red;
+    }
+}

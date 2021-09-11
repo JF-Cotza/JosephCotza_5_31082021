@@ -1,42 +1,9 @@
-body{
-    background-color: white;
-}
 
+//variable pour modifier les valeurs dans les propriétés bootstrap
+$primary:#e58a0c;
+$secondary : #8f5bfe;
 
+//variable pour modifier les valeurs dans les propriétés _my_style
+$radius:20px;
+$secundary-color:lightgrey;
 
-.stealth{
-    visibility: collapse;
-}
-
-.card-body ul{
-    list-style: none;
-    background: red;
-}
-
-.card-body ul li{
-    background-color: yellow;
-}
-
-.col-12{
-    background: yellowgreen;
-}
-
-.col-9{
-    background: blue;
-}
-.col-3{
-    background: aqua;
-}
-
-.truncate-overflow{
-    height: 60px;
-    overflow: auto;
-    white-space: wrap;
-    text-overflow: ellipsis;
-    margin:0;
-    padding: 0;
-}
-
-.heigth-1{
-    height: 40px;
-}

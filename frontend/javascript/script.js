@@ -1,18 +1,45 @@
 
+//constantes
 const apiLink = 'http://localhost:3000/api/teddies';
-const storage= ($nom, $value)=> localStorage.setItem($nom,$value)
-const getItem= ($nom)=>localStorage.getItem($nom)
 
+//applications fléchées
+const storage= ($nom, $value)=> {localStorage.setItem($nom,$value)};
+const getItem= ($nom)=>{localStorage.getItem($nom)};
+const getType= ($type)=>{document.getElementsByTagName($type)};
+const getClass=($class)=>{document.getElementsByClassName($class)};
+
+    //copie template
+const copieTemplate=() => {
+    if (getType('template')){
+        getType('template');
+    }
+}
+
+    //clone template
+const repeat=($what,$where,$howmuch) => {
+    const $towrite=[];
+    for (let i=0; i<$howmuch; i++){
+        $towrite.push($what);
+    }
+    $where.innerHTML=($towrite);
+}
+
+//test
+const test=document.getElementById('testwritejs');
+
+repeat(copieTemplate('toto'),test,4);
+
+
+
+/*
 fetch(apiLink)
-    .then((res) => {
-                        let value=res[0];
-                        console.log('longueur: '+value.length);
-                        for (let i=0; i<res.length; i++){
-                            console.log(i+' '+res[i]);
+    .then(function(res) {
+                            test.innerHTML=res;
+                            console.log(res);
                         }
-                        
-                    })
+        )
     .catch((error)=> 
         {console.log(error.message + ' erreur du fetch ');}
         );
 
+*/
