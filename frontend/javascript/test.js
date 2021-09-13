@@ -54,3 +54,31 @@ const teddies = [
         "imageUrl": "teddy_5.jpg"
     }
 ];
+
+
+
+
+//test data de test.js
+const test = document.getElementById('testwritejs');
+
+// test récup data page test.js
+let a = '';
+
+const couleurTest = ['red', 'yellow', 'white', 'pink', 'orange', 'green', 'blue']
+
+//console.log(teddies);
+const testValue = () => {
+    for (let i = 0; i < teddies.length; i++) {
+        a += `<div style='background-color:${couleurTest[i]}'>
+                    </br>couleurs: ${teddies[i]['colors']} 
+                    </br> id: ${teddies[i]['_id']} 
+                    </br> nom: ${teddies[i]['name']} 
+                    </br> prix: ${teddies[i]['price'] / 100}€
+                    </br> image: ${teddies[i]['imageUrl']}
+                    </br> description: id: ${teddies[i]['description']}
+                    </div>
+                    </br></br>`;
+    }
+    return a;
+}
+test.innerHTML = testValue();
