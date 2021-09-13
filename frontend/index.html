@@ -15,13 +15,54 @@
 </head>
 
 <body>
-    <div class="container">
-       
-<!-- fermeture du container-->
+    <div class="container" id='allProducts'>
+        
+
+
+
+        <div id="testwritejs">
+            <!-- zone de test js -->
+        </div>    
+    </div><!-- fermeture du container-->
+<template id='card'>
+    <div class="card rounded-lg bg-primary mx-auto col-md-6">
+        <a href="...." class='.stretched-link cardLink'><img src="imageUrl" alt="" class='.cardImage'></a>
+        <div class="card-body ">
+            <div class="row">
+                <div class='stealth col-12'>
+                    <div class="cardId">1234</div>
+                </div>
+                <div class='row'>
+                    <h2 class='col-9 heigth-1 grey-1 border-left cardModelName'>nom du modéle</h2>
+                    <div
+                        class="price col-3 text-end heigth-1 grey-2 border-right cardPrice">
+                        59,00 €</div>
+                </div>
+                <div class="row">
+                    <div
+                        class="col-12 details  truncate-overflow bg-white border-solid">
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Incidunt eveniet aut
+                        et iis quisquam animi sit repudiandae
+                        ratione impedit neque laudantium!
+                        Consequuntur quis cumque mollitia dolore
+                        voluptate iure delectus ratione?
+                    </div>
+                </div>
+                <div class="option row mt-2">
+                    <div class="col-3 border-solid text-center">
+                        couleur 1</div>
+                    <div class="col-3 border-solid text-center">
+                        couleur 2</div>
+                    <div class="col-3 border-solid text-center">
+                        couleur 3</div>
+                    <div class="col-3 border-solid text-center">
+                        couleur 4</div>
+                </div>
+            </div> <!-- fin card-body -->
+        </div> <!-- fin card  -->
     </div>
-
-    
-
+</template>
 
 
     <!-- script jquery -->
