@@ -24,9 +24,9 @@ function index(param_fetchdata){
         url.href = `produit/?id=${produit._id}`;
         console.log(produit._id);
         name.textContent = produit.name;
-        color.textContent = produit.color;
-        price.textContent = (produit.prix) / 100 + '€';
-        detail.textContent = produit.details;
+        color.textContent = produit.colors;
+        price.textContent = (produit.price) / 100 + '€';
+        detail.textContent = produit.description;
         id.textContent = produit._id;
         url.appendChild(image); //on crée l'image dans le l'url
         body.appendChild(copy); //on crée la carte produit

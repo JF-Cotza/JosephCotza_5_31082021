@@ -11180,4 +11180,14 @@ textarea.form-control-lg {
   color: red;
 }
 
+img {
+  width: 80%;
+  height: auto;
+  margin: 0 10%;
+}
+
+.card {
+  margin-top: 10px;
+}
+
 /*# sourceMappingURL=style.css.map */
