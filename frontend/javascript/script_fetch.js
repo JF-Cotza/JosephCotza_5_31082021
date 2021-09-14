@@ -1,3 +1,6 @@
+console.log('script fetch lancé');
+
+
 //fetch
 /* 
 const consolefetch = ($result) => {
@@ -28,19 +31,27 @@ const fetchApp = () => {
                         produit.description = data[i].description;
                         produit.imageUrl = data[i].imageUrl;
                         produit.colors = colors;
-                        console.log(produit);
-                        prod.push(produit);
-                    };
+            
+                        
+                        cloneCard(produit);
 
+
+
+                        //prod.push(produit);
+                        //storage('produit'+i, produit);
+                    };
+                    //console.log(prod[0]); fonctionne !
                 })
-            console.log(champs); //test affichage console tableau simple
+            /*console.log(champs); //test affichage console tableau simple
             console.log(testTab);// test affichage console tableau avec objet
             console.log(testTab[0].color);//resultat attendu: blue
             console.log(prod[0]);
-
-
+            let item = getItem('produit0')
+            console.log('get: '+item._id);
+            */
 
         })
         .catch((error) => { console.log(error.message + ' erreur du fetch '); }
         );
 }
+

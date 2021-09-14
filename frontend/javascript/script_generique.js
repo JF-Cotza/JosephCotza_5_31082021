@@ -19,3 +19,6 @@ const node = (param_value) => { return document.importNode(param_value.content, 
 
 //variables globales
 let allProducts;
+
+
+//console.log('generique');
