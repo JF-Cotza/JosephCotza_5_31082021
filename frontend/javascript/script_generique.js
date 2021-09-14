@@ -6,7 +6,10 @@
 */
 
 //constantes
-const apiLink = 'http://localhost:3000/api/teddies';
+const productType=['teddies','cameras','furniture'];
+const type=productType[2];                              //utilisé dans le template pour le chois de l'afichage des options 
+const apiLink = 'http://localhost:3000/api/'+type;
+const option=['colors','lenses']
 
 //applications fléchées
 const storage   = (param_nom, param_value)  => { return localStorage.setItem(param_nom, param_value) };

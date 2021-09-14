@@ -1,26 +1,12 @@
 console.log('script fetch lancé');
 
-
-//fetch
-/* 
-const consolefetch = ($result) => {
-    let res = $result;
-    for (let product of $result) {
-        console.log(product);
-    }
-}
-*/
-let prod = [];
-let champs = ['colors', '_id', 'name', 'description'];
-let testTab = [{ 'color': 'blue' }, { 'color': ['black', 'white'] }];
-
+//script fetch
 const fetchApp = () => {
-    fetch(apiLink)
-        .then(function (res) {
-            res.json() //ne pas oublier les parenthèses !!!!!!
+    fetch(apiLink)                      // on se connecte à la page apiLInk définie dans Script_generiqique
+        .then(function (res) {          //s'il y a des data on continue sinon on passe au catch 
+            res.json()                  //ne pas oublier les parenthèses !!!!!!
                 .then((data) => {
-                    console.log('data:' + data);
-                    index(data);    
+                    index(data);        //on crée la carte produit    
                 })
         })
         .catch((error) => { console.log(error.message + ' erreur du fetch '); }
