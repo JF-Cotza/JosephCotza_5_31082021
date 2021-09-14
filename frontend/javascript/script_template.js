@@ -2,7 +2,7 @@
 console.log('template lancé')
 
 function index(param_fetchdata){
-    console.log('index');
+    console.log('fonction index');
     //on sélectionne le template par son ID
     let template = document.querySelector('#card');
     //on sélectionne là où on on créera les cartes.
@@ -22,20 +22,19 @@ function index(param_fetchdata){
         image.setAttribute('alt', produit.alt);
         image.setAttribute('src', produit.imageUrl);
         url.href = `produit/?id=${produit._id}`;
-        console.log(produit._id);
-        name.textContent = produit.name;        
-        price.textContent = (produit.price) / 100 + '€';
-        detail.textContent = produit.description;
+        name.textContent = 'modèle: '+produit.name;        
+        price.textContent = 'prix: '+(produit.price) / 100 + '€';
+        detail.textContent = 'description: '+produit.description;
         id.textContent = produit._id;
         
         if(type=='teddies'){
-            option.textContent = produit.colors;
+            option.textContent = 'couleurs: '+ produit.colors;
         }
         else if (type=='cameras'){
-            option.textContent = produit.lenses;
+            option.textContent = 'objectifs: '+produit.lenses;
         }
         else if (type=='furniture'){
-            option.textContent = produit.varnish;
+            option.textContent = 'vernis: '+produit.varnish;
 
         }
 

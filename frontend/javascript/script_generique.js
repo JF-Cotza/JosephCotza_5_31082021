@@ -7,7 +7,7 @@
 
 //constantes
 const productType=['teddies','cameras','furniture'];
-const type=productType[2];                              //utilisé dans le template pour le chois de l'afichage des options 
+const type=productType[0];                              //utilisé dans le template pour le chois de l'afichage des options 
 const apiLink = 'http://localhost:3000/api/'+type;
 const option=['colors','lenses']
 
@@ -20,5 +20,6 @@ const getId     = (param_id)                => { return document.getElementById(
 const node      = (param_value)             => { return document.importNode(param_value.content, true) };
 const select    = (param_where, param_what) => {return param_where.querySelectorAll(param_what);}
 const clone     = (param_where, param_what) => {return param_where.importNode(param_what.content, true);}
+
 
 //variables globales
