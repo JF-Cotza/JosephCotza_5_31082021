@@ -2,7 +2,7 @@ console.log('testindex');
 
 // pour le template
 //variables
-let area = [];
+
 //*1) la page sur laquelle on est:
 let page = '';
 let areaPage = '';
