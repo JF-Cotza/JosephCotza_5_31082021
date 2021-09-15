@@ -1,8 +1,4 @@
-
-console.log('template lancé')
-
 function index(param_fetchdata){
-    console.log('fonction index');
     //on sélectionne le template par son ID
     let template = document.querySelector('#card');
     //on sélectionne là où on on créera les cartes.
@@ -21,7 +17,7 @@ function index(param_fetchdata){
 
         image.setAttribute('alt', produit.alt);
         image.setAttribute('src', produit.imageUrl);
-        url.href = `produit/?id=${produit._id}`;
+        url.href = `product.html?id=${produit._id}`;
         name.textContent = 'modèle: '+produit.name;        
         price.textContent = 'prix: '+(produit.price) / 100 + '€';
         detail.textContent = 'description: '+produit.description;

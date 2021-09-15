@@ -21,5 +21,12 @@ const node      = (param_value)             => { return document.importNode(para
 const select    = (param_where, param_what) => {return param_where.querySelectorAll(param_what);}
 const clone     = (param_where, param_what) => {return param_where.importNode(param_what.content, true);}
 
+//pour récupérer une valeur dans l'URL
+const getInUrl  = (param_searched)          => {
+    let place = window.location.search;             //on récupére ce qu'il y a après l'url standard. à partir du ?
+    const urlParams = new URLSearchParams(place);   //on crée une recherche dans le paramètre
+    let value = urlParams.get(param_searched);      //on récupère la valeur du parametre
+    return value;  
+}
 
 //variables globales
