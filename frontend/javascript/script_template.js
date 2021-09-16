@@ -105,16 +105,28 @@ function product(param_fetchdata,param_idproduct) {
             storage('showing_'+produit._id,JSON.stringify(showingProduct));
             image.setAttribute('alt', imageAlt);
             body.appendChild(copy); //on crée la carte produit
-            commande.push(showingProduct);
+        
 
         
             //on regarde si une option est sélectionnée
             option.addEventListener('change',function(){
                 let volume=clone(document,howmany);
-                let volumeAsked = select(volume,'.volumeAsked')[0]
-                let commande=getClass('commande')[0];
-                volumeAsked.name=produit.colors[option.value];
-                commande.appendChild(volumeAsked);
+                let label = document.createElement('Label');
+                let input = document.createElement('input');
+                let commande = getClass('commande')[0];
+
+                //définition du label
+                label.setAttribute('for', produit.colors[option.value]);
+                label.innerHTML = produit.colors[option.value];
+                
+                //définition de l'input
+                input.id = produit.colors[option.value];
+                input.name = produit.colors[option.value];
+                input.setAttribute('key', option.value);  //servira de controle pour savoir la couleur a déjà été sélectionnée
+                input.type='number';
+                input.setAttribute('min',0);
+                commande.appendChild(label);
+                commande.appendChild(input);
             })
         }
     }
