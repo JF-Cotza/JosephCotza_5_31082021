@@ -45,7 +45,7 @@ function product(param_fetchdata,param_idproduct) {
 
     //on sélectionne le template par son ID
     let template = document.querySelector('#productTemplate');
-    
+    let howmany=document.querySelector('#howmany');
     //on sélectionne là où on on créera les cartes.
     let body = select(document, '#productCommand')[0];
 
@@ -87,7 +87,7 @@ function product(param_fetchdata,param_idproduct) {
                     tableOption.push({'color':colors,'quantity':''});
                     i++;
                 }
-                console.log(tableOption);
+                //console.log(tableOption);
             }
             else if (type == 'cameras') {
                // option.textContent = 'objectifs: ' + produit.lenses;
@@ -105,8 +105,17 @@ function product(param_fetchdata,param_idproduct) {
             storage('showing_'+produit._id,JSON.stringify(showingProduct));
             image.setAttribute('alt', imageAlt);
             body.appendChild(copy); //on crée la carte produit
-        
+            commande.push(showingProduct);
 
+        
+            //on regarde si une option est sélectionnée
+            option.addEventListener('change',function(){
+                let volume=clone(document,howmany);
+                let volumeAsked = select(volume,'.volumeAsked')[0]
+                let commande=getClass('commande')[0];
+                volumeAsked.name=produit.colors[option.value];
+                commande.appendChild(volumeAsked);
+            })
         }
     }
 }

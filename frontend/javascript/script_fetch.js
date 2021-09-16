@@ -18,7 +18,7 @@ const fetchProduct= ($prod)=>{
         .then(function (result) {
             result.json()
             .then((data)=>{
-                    console.log(data);
+                    //console.log(data);
                     product(data,$prod);
                 })
         })    
