@@ -7,8 +7,20 @@ const fetchIndex = () => {
                     .then((data) => {
                         index(data);        //on crée la carte produit
                     })
-            })
+
+                })
             .catch((error) => { console.log(error.message + ' erreur du fetch '); }
             );
 }
+
+const fetchProduct= ($prod)=>{
+    fetch(apiLink+'?id='+$prod)
+        .then(function (result) {
+            result.json()
+            .then((data)=>{
+                    console.log(data);
+                    product(data,$prod);
+                })
+        })    
+    }
 

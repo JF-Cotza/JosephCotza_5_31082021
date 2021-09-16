@@ -1,9 +1,8 @@
-function index(param_fetchdata){
+const index=(param_fetchdata)=>{
     //on sélectionne le template par son ID
     let template = document.querySelector('#card');
     //on sélectionne là où on on créera les cartes.
     let body = select(document, '#allProducts')[0];
-
     //on explore les produits
     for (let produit of param_fetchdata) {
         let copy = clone(document, template);
@@ -38,5 +37,76 @@ function index(param_fetchdata){
         url.appendChild(image); //on crée l'image dans le l'url
         body.appendChild(copy); //on crée la carte produit
 
+    }
+}
+
+function product(param_fetchdata,param_idproduct) {
+    let showingProduct = { 'id': '', 'name': '','price':'','option': [] }
+
+    //on sélectionne le template par son ID
+    let template = document.querySelector('#productTemplate');
+    
+    //on sélectionne là où on on créera les cartes.
+    let body = select(document, '#productCommand')[0];
+
+    //on explore les produits
+    for (let produit of param_fetchdata) {
+        let copy = clone(document, template);
+        
+        if(produit._id==param_idproduct){
+            //let url = select(copy, '.cardLink')[0];
+            let name = select(copy, '.cardModelName')[0];
+            let option = select(copy, '.cardOptionSelect')[0];
+            
+            let price = select(copy, '.cardPrice')[0];
+            let detail = select(copy, '.cardDetails')[0];
+            let id = select(copy, '.cardId')[0];
+            let image=select(copy,'.cardImage')[0];
+            let imageAlt='';
+            let i=0;
+
+
+            image.setAttribute('src', produit.imageUrl);
+            name.textContent = produit.name;
+            price.textContent = (produit.price)/100;
+            detail.textContent = 'description: ' + produit.description;
+            id.value = produit._id;
+            
+
+            let tableOption=[];
+            if (type == 'teddies') {
+                //option.textContent = 'couleurs: ' + produit.colors;
+                imageAlt='un ours en peluche';
+                for (let colors of produit.colors){
+                    let selectoption=document.createElement('option');
+                    
+                    //console.log(colors);
+                    selectoption.value=i;
+                    selectoption.textContent=colors;
+                    option.appendChild(selectoption);
+                    tableOption.push({'color':colors,'quantity':''});
+                    i++;
+                }
+                console.log(tableOption);
+            }
+            else if (type == 'cameras') {
+               // option.textContent = 'objectifs: ' + produit.lenses;
+                imageAlt='un appareil photo'
+            }
+            else if (type == 'furniture') {
+                option.textContent = 'vernis: ' + produit.varnish;
+                imageAlt='un meuble';
+            }
+
+            showingProduct.price=produit.price;
+            showingProduct.name=produit.name;
+            showingProduct.id = produit.id;
+            showingProduct.option=tableOption;
+            storage('showing_'+produit._id,JSON.stringify(showingProduct));
+            image.setAttribute('alt', imageAlt);
+            body.appendChild(copy); //on crée la carte produit
+        
+
+        }
     }
 }

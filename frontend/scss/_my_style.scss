@@ -79,3 +79,8 @@ img{
 .card{
     margin-top: 10px;
 }
+
+#price::after{
+    content:' €';
+}
+

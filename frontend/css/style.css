@@ -11190,4 +11190,8 @@ img {
   margin-top: 10px;
 }
 
+#price::after {
+  content: " €";
+}
+
 /*# sourceMappingURL=style.css.map */

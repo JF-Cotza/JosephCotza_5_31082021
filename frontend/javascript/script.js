@@ -8,7 +8,7 @@ if (getId('allProducts')) {
 
 if (getId('productCommand')){
     let value=getInUrl('id');
-
+    fetchProduct(value);
     console.log(value);
 
 
