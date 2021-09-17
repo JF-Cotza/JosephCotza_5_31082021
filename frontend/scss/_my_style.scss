@@ -68,6 +68,9 @@
     text-align: center;
 }
 
+.border-command{
+    border: 1px solid grey;
+}
 
 .input{
     display: none;
@@ -88,5 +91,10 @@ img{
 
 #price::after{
     content:' €';
+}
+
+.h3{
+    font-size: 1rem;
+    font-weight: bolder;
 }
 
