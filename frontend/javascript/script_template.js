@@ -102,7 +102,7 @@ function product(param_fetchdata,param_idproduct) {
             showingProduct.name=produit.name;
             showingProduct.id = produit.id;
             showingProduct.option=tableOption;
-            storage('showing_'+produit._id,JSON.stringify(showingProduct));
+            
             image.setAttribute('alt', imageAlt);
             body.appendChild(copy); //on crée la carte produit
         
@@ -127,6 +127,7 @@ function product(param_fetchdata,param_idproduct) {
                 input.setAttribute('min',0);
                 commande.appendChild(label);
                 commande.appendChild(input);
+                storage('showing_' + produit._id, JSON.stringify(showingProduct));
             })
         }
     }

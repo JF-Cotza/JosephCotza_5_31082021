@@ -36,6 +36,12 @@
     background-color: darken($color: $secundary-color, $amount: 10%);
 }
 
+.grey-3
+{
+    background-color: lighten($color: $secundary-color, $amount: 10%);
+}
+
+
 .details{
     height: 150px;
 }
