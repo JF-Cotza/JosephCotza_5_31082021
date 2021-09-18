@@ -30,3 +30,6 @@ const getInUrl  = (param_searched)          => {
 }
 
 //variables globales
+//  le bouton panier
+    let look = getId('look'); //bouton pour afficher le panier
+    let textLook = getId('textLook'); //zone de texte de look
