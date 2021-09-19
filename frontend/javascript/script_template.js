@@ -57,14 +57,12 @@ function product(param_fetchdata,param_idproduct) {
             //let url = select(copy, '.cardLink')[0];
             let name = select(copy, '.cardModelName')[0];
             let option = select(copy, '.cardOptionSelect')[0];
-            
             let price = select(copy, '.cardPrice')[0];
             let detail = select(copy, '.cardDetails')[0];
             let id = select(copy, '.cardId')[0];
             let image=select(copy,'.cardImage')[0];
             let imageAlt='';
             let i=0;
-
 
             image.setAttribute('src', produit.imageUrl);
             name.textContent = produit.name;
@@ -75,27 +73,38 @@ function product(param_fetchdata,param_idproduct) {
 
             let tableOption=[];
             if (type == 'teddies') {
-                //option.textContent = 'couleurs: ' + produit.colors;
                 imageAlt='un ours en peluche';
                 for (let colors of produit.colors){
                     let selectoption=document.createElement('option');
-                    
-                    //console.log(colors);
                     selectoption.value=i;
                     selectoption.textContent=colors;
                     option.appendChild(selectoption);
                     tableOption.push({'color':colors,'quantity':''});
                     i++;
                 }
-                //console.log(tableOption);
             }
             else if (type == 'cameras') {
-               // option.textContent = 'objectifs: ' + produit.lenses;
                 imageAlt='un appareil photo'
+                for (let lense of produit.lenses) {
+                    let selectoption = document.createElement('option');
+                    selectoption.value = i;
+                    selectoption.textContent = lense;
+                    option.appendChild(selectoption);
+                    tableOption.push({ 'Lense': lense, 'quantity': '' });
+                    i++;
+                }
             }
             else if (type == 'furniture') {
                 option.textContent = 'vernis: ' + produit.varnish;
                 imageAlt='un meuble';
+                for (let varnishOption of produit.varnish) {
+                    let selectoption = document.createElement('option');
+                    selectoption.value = i;
+                    selectoption.textContent = varnishOption;
+                    option.appendChild(selectoption);
+                    tableOption.push({ 'Vernis': varnishOption, 'quantity': '' });
+                    i++;
+                }
             }
 
             showingProduct.price=produit.price;
@@ -132,3 +141,5 @@ function product(param_fetchdata,param_idproduct) {
         }
     }
 }
+
+
