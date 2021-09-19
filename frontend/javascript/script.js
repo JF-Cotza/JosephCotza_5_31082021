@@ -19,5 +19,6 @@ let test=000;
 
 
 
-
-afficherLePanier(test);
+if(getId('look')){
+    afficherLePanier(test);
+}
