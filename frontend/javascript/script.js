@@ -48,3 +48,10 @@ getFormData.addEventListener('click',function(){
 voidStorage.addEventListener('click',function () {
     localStorage.clear();
 })
+
+
+let locala = getId('local-a');
+
+if(locala){
+    console.log(getItem('customer'));
+}
