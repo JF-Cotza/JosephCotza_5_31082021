@@ -1,4 +1,3 @@
-console.log('script fetch lancé');
 //script fetch
 const fetchIndex = () => {
         fetch(apiLink)                      // on se connecte à la page apiLInk définie dans Script_generiqique
@@ -18,7 +17,6 @@ const fetchProduct= ($prod)=>{
         .then(function (result) {
             result.json()
             .then((data)=>{
-                    //console.log(data);
                     product(data,$prod);
                 })
         })    
