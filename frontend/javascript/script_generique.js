@@ -13,7 +13,7 @@ const apiLink = 'http://localhost:3000/api/'+type;
 const option=['colors','lenses']
 
 //applications fléchées
-const storage   = (param_nom, param_value)  => { return localStorage.setItem(param_nom, param_value) };
+const storage = (param_nom, param_value) => { return localStorage.setItem(param_nom, JSON.stringify(param_value)) };
 const getItem   = (param_nom)               => { return localStorage.getItem(param_nom) };
 const getType   = (param_type)              => { return document.getElementsByTagName(param_type) };
 const getClass  = (param_class)             => { return document.getElementsByClassName(param_class) };
@@ -21,7 +21,7 @@ const getId     = (param_id)                => { return document.getElementById(
 const node      = (param_value)             => { return document.importNode(param_value.content, true) };
 const select    = (param_where, param_what) => { return param_where.querySelectorAll(param_what);}
 const clone     = (param_where, param_what) => { return param_where.importNode(param_what.content, true);}
-const h1content = (param_content)           => { return getType('h1')[0].textContent=type;}
+const h1content = (param_content)           => { return getType('h1')[0].textContent = param_content;}
 
 const afficherLePanier = (param_totalPanier) => {
     if (param_totalPanier <= 0) {

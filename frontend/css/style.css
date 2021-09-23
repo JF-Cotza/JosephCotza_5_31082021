@@ -11116,10 +11116,6 @@ textarea.form-control-lg {
   visibility: collapse;
 }
 
-.rounded-lg {
-  border-radius: 50%;
-}
-
 .col-12 {
   background: yellowgreen;
 }
@@ -11186,6 +11182,10 @@ textarea.form-control-lg {
 }
 .input + label {
   color: red;
+}
+
+input:invalid {
+  border: 3px solid red;
 }
 
 img {

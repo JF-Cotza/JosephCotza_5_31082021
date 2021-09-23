@@ -3,9 +3,6 @@
     visibility: collapse;
 }
 
-.rounded-lg{
-    border-radius: 50%;
-}
 
 .col-12{
     background: yellowgreen;
@@ -77,6 +74,10 @@
     +label{
         color:red;
     }
+}
+
+input:invalid{
+    border: 3px solid red;
 }
 
 img{
