@@ -48,9 +48,11 @@ function product(param_fetchdata,param_idproduct) {
     let howmany=document.querySelector('#howmany');
     //on sélectionne là où on on créera les cartes.
     let body = select(document, '#productCommand')[0];
-
+    let count = 0;
     //on explore les produits
     for (let produit of param_fetchdata) {
+        
+        let length = param_fetchdata.length;
         let copy = clone(document, template);
         
         if(produit._id==param_idproduct){
@@ -141,6 +143,16 @@ function product(param_fetchdata,param_idproduct) {
                 //click sur le bouton annuler
                 cancellation();
             })
+        }
+        else{
+            if(count<(length-1)){
+                count++;
+                console.log('count: '+count);
+            }
+            else{
+                infos.textContent="désolé, le produit n'est plus disponible";
+                console.log('count final: '+count+' indispo');
+            }
         }
     }
 }

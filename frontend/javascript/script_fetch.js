@@ -1,9 +1,3 @@
-//messages d'erreurs
-let erreurs = ['NetworkError when attempting to fetch resource.']
-let messageAafficher=['Oups! le serveur est inaccessible. Veuillez nous en excusez.']
-
-
-
 //script fetchIndex : on récupére tous les datas du serveur pour aficher les produits
 const fetchIndex = () => {
         fetch(apiLink)                      // on se connecte à la page apiLInk définie dans Script_generiqique
@@ -16,9 +10,7 @@ const fetchIndex = () => {
                 })
             .catch((error) => { 
                 mistake(error);
-            })
-                
-        
+            })        
 }
 
 const fetchProduct= ($prod)=>{

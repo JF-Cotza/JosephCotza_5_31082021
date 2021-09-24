@@ -7,14 +7,14 @@
 
 //constantes
 const productType=['teddies','cameras','furniture'];
-const selectedProduct=4;
+const selectedProduct=0;
 const type=productType[selectedProduct];                              //utilisé dans le template pour le chois de l'afichage des options 
 const apiLink = 'http://localhost:3000/api/'+type;                    //lien pour l'api et accéder aux produits  
 const option=['colors','lenses','varnishes']
 
     //pour messages d'erreurs
-const erreurs = ['NetworkError when attempting to fetch resource.']
-const messageAafficher = ['Oups! le serveur est inaccessible. Veuillez nous en excusez.']
+const erreurs = ['NetworkError when attempting to fetch resource.'];
+const messageAafficher = ['Oups! le serveur est inaccessible. Veuillez nous en excusez.'];
 
 
 
@@ -49,12 +49,17 @@ const afficherLePanier = (param_totalPanier) => {
 
     //afficher le message d'erreur
 const mistake = (param_error) => {
-    if (param_error.message = erreurs[0]) {
-        infos.textContent = messageAafficher[0];
+    let i=0;
+    for(let risque of erreurs){
+        if (param_error.message = risque) {
+            infos.textContent = messageAafficher[i];
+        }
+        else {
+            console.log(param_error.message + ' erreur du fetch ');
+            i++
+        }
     }
-    else {
-        console.log(param_error.message + ' erreur du fetch ');
-    }
+    
 }
 
 
