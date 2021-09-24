@@ -1,4 +1,4 @@
-//script fetch
+//script fetchIndex : on récupére tous les datas du serveur pour aficher les produits
 const fetchIndex = () => {
         fetch(apiLink)                      // on se connecte à la page apiLInk définie dans Script_generiqique
             .then(function (res) {          //s'il y a des data on continue sinon on passe au catch 
@@ -19,6 +19,11 @@ const fetchProduct= ($prod)=>{
             .then((data)=>{
                     product(data,$prod);
                 })
-        })    
+        })
+        .catch((error) => { console.log(error.message + ' erreur du fetch '); }
+        );
     }
 
+const fetchPanier=()=>{
+    method='POST';
+}
