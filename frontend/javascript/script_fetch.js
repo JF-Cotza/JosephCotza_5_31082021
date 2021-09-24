@@ -25,7 +25,31 @@ const fetchProduct= ($prod)=>{
         );
     }
 
-const fetchPanier=()=>{
-    method='POST';
+const fetchPanier=($value)=>{
+    fetch(apiLink, {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jsonBody)
+        
+    });
+        
 }
 
+const fetchCustomer = ($value) => {
+    fetch(apiLink, {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify($value)
+        
+    })
+    .then(function(res){
+        console.log(res)
+    })
+    .catch((error)=>mistake(error))
+}

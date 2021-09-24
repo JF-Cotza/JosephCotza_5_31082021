@@ -144,14 +144,12 @@ function product(param_fetchdata,param_idproduct) {
                 cancellation();
             })
         }
-        else{
+        else{//si l'id est erronné
             if(count<(length-1)){
                 count++;
-                console.log('count: '+count);
             }
             else{
-                infos.textContent="désolé, le produit n'est plus disponible";
-                console.log('count final: '+count+' indispo');
+                infos.textContent="Désolé, le produit n'est plus disponible";
             }
         }
     }
