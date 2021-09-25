@@ -39,17 +39,24 @@ const fetchPanier=($value)=>{
 }
 
 const fetchCustomer = ($value) => {
-    fetch(apiLink, {
+    fetch('confirmation.html', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify($value)
-        
+        body: 'toto' // JSON.stringify({value:'toto'})      
     })
     .then(function(res){
-        console.log(res)
+        if(res.ok){
+        return res.json();
+        }
+        else{
+            console.log('pas de res');
+        }
+    })
+    .then(function(value){
+        console.log(value.postData.text);
     })
     .catch((error)=>mistake(error))
 }

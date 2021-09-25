@@ -116,6 +116,7 @@ const optionMaker=(param_produit,param_option)=>{
 
     //définition du label
     label.setAttribute('for', param_produit.colors[param_option.value]);
+    label.setAttribute('key', param_option.value);
     label.innerHTML = param_produit.colors[param_option.value];
 
     //définition de l'input
@@ -189,7 +190,22 @@ const productOptionListener=(param_produit,param_option)=>{
                 infos.textContent='';
             }
         }       
-        
+        if(qty){
+            for(let member of qty){
+                member.addEventListener('change', (e) => {
+                    if (e.target.value == 0) {
+                        let toSuppress = e.target.getAttribute('key');
+                        e.target.remove();
+                        let labels = document.getElementsByTagName('label');
+                        for (let lab of labels) {
+                            if (lab.getAttribute('key') == toSuppress) {
+                                lab.remove();
+                            }
+                        }
+                    }
+                })
+            }
+        }
         
         
     })

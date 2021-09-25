@@ -10,8 +10,10 @@ const getCustomerDatas = () => {
         'adressBuilding': getId('adressBuilding').value,
         'adressAdding': getId('adressAdding').value
     }
+    customer.email=getId('mail').value;
     customer.city = getId('adressCode').value + ' ' + getId('adressCity').value
-    storage('customer',customer);
+    //storage('customer',customer);
+    return customer;
 };
 
 
@@ -60,4 +62,15 @@ let locala = getId('local-a');
 
 if(locala){
     console.log(getItem('customer'));
+}
+
+
+let toLocalstorage = getId('toLocalstorage');
+if (toLocalstorage){
+    toLocalstorage.addEventListener('click',function(){
+        
+        let customerinfo=getCustomerDatas();
+        storage('customerDatas',customerinfo);
+    })
+    
 }

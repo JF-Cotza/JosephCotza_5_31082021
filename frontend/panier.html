@@ -15,7 +15,7 @@
         <h1></h1>
 
 <!-- carte commande -->
-        <form action="./confirmation.html" method='POST'>
+        <!--<form action="./confirmation.html" method='POST'> -->
             <div class="card rounded-lg bg-primary mx-auto ">
                 <div class="row">
                     <img src="./../backend/images/teddy_1.jpg" alt="imgeUrl" class='col col-3 mx-0'>
@@ -78,7 +78,7 @@
                     <!-- pour les éléments de l'adresse postale, il a été choisi de tous les commencer par adress -->
                     
                     <label for="adressNumber">Numéro
-                        <input type="text" name="adressNumber" id="adressNumber" pattern='[a-zA-Z0-9 -]{0,10}' placeholder="exemple: 7, 7-7bis, 7Ter" maxlength="=10">
+                        <input type="text" name="adressNumber" id="adressNumber" pattern='[a-zA-Z0-9 -]{0,10}' placeholder="exemple: 7, 7-7bis, 7Ter" maxlength=10>
                     </label>
                     <label for="adressStreet" class="w-100">Voie
                         <input type="text" name="adressStreet" id="adressStreet" required pattern='[a-zA-Z0-9 -àéèùäëïöüÿ]{3,50}'
@@ -97,7 +97,7 @@
                             placeholder="exemple: Total Tour Coupole"
                             maxlength="30">
                     </label>
-                    </br>
+                    <br>
                     <p class='w100 bb-success'></p>
 
                     <label for="adressAdding">Complément d'adresse
@@ -114,10 +114,12 @@
                 </fieldset>                
             </fieldset>
             
-            
+        <!--    
             <button type="submit" class='btn border-solid mx-auto text-center' id='getFormData'>Envoyer</button>
+            
             <button type='reset' id='voidStorage' class='btn border-solid mx-auto text-center'>Vide Local storage</button>
-        </form>
+         </form> -->
+        <a href='./confirmation.html' class='btn border-solid mx-auto text-center' id='toLocalstorage'>Envoyer vers localStorage</a>
     </div> <!-- fin container -->
 <!-- script jquery -->
 <script src="javascript/jQuery/jquery-3.6.0.js"></script>
@@ -133,5 +135,5 @@
 <script src="./javascript/script.js"></script>
 </body>
 
-</body>
+
 </html>
