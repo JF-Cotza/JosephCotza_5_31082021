@@ -29,6 +29,7 @@ const node      = (param_value)             => { return document.importNode(para
 const select    = (param_where, param_what) => { return param_where.querySelectorAll(param_what);}
 const clone     = (param_where, param_what) => { return param_where.importNode(param_what.content, true);}
 const h1content = (param_content)           => { return getType('h1')[0].textContent = param_content;}
+const getAttribute=(param_nom,param_attribute) => { return param_nom.getAttribute(param_attribute);}
 
     //afficher le panier
 const afficherLePanier = (param_totalPanier) => {

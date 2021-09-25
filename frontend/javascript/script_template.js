@@ -24,14 +24,12 @@ const product=(param_fetchdata,param_idproduct)=> {
         let copy = clone(document, template);
         
         if(produit._id==param_idproduct){
-            productShowing(copy,produit,body);        
+            productShowing(copy,produit,body);   //affiche le produit sélectionné     
         
-            //on regarde si une option est sélectionnée
-            option.addEventListener('change',function(){
-                optionMaker(produit,option);             
-                //click sur le bouton annuler
-                cancellation();
-            })
+           
+            //click sur le bouton annuler
+            cancellation();
+            
         }
         else{//si l'id est erronné
             if(count<(length-1)){
@@ -44,6 +42,7 @@ const product=(param_fetchdata,param_idproduct)=> {
     }
 }
 
+//affiche le produit sélectionné
 const productShowing=(param_copy,param_produit,param_body)=>{
     let showingProduct = { 'id': '', 'name': '', 'price': '', 'option': [] };
     let name = select(param_copy, '.cardModelName')[0];
@@ -104,9 +103,12 @@ const productShowing=(param_copy,param_produit,param_body)=>{
 
     image.setAttribute('alt', imageAlt);
     param_body.appendChild(param_copy); //on crée la carte produit
+     //on regarde si une option est sélectionnée
+    productOptionListener(param_produit,option); //surveille si une option est sélectionnée
 
 }
 
+//crée l'input pour les options et les quantités
 const optionMaker=(param_produit,param_option)=>{
     let label = document.createElement('Label');
     let input = document.createElement('input');
@@ -123,9 +125,10 @@ const optionMaker=(param_produit,param_option)=>{
     input.type = 'number';
     input.setAttribute('min', 0);
     input.value = 1;
+    input.classList.add('qty');
     commande.appendChild(label);
     commande.appendChild(input);
-    storage('showing_' + param_produit._id, showingProduct);
+    //storage('showing_' + param_produit._id, showingProduct);
 }
 
 const productData=(param_copy,param_produit,param_body)=>{
@@ -165,4 +168,30 @@ const cancellation = () => {
         preventDefault();
         getType('input').remove;
     })
+}
+
+//surveille si l'on sélectionne une option
+const productOptionListener=(param_produit,param_option)=>{
+    param_option.addEventListener('change', function () {
+        let qty=getClass('qty');
+        let allready=0;
+        if(qty){
+            for (let member of qty) {
+                if (getAttribute(member, 'key') == param_option.value){
+                    allready++
+                }
+            }
+            if (allready!=0){
+                infos.textContent='Option déjà sélectionnée';
+            }
+            else{
+                optionMaker(param_produit, param_option);
+                infos.textContent='';
+            }
+        }       
+        
+        
+        
+    })
+
 }
