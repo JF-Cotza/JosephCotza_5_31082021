@@ -24,7 +24,6 @@ let commande=[];
 let test = 000;
 let getFormData = getId('getFormData');
 let voidStorage = getId('voidStorage');
-let toCaddie = getId('toCaddie');
 
 
 
@@ -58,13 +57,6 @@ if (voidStorage){
 };
 
 
-let locala = getId('local-a');
-
-if(locala){
-    console.log(getItem('customer'));
-}
-
-
 let toLocalstorage = getId('toLocalstorage');
 if (toLocalstorage){
     toLocalstorage.addEventListener('click',function(){
@@ -74,3 +66,6 @@ if (toLocalstorage){
     })
     
 }
+
+
+

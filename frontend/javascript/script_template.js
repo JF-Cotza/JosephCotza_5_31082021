@@ -106,6 +106,32 @@ const productShowing=(param_copy,param_produit,param_body)=>{
      //on regarde si une option est sélectionnée
     productOptionListener(param_produit,option); //surveille si une option est sélectionnée
 
+   
+    
+
+    toCaddie.addEventListener('click', () => {
+        let selectedOptions = getType('input');
+        let exist = 0;
+        //on vérifie s'il y a une option de produit affichée
+        for (let item of selectedOptions) {
+            if (item.getAttribute('key')) {
+                exist++
+            }
+        }
+
+        if(getItem(param_produit._id)){
+            infos.textContent='Produit déjà choisi';
+        }
+        else{
+            if (exist > 0) {
+                storeToLocal(param_produit);
+            }
+            else if (exist == 0) {
+                infos.textContent = 'pas de quantité sélectionnée pour le produit';
+            }
+        }
+    })       
+    
 }
 
 //crée l'input pour les options et les quantités
@@ -129,7 +155,6 @@ const optionMaker=(param_produit,param_option)=>{
     input.classList.add('qty');
     commande.appendChild(label);
     commande.appendChild(input);
-    //storage('showing_' + param_produit._id, showingProduct);
 }
 
 const productData=(param_copy,param_produit,param_body)=>{
@@ -205,9 +230,35 @@ const productOptionListener=(param_produit,param_option)=>{
                     }
                 })
             }
-        }
-        
-        
+        }                
     })
+}
 
+
+const storeToLocal=(param_produit)=>{
+    let selectedProduct=[];
+    let selectedOptions=getType('input');
+    
+    for (let option of selectedOptions){
+        let toPush={'key':'','value':''};
+        if (getAttribute(option, 'key')){
+            let key = getAttribute(option, 'key');
+            let howMany = option.value;
+            toPush.key=key;
+            toPush.value=howMany;
+            selectedProduct.push(toPush);
+        }
+    }    
+
+    
+    //on trie les options par clés
+    selectedProduct.sort(function compare(a, b) {
+        if (a.key < b.key)
+            return -1;
+        if (a.key > b.key)
+            return 1;
+        return 0;
+    });
+    //on stock en local
+    storage(param_produit._id, selectedProduct);
 }

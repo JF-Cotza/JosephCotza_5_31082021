@@ -79,6 +79,8 @@ const getInUrl  = (param_searched)          => {
 //autres   
     let entreprise='Orinoco';
     let infos = getId('infos');
+    let toCaddie = getId('toCaddie');
+
 
 //script lancés qu'une fois
 h1content(entreprise);
