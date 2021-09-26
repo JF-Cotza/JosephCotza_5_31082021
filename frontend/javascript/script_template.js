@@ -8,6 +8,9 @@ const index=(param_fetchdata)=>{
         let copy = clone(document, template);
         productData(copy,produit,body);          
     }
+
+    //bouton panier
+    compteProduitsDuPanier(param_fetchdata)
 }
 
 const product=(param_fetchdata,param_idproduct)=> {
@@ -40,6 +43,8 @@ const product=(param_fetchdata,param_idproduct)=> {
             }
         }
     }
+    //bouton panier
+    compteProduitsDuPanier(param_fetchdata)
 }
 
 //affiche le produit sélectionné

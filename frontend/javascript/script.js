@@ -37,9 +37,6 @@ if (getId('productCommand')){
     fetchProduct(value);
 };
 
-if(getId('look')){
-    afficherLePanier(test);
-}
 
 if (getFormData){
     getFormData.addEventListener('click',getCustomerDatas);
@@ -69,3 +66,9 @@ if (toLocalstorage){
 
 
 
+
+
+
+
+//testingFunction(getId('text-center'));
+console.log(getId('infos'));

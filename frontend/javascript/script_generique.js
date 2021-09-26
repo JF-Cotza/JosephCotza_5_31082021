@@ -25,11 +25,38 @@ const getItem   = (param_nom)               => { return localStorage.getItem(par
 const getType   = (param_type)              => { return document.getElementsByTagName(param_type) };
 const getClass  = (param_class)             => { return document.getElementsByClassName(param_class) };
 const getId     = (param_id)                => { return document.getElementById(param_id) };
-const node      = (param_value)             => { return document.importNode(param_value.content, true) };
+const clone     = (param_where, param_what) => { return param_where.importNode(param_what.content, true); }
 const select    = (param_where, param_what) => { return param_where.querySelectorAll(param_what);}
-const clone     = (param_where, param_what) => { return param_where.importNode(param_what.content, true);}
 const h1content = (param_content)           => { return getType('h1')[0].textContent = param_content;}
 const getAttribute=(param_nom,param_attribute) => { return param_nom.getAttribute(param_attribute);}
+//const node      = (param_value)             => { return document.importNode(param_value.content, true) };
+
+
+// fonction de contrôle
+const testingFunction = (param_toCheck) => {
+    let exist = 0;
+    for (let option of param_toCheck) {
+        exist++;
+        console.log(option.id);
+    }
+    if (exist == 0) {
+        console.log("Résultat testingFunction : l’élement n’existe pas")
+    }
+    if (!param_toCheck){
+        console.log('toto');
+    }
+}
+
+//le bouton panier
+const compteProduitsDuPanier = (param_fetchdata) => {
+    let count = 0;
+    for (let produit of param_fetchdata) {
+        if (getItem(produit._id)) {
+            count++;
+        }
+    }
+    afficherLePanier(count);
+}
 
     //afficher le panier
 const afficherLePanier = (param_totalPanier) => {
@@ -43,8 +70,8 @@ const afficherLePanier = (param_totalPanier) => {
     else {
         let span = document.createElement('span');
         look.title = 'afficher le panier';
-        span.textContent = `valeur du panier: ${param_totalPanier / 100} €`
-        look.appendChild(span);
+        span.textContent = `Le panier contient :${param_totalPanier} produits`
+        textLook.appendChild(span);
     }
 }
 
