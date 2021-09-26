@@ -7,7 +7,7 @@
 
 //constantes
 const productType=['teddies','cameras','furniture'];
-const imageAlt=['un ou des ourson','un appareil photo','un meuble']
+const imageAlternative=['un ou des ourson','un appareil photo','un meuble'];
 const selectedProduct=0;
 const type=productType[selectedProduct];                              //utilisé dans le template pour le chois de l'afichage des options 
 const apiLink = 'http://localhost:3000/api/'+type;                    //lien pour l'api et accéder aux produits  
