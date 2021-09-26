@@ -27,15 +27,7 @@ let voidStorage = getId('voidStorage');
 
 
 
-//application lancées
-if (getId('allProducts')) {
-    fetchIndex();
-};
 
-if (getId('productCommand')){
-    let value=getInUrl('id');
-    fetchProduct(value);
-};
 
 
 if (getFormData){
@@ -72,3 +64,18 @@ if (toLocalstorage){
 
 //testingFunction(getId('text-center'));
 console.log(getId('infos'));
+
+
+
+
+/*********************** application lancées depuis les pages ***********************/
+//index.html
+if (getId('allProducts')) {
+    fetchIndex();
+};
+
+//product.html
+if (getId('productCommand')){
+    let value=getInUrl('id');
+    fetchProduct(value);
+}; 

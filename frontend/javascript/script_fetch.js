@@ -25,6 +25,21 @@ const fetchProduct= ($prod)=>{
         );
     }
 
+const fetchAffichagePanier=()=>{
+    fetch(apiLink)                      
+        .then(function (res) {           
+            res.json()                  
+                .then((data) => {
+                    panier(data);        
+                })
+
+        })
+        .catch((error) => {
+            mistake(error);
+        })
+}
+
+
 const fetchPanier=($value)=>{
     fetch(apiLink, {
         method: "POST",

@@ -47,6 +47,15 @@ const product=(param_fetchdata,param_idproduct)=> {
     compteProduitsDuPanier(param_fetchdata)
 }
 
+const panier=(param_fetchdata)=>{
+    for (let produit of param_fetchdata){
+        if(getItem(produit._id))
+        {
+            console.log(produit);
+        }
+    }
+}
+
 //affiche le produit sélectionné
 const productShowing=(param_copy,param_produit,param_body)=>{
     let showingProduct = { 'id': '', 'name': '', 'price': '', 'option': [] };
