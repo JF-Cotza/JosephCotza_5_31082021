@@ -196,7 +196,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     name.textContent=param_produit.name;
     image.setAttribute('src', param_produit.imageUrl);
     image.setAttribute('alt', imageAlternative[selectedProduct]);
-    price.textContent=(param_produit.price)/100; 
+    price.textContent=(param_produit.price) / 100; 
     
     param_body.appendChild(param_copy);
 
