@@ -13,51 +13,40 @@ const index=(param_fetchdata)=>{
     compteProduitsDuPanier(param_fetchdata)
 }
 
-const product=(param_fetchdata,param_idproduct)=> {
-    //on sélectionne le template par son ID
-    let template = document.querySelector('#productTemplate');
+const productData = (param_copy, param_produit, param_body) => {
+    let url = select(param_copy, '.cardLink')[0];
+    let name = select(param_copy, '.cardModelName')[0];
+    let option = select(param_copy, '.cardOption')[0];
+    let price = select(param_copy, '.cardPrice')[0];
+    let detail = select(param_copy, '.cardDetails')[0];
+    let id = select(param_copy, '.cardId')[0];
+    let image = document.createElement('img');
 
-    //on sélectionne là où on on créera les cartes.
-    let body = select(document, '#productCommand')[0];
-    let count = 0;
-    //on explore les produits
-    for (let produit of param_fetchdata) {
-        
-        let length = param_fetchdata.length;
-        let copy = clone(document, template);
-        
-        if(produit._id==param_idproduct){
-            productShowing(copy,produit,body);   //affiche le produit sélectionné     
-        
-           
-            //click sur le bouton annuler
-            cancellation();
-            
-        }
-        else{//si l'id est erronné
-            if(count<(length-1)){
-                count++;
-            }
-            else{
-                infos.textContent="Désolé, le produit n'est plus disponible";
-            }
-        }
-    }
-    //bouton panier
-    compteProduitsDuPanier(param_fetchdata)
-}
+    image.setAttribute('alt', param_produit.alt);
+    image.setAttribute('src', param_produit.imageUrl);
+    url.href = `product.html?id=${param_produit._id}`;
+    name.textContent = 'modèle: ' + param_produit.name;
+    price.textContent = 'prix: ' + (param_produit.price) / 100 + '€';
+    detail.textContent = 'description: ' + param_produit.description;
+    id.textContent = param_produit._id;
 
-const panier=(param_fetchdata)=>{
-    for (let produit of param_fetchdata){
-        if(getItem(produit._id))
-        {
-            console.log(produit);
-        }
+    if (type == 'teddies') {
+        option.textContent = 'couleurs: ' + param_produit.colors;
     }
+    else if (type == 'cameras') {
+        option.textContent = 'objectifs: ' + param_produit.lenses;
+    }
+    else if (type == 'furniture') {
+        option.textContent = 'vernis: ' + param_produit.varnish;
+    }
+
+
+    url.appendChild(image); //on crée l'image dans le l'url
+    param_body.appendChild(param_copy); //on crée la carte produit
 }
 
 //affiche le produit sélectionné
-const productShowing=(param_copy,param_produit,param_body)=>{
+const productShowing = (param_copy, param_produit, param_body) => {
     let showingProduct = { 'id': '', 'name': '', 'price': '', 'option': [] };
     let name = select(param_copy, '.cardModelName')[0];
     let option = select(param_copy, '.cardOptionSelect')[0];
@@ -117,11 +106,8 @@ const productShowing=(param_copy,param_produit,param_body)=>{
 
     image.setAttribute('alt', imageAlt);
     param_body.appendChild(param_copy); //on crée la carte produit
-     //on regarde si une option est sélectionnée
-    productOptionListener(param_produit,option); //surveille si une option est sélectionnée
-
-   
-    
+    //on regarde si une option est sélectionnée
+    productOptionListener(param_produit, option); //surveille si une option est sélectionnée
 
     toCaddie.addEventListener('click', () => {
         let selectedOptions = getType('input');
@@ -133,10 +119,10 @@ const productShowing=(param_copy,param_produit,param_body)=>{
             }
         }
 
-        if(getItem(param_produit._id)){
-            infos.textContent='Produit déjà choisi';
+        if (getItem(param_produit._id)) {
+            infos.textContent = 'Produit déjà choisi';
         }
-        else{
+        else {
             if (exist > 0) {
                 storeToLocal(param_produit);
             }
@@ -144,9 +130,67 @@ const productShowing=(param_copy,param_produit,param_body)=>{
                 infos.textContent = 'pas de quantité sélectionnée pour le produit';
             }
         }
-    })       
-    
+    })
+
 }
+
+const product=(param_fetchdata,param_idproduct)=> {
+    //on sélectionne le template par son ID
+    let template = document.querySelector('#productTemplate');
+
+    //on sélectionne là où on on créera les cartes.
+    let body = select(document, '#productCommand')[0];
+    let count = 0;
+    //on explore les produits
+    for (let produit of param_fetchdata) {
+        
+        let length = param_fetchdata.length;
+        let copy = clone(document, template);
+        
+        if(produit._id==param_idproduct){
+            productShowing(copy,produit,body);   //affiche le produit sélectionné     
+        
+           
+            //click sur le bouton annuler
+            cancellation();
+            
+        }
+        else{//si l'id est erronné
+            if(count<(length-1)){
+                count++;
+            }
+            else{
+                infos.textContent="Désolé, le produit n'est plus disponible";
+            }
+        }
+    }
+    //bouton panier
+    compteProduitsDuPanier(param_fetchdata)
+}
+
+const panier=(param_fetchdata)=>{
+    //on sélectionne le template par son ID
+    let template = document.querySelector('#basePanier');
+    //on sélectionne là où on on créera les cartes.
+    let body = select(document, '#panier')[0];
+    for (let produit of param_fetchdata){
+        if(getItem(produit._id))
+        {
+            //on clone le template
+            let copy = clone(document, template);
+            console.log(produit);            
+            panierData(copy,produit,body);        
+        }
+    }
+}
+
+const panierData = (param_copy, param_produit, param_body) =>{
+    let image= select(param_copy,'.imagePanier')[0];
+    image.setAttribute('src', param_produit.imageUrl);
+    image.setAttribute('alt', param_produit.alt);
+    console.log(image);
+}
+
 
 //crée l'input pour les options et les quantités
 const optionMaker=(param_produit,param_option)=>{
@@ -171,37 +215,6 @@ const optionMaker=(param_produit,param_option)=>{
     commande.appendChild(input);
 }
 
-const productData=(param_copy,param_produit,param_body)=>{
-    let url = select(param_copy, '.cardLink')[0];
-    let name = select(param_copy, '.cardModelName')[0];
-    let option = select(param_copy, '.cardOption')[0];
-    let price = select(param_copy, '.cardPrice')[0];
-    let detail = select(param_copy, '.cardDetails')[0];
-    let id = select(param_copy, '.cardId')[0];
-    let image = document.createElement('img');
-
-    image.setAttribute('alt', param_produit.alt);
-    image.setAttribute('src', param_produit.imageUrl);
-    url.href = `product.html?id=${param_produit._id}`;
-    name.textContent = 'modèle: ' + param_produit.name;
-    price.textContent = 'prix: ' + (param_produit.price) / 100 + '€';
-    detail.textContent = 'description: ' + param_produit.description;
-    id.textContent = param_produit._id;
-
-    if (type == 'teddies') {
-        option.textContent = 'couleurs: ' + param_produit.colors;
-    }
-    else if (type == 'cameras') {
-        option.textContent = 'objectifs: ' + param_produit.lenses;
-    }
-    else if (type == 'furniture') {
-        option.textContent = 'vernis: ' + param_produit.varnish;
-    }
-
-
-    url.appendChild(image); //on crée l'image dans le l'url
-    param_body.appendChild(param_copy); //on crée la carte produit
-}
 
 const cancellation = () => {
     getId('cancel').addEventListener('click', () => {
@@ -247,7 +260,6 @@ const productOptionListener=(param_produit,param_option)=>{
         }                
     })
 }
-
 
 const storeToLocal=(param_produit)=>{
     let selectedProduct=[];

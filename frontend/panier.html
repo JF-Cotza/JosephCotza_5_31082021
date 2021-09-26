@@ -11,8 +11,30 @@
     <title>Orinoco - commande</title>
 </head>
 <body>
-    <div class="container bg-secondary" id='panier'>
+    <div class="container bg-secondary" >
+        <nav>
+            <p class='text-center h2'>Votre Panier</p>
+        </nav>
         <h1></h1>
+
+        <main id='panier'>
+
+        </main>
+
+        <template id='basePanier'>
+            <div class="card rounded-lg bg-primary mx-auto ">
+                <div class="row">
+                    <img src="" alt="" class='col col-3 mx-0 imagePanier'>
+                    <div class='col-9 row bg-success mx-0'>
+                        <div class="row">
+                            <div class="nom col col-9 h2 grey-1 heigth-1">nom
+                                modele</div>
+                            <div class="unitaire  col col-3 grey-2 heigth-1">
+                                prix unitaire</div>
+                        </div>
+                </div>
+            </div>
+        </template>
 
 <!-- carte commande -->
         <!--<form action="./confirmation.html" method='POST'> -->
