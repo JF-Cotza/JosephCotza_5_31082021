@@ -79,3 +79,8 @@ if (getId('productCommand')){
     let value=getInUrl('id');
     fetchProduct(value);
 }; 
+
+//panier.html
+if (getId('panier')){
+    fetchAffichagePanier();
+}
