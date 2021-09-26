@@ -30,7 +30,7 @@ const fetchAffichagePanier=()=>{
         .then(function (res) {           
             res.json()                  
                 .then((data) => {
-                    panier(data);        
+                    panierExplorer(data);        
                 })
 
         })

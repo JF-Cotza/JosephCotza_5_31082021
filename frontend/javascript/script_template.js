@@ -168,7 +168,7 @@ const product=(param_fetchdata,param_idproduct)=> {
     compteProduitsDuPanier(param_fetchdata)
 }
 
-const panier=(param_fetchdata)=>{
+const panierExplorer=(param_fetchdata)=>{
     //on sélectionne le template par son ID
     let template = document.querySelector('#basePanier');
     //on sélectionne là où on on créera les cartes.
