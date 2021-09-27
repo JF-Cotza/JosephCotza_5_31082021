@@ -12,20 +12,29 @@
 </head>
 <body>
     <div class="container bg-secondary" >
-        <nav>
-            <p class='text-center h2'>Votre Panier</p>
+        <nav class='navbar row'>
+            <a href="index.html" class='col-9' title="retour à la page d'accueil">            
+                <picture>
+                    <source srcset="./images/logo-200.png" media='(max-width=500px)'>
+                <img src="./images/logo.png" alt="Un caddie, logo d'Orniroco" srcset="">
+                </picture>
+            </a>
+
+            <p class='text-center h2 col-3'>Votre Panier</p>
         </nav>
         <h1></h1>
 
         <main >
             <div id='panier'></div>
-            <a href="index.html" class='btn bg-danger' id='cancelPanier'>Annuler la commande</a>
+            <a href="index.html" class='btn bg-danger border-solid' id='cancelPanier'>Annuler la commande</a>
         </main>
 
         <template id='basePanier'>
             <div class="card rounded-lg bg-primary mx-auto ">
                 <div class="row">
-                    <img src="" alt="" class='col col-3 mx-0 imagePanier'>
+                    <div class='col  col-3 mx-0 d-flex justify-content-center'>
+                        <img src="" alt="" class='w-1O0 h-auto imagePanier'>
+                    </div>
                     <div class='col-9 row bg-success mx-0'>
                         <div class="row">
                             <div class="nom col col-9 h2 grey-1 heigth-1 modelePanier">
@@ -42,8 +51,11 @@
 <!-- carte commande -->
         <!--<form action="./confirmation.html" method='POST'> -->
             <div class="card rounded-lg bg-primary mx-auto ">
-                <div class="row">
-                    <img src="./../backend/images/teddy_1.jpg" alt="imgeUrl" class='col col-3 mx-0'>
+                <div class="row w-100">
+                    <div class='col-3 mx-0 bg-white px-0'>
+                        <img src="./../backend/images/teddy_1.jpg" alt="imgeUrl" class='w-75 mx-0 px-0'>
+                    </div>
+                    
                     <div class='col-9 row bg-success mx-0'>
                         <div class="row">
                             <div class="nom col col-9 h2 grey-1 heigth-1">nom modele</div>
