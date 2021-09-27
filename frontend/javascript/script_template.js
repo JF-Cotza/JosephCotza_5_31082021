@@ -192,7 +192,9 @@ const panierData = (param_copy, param_produit, param_body) =>{
     let price = select(param_copy, '.singlePricePanier')[0];
     
     let fromStorage=getItem(param_produit._id);
-
+    for (let choice of fromStorage){
+        console.log(choice);
+    }
     console.log(fromStorage);
     /*  let option = select(param_copy, '.cardOptionSelect')[0];
     

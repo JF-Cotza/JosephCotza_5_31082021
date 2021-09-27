@@ -49,10 +49,10 @@ if (voidStorage){
 let toLocalstorage = getId('toLocalstorage');
 
 if (toLocalstorage){
-    console.log(toLocalstorage);
+   // console.log(toLocalstorage);
 
     toLocalstorage.addEventListener('click',function(e){
-        console.log('toLocalstorage');
+        //console.log('toLocalstorage');
         e.preventDefault();
         //storage('customerDatas',customerinfo);
         fetchCustomer();
