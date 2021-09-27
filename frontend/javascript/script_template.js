@@ -108,8 +108,10 @@ const productShowing = (param_copy, param_produit, param_body) => {
     param_body.appendChild(param_copy); //on crée la carte produit
     //on regarde si une option est sélectionnée
     productOptionListener(param_produit, option); //surveille si une option est sélectionnée
+    let submit=getClass('submit');
 
-    toCaddie.addEventListener('click', () => {
+    for (let btn of submit){
+        btn.addEventListener('click', () => {
         let selectedOptions = getType('input');
         let exist = 0;
         //on vérifie s'il y a une option de produit affichée
@@ -131,7 +133,7 @@ const productShowing = (param_copy, param_produit, param_body) => {
             }
         }
     })
-
+    }
 }
 
 const product=(param_fetchdata,param_idproduct)=> {
