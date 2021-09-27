@@ -56,7 +56,7 @@ const fetchPanier=($value)=>{
 const fetchCustomer = () => {
     const body = {contact: getCustomerDatas(),
         productsId: ['id', 'vfdnkvjfbkjdjkbjf', 'vbfuigfbgsg', 'kjdnsnbkb', 'cdhvdsvuk']};
-
+    console.log(body);
     fetch(apiLink+'/order', {
         method: "POST",
         headers: {
