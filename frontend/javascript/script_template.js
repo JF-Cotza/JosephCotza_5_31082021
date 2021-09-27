@@ -190,6 +190,10 @@ const panierData = (param_copy, param_produit, param_body) =>{
     let image= select(param_copy,'.imagePanier')[0];
     let name = select(param_copy,'.modelePanier')[0];
     let price = select(param_copy, '.singlePricePanier')[0];
+    
+    let fromStorage=getItem(param_produit._id);
+
+    console.log(fromStorage);
     /*  let option = select(param_copy, '.cardOptionSelect')[0];
     
     let detail = select(param_copy, '.cardDetails')[0];
@@ -201,7 +205,14 @@ const panierData = (param_copy, param_produit, param_body) =>{
     image.setAttribute('alt', imageAlternative[selectedProduct]);
     price.textContent=(param_produit.price) / 100; 
     
+
+
     param_body.appendChild(param_copy);
+
+    '.optionList'
+    '.optionTitlePanier'
+    '.optionQuantityPanier'
+    '.optionCostPanier'
 
 }
 
