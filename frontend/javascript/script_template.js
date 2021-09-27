@@ -179,8 +179,9 @@ const panierExplorer=(param_fetchdata)=>{
             //on clone le template
             let copy = clone(document, template);
             panierData(copy,produit,body);        
-        }
+        }    
     }
+    videPanier(param_fetchdata);
 }
 
 const panierData = (param_copy, param_produit, param_body) =>{
@@ -202,6 +203,13 @@ const panierData = (param_copy, param_produit, param_body) =>{
 
 }
 
+const videPanier=(param_fetchdata)=>{
+    getId('cancelPanier').addEventListener('click',()=>{
+        for(let produit of param_fetchdata){
+            remove(produit._id);
+        }
+    })
+}
 
 //crée l'input pour les options et les quantités
 const optionMaker=(param_produit,param_option)=>{

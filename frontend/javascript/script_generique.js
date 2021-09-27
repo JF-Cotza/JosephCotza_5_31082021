@@ -30,6 +30,7 @@ const clone     = (param_where, param_what) => { return param_where.importNode(p
 const select    = (param_where, param_what) => { return param_where.querySelectorAll(param_what);}
 const h1content = (param_content)           => { return getType('h1')[0].textContent = param_content;}
 const getAttribute=(param_nom,param_attribute) => { return param_nom.getAttribute(param_attribute);}
+const remove    = (param_nom)               => { return localStorage.removeItem(param_nom);}
 //const node      = (param_value)             => { return document.importNode(param_value.content, true) };
 
 
