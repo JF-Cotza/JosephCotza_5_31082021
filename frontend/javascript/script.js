@@ -47,11 +47,15 @@ if (voidStorage){
 
 
 let toLocalstorage = getId('toLocalstorage');
+
 if (toLocalstorage){
-    toLocalstorage.addEventListener('click',function(){
-        
-        let customerinfo=getCustomerDatas();
-        storage('customerDatas',customerinfo);
+    console.log(toLocalstorage);
+
+    toLocalstorage.addEventListener('click',function(e){
+        console.log('toLocalstorage');
+        e.preventDefault();
+        //storage('customerDatas',customerinfo);
+        fetchCustomer();
     })
     
 }

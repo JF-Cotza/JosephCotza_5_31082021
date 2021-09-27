@@ -39,7 +39,7 @@ const fetchAffichagePanier=()=>{
         })
 }
 
-
+/*
 const fetchPanier=($value)=>{
     fetch(apiLink, {
         method: "POST",
@@ -52,19 +52,25 @@ const fetchPanier=($value)=>{
     });
         
 }
+*/
+const fetchCustomer = () => {
+    const body = {contact: getCustomerDatas(),
+        productsId: ['id', 'vfdnkvjfbkjdjkbjf', 'vbfuigfbgsg', 'kjdnsnbkb', 'cdhvdsvuk']};
 
-const fetchCustomer = ($value) => {
-    fetch('confirmation.html', {
+    fetch(apiLink, {
         method: "POST",
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: 'toto' // JSON.stringify({value:'toto'})      
+        body:JSON.stringify(body) //on stringifie la constante body
     })
     .then(function(res){
         if(res.ok){
-        return res.json();
+            console.log('resjson-post:');
+            console.log(res.json());
+            return res.json();
+
         }
         else{
             console.log('pas de res');
