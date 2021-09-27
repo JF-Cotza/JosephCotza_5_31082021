@@ -195,7 +195,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     for (let choice of fromStorage){
         console.log(choice);
     }
-    console.log(fromStorage);
+    
     /*  let option = select(param_copy, '.cardOptionSelect')[0];
     
     let detail = select(param_copy, '.cardDetails')[0];
