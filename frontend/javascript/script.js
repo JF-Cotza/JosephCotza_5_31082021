@@ -67,7 +67,7 @@ if (toLocalstorage){
 
 
 //testingFunction(getId('text-center'));
-console.log(getId('infos'));
+//console.log(getId('infos'));
 
 
 
