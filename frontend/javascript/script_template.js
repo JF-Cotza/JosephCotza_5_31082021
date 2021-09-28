@@ -188,7 +188,7 @@ const panierExplorer=(param_fetchdata)=>{
             panierData(copy,produit,body);        
         }    
     }
-    
+    videPanier(param_fetchdata);
 }
 
 const panierData = (param_copy, param_produit, param_body) =>{
@@ -221,7 +221,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     param_body.appendChild(param_copy);
 
     supprimerUnProduitDuPanier();
-    videPanier(param_fetchdata);
+    
     '.optionList'
     '.optionTitlePanier'
     '.optionQuantityPanier'
