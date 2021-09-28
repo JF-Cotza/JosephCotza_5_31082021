@@ -188,7 +188,7 @@ const panierExplorer=(param_fetchdata)=>{
             panierData(copy,produit,body);        
         }    
     }
-    videPanier(param_fetchdata);
+    
 }
 
 const panierData = (param_copy, param_produit, param_body) =>{
@@ -220,20 +220,8 @@ const panierData = (param_copy, param_produit, param_body) =>{
 
     param_body.appendChild(param_copy);
 
-    let suppressClass = getClass('productSuppr');
-    console.log(suppressClass);
-    for (let prod of suppressClass){
-        prod.addEventListener('click',()=>{ 
-            let id=getAttribute(prod,'keyId');
-            console.log('prod pressed');
-            for(cardlisted of getClass('card')){
-                if(getAttribute(cardlisted,'keyId')==id){
-                    cardlisted.parentNode.removeChild(cardlisted);
-                    storageRemove(id);
-                }
-            }
-        })
-    }
+    supprimerUnProduitDuPanier();
+    videPanier(param_fetchdata);
     '.optionList'
     '.optionTitlePanier'
     '.optionQuantityPanier'
@@ -241,13 +229,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
 
 }
 
-const videPanier=(param_fetchdata)=>{
-    getId('cancelPanier').addEventListener('click',()=>{
-        for(let produit of param_fetchdata){
-            remove(produit._id);
-        }
-    })
-}
+
 
 //crée l'input pour les options et les quantités
 const optionMaker=(param_produit,param_option)=>{
@@ -344,4 +326,36 @@ const storeToLocal=(param_produit)=>{
     });
     //on stock en local
     storage(param_produit._id, selectedProduct);
+}
+
+
+const supprimerUnProduitDuPanier = () => {
+    let suppressClass = getClass('productSuppr');
+    for (let prod of suppressClass) {
+        prod.addEventListener('click', () => {
+            let id = getAttribute(prod, 'keyId');
+            console.log('prod pressed');
+            for (cardlisted of getClass('card')) {
+                if (getAttribute(cardlisted, 'keyId') == id) {
+                    cardlisted.parentNode.removeChild(cardlisted);
+                    storageRemove(id);
+                }
+            }
+        })
+    }
+}
+
+
+const videPanier = (param_fetchdata) => {
+    getId('cancelPanier').addEventListener('click', () => {
+        for (let produit of param_fetchdata) {
+            storageRemove(produit._id);
+            let cardClass=getClass('card');
+            for (let member of cardClass){
+                if(getAttribute(member,'keyId')==produit._id){
+                    member.parentNode.removeChild(member);
+                }
+            }           
+        }
+    })
 }
