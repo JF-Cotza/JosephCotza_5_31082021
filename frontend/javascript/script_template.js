@@ -195,6 +195,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     let image= select(param_copy,'.imagePanier')[0];
     let name = select(param_copy,'.modelePanier')[0];
     let price = select(param_copy, '.singlePricePanier')[0];
+    let card = select(param_copy,'.card')[0];
     
     let fromStorage=JSON.parse(getItem(param_produit._id));
     for (let choice of fromStorage){
@@ -210,6 +211,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     name.textContent=param_produit.name;
     image.setAttribute('src', param_produit.imageUrl);
     image.setAttribute('alt', imageAlternative[selectedProduct]);
+    card.setAttribute('keyId',param_produit._id);
     price.textContent=(param_produit.price) / 100; 
     
 

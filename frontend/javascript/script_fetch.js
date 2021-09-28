@@ -6,7 +6,6 @@ const fetchIndex = () => {
                     .then((data) => {
                         index(data);        //on crée la carte produit
                     })
-
                 })
             .catch((error) => { 
                 mistake(error);

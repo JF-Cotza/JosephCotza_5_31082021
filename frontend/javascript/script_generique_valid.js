@@ -5,7 +5,7 @@
     - les variables globales
 */
 
-//constantes
+/***************** constantes ******************************/
 const productType = ['teddies', 'cameras', 'furniture'];
 const imageAlternative = ['un ou des ourson', 'un appareil photo', 'un meuble'];
 const selectedProduct = 0;
@@ -13,7 +13,7 @@ const type = productType[selectedProduct];                              //utilis
 const apiLink = 'http://localhost:3000/api/' + type;                    //lien pour l'api et accéder aux produits  
 const option = ['colors', 'lenses', 'varnishes']
 
-//applications fléchées
+/**************** applications fléchées ****************************/
 //fonctions simplificatrices
 const storage = (param_nom, param_value) => { return localStorage.setItem(param_nom, JSON.stringify(param_value)) };
 const getItem = (param_nom) => { return localStorage.getItem(param_nom) };
@@ -35,6 +35,24 @@ const testingFunction = (param_toCheck) => {
     }
     if (exist == 0) {
         console.log("Résultat testingFunction : l’élement n’existe pas")
+    }
+}
+
+//afficher le message d'erreur
+const mistake = (param_error) => {
+    //constante à mettre à jour pour les messages d'erreurs
+    const erreurs = ['NetworkError when attempting to fetch resource.'];
+    const messageAafficher = ['Oups! le serveur est inaccessible. Veuillez nous en excusez.'];
+    // 
+    let i = 0;
+    for (let risque of erreurs) {
+        if (param_error.message = risque) {
+            infos.textContent = messageAafficher[i];
+        }
+        else {
+            console.log(param_error.message + ' erreur du fetch ');
+            i++
+        }
     }
 }
 

@@ -28,24 +28,7 @@ const afficherLePanier = (param_totalPanier) => {
     }
 }
 
-    //afficher le message d'erreur
-const mistake = (param_error) => {
-    //constante à mettre à jour pour les messages d'erreurs
-    const erreurs = ['NetworkError when attempting to fetch resource.'];
-    const messageAafficher = ['Oups! le serveur est inaccessible. Veuillez nous en excusez.'];
-    // 
-    let i=0;
-    for(let risque of erreurs){
-        if (param_error.message = risque) {
-            infos.textContent = messageAafficher[i];
-        }
-        else {
-            console.log(param_error.message + ' erreur du fetch ');
-            i++
-        }
-    }
-    
-}
+
 
 
 //pour récupérer une valeur dans l'URL
@@ -56,15 +39,3 @@ const getInUrl  = (param_searched)          => {
     return value;  
 }
 
-//variables globales
-//  le bouton panier
-    let look = getId('look'); //bouton pour afficher le panier
-    let textLook = getId('textLook'); //zone de texte de look
-//autres   
-    let entreprise='Orinoco';
-    let infos = getId('infos');
-    let toCaddie = getId('toCaddie');
-
-
-//script lancés qu'une fois
-h1content(entreprise);
