@@ -221,7 +221,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     param_body.appendChild(param_copy);
 
     let suppressClass = getClass('.productSuppr');
-
+    console.log(suppressClass);
     for (let prod of suppressClass){
         prod.addEventListener('click',()=>{ 
             let id=getAttribute(prod,'keyId');
