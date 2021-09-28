@@ -225,7 +225,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
             let id=getAttribute(prod,'keyId');
             for(cardlisted of getClass('card')){
                 if(getAttribute(cardlisted,'keyId')==id){
-                    document.remove(cardlisted);
+                    cardlisted.parentNode.removeChild(cardlisted);
                 }
             }
         })
