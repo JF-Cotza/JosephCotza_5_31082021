@@ -225,6 +225,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     for (let prod of suppressClass){
         prod.addEventListener('click',()=>{ 
             let id=getAttribute(prod,'keyId');
+            console.log('prod pressed');
             for(cardlisted of getClass('card')){
                 if(getAttribute(cardlisted,'keyId')==id){
                     cardlisted.parentNode.removeChild(cardlisted);
