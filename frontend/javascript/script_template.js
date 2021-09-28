@@ -196,7 +196,8 @@ const panierData = (param_copy, param_produit, param_body) =>{
     let name = select(param_copy,'.modelePanier')[0];
     let price = select(param_copy, '.singlePricePanier')[0];
     let card = select(param_copy,'.card')[0];
-    
+    let suppress = select(param_copy,'.productSuppr')[0];
+
     let fromStorage=JSON.parse(getItem(param_produit._id));
     for (let choice of fromStorage){
         console.log(choice.key);
@@ -211,13 +212,24 @@ const panierData = (param_copy, param_produit, param_body) =>{
     name.textContent=param_produit.name;
     image.setAttribute('src', param_produit.imageUrl);
     image.setAttribute('alt', imageAlternative[selectedProduct]);
-    card.setAttribute('keyId',param_produit._id);
+    
     price.textContent=(param_produit.price) / 100; 
     
-
+    suppress.setAttribute('keyId',param_produit._id);
+    card.setAttribute('keyId', param_produit._id);
 
     param_body.appendChild(param_copy);
 
+    for (let prod of suppress){
+        prod.addEventListener('click',()=>{ 
+            let id=getAttribute(prod,'keyId');
+            for(cardlisted of getClass('card')){
+                if(getAttribute(cardlisted,'keyId')==id){
+                    document.remove(cardlisted);
+                }
+            }
+        })
+    }
     '.optionList'
     '.optionTitlePanier'
     '.optionQuantityPanier'
