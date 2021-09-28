@@ -66,8 +66,9 @@ if (toLocalstorage){
 
 
 
-//testingFunction(getId('text-center'));
-//console.log(getId('infos'));
+//testingFunction();
+
+
 
 
 
@@ -88,3 +89,4 @@ if (getId('productCommand')){
 if (getId('panier')){
     fetchAffichagePanier();
 }
+

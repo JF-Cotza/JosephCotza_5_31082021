@@ -43,6 +43,9 @@ const productData = (param_copy, param_produit, param_body) => {
 
     url.appendChild(image); //on crée l'image dans le l'url
     param_body.appendChild(param_copy); //on crée la carte produit
+
+
+
 }
 
 //affiche le produit sélectionné
@@ -134,6 +137,8 @@ const productShowing = (param_copy, param_produit, param_body) => {
         }
     })
     }
+
+    
 }
 
 const product=(param_fetchdata,param_idproduct)=> {
@@ -193,7 +198,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     
     let fromStorage=JSON.parse(getItem(param_produit._id));
     for (let choice of fromStorage){
-        console.log(choice);
+        console.log(choice.key);
     }
     
     /*  let option = select(param_copy, '.cardOptionSelect')[0];
