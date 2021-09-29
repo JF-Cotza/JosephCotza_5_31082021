@@ -4,7 +4,6 @@ const fetchIndex = () => {
         .then(function (res) {          //s'il y a des data on continue sinon on passe au catch 
             res.json()                  //ne pas oublier les parenthèses !!!!!!
                 .then((data) => {
-                    console.log('index');
                     index(data);        //on crée la carte produit
                 })
         })
@@ -39,5 +38,3 @@ const fetchAffichagePanier = () => {
             mistake(error);
         })
 }
-
-console.log('script_fetch_valid appelé');
