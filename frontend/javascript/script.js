@@ -16,18 +16,12 @@ const getCustomerDatas = () => {
     return customer;
 };
 
-
-
 //variables
 
 let commande=[];
 let test = 000;
 let getFormData = getId('getFormData');
 let voidStorage = getId('voidStorage');
-
-
-
-
 
 
 if (getFormData){
@@ -62,15 +56,7 @@ if (toLocalstorage){
 
 
 
-
-
-
-
 //testingFunction();
-
-
-
-
 
 
 /*********************** application lancées depuis les pages ***********************/

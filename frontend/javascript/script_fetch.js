@@ -1,19 +1,3 @@
-
-
-/*
-const fetchPanier=($value)=>{
-    fetch(apiLink, {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(jsonBody)
-        
-    });
-        
-}
-*/
 const fetchCustomer = () => {
     const body = {contact: getCustomerDatas(),
         productsId: ['id', 'vfdnkvjfbkjdjkbjf', 'vbfuigfbgsg', 'kjdnsnbkb', 'cdhvdsvuk']};
