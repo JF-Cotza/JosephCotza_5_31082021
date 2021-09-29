@@ -14,6 +14,7 @@ const index=(param_fetchdata)=>{
 }
 
 const productData = (param_copy, param_produit, param_body) => {
+    console.log(param_produit);
     let url = select(param_copy, '.cardLink')[0];
     let name = select(param_copy, '.cardModelName')[0];
     let option = select(param_copy, '.cardOption')[0];

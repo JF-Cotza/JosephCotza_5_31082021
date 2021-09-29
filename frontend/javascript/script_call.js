@@ -17,6 +17,6 @@ if (getId('panier')) {
 }
 
 //confirmation.html
-if (getid('confirmation')){
+if (getId('confirmation')){
     fetchconfirmation();
 }
