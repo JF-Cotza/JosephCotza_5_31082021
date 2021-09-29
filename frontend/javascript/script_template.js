@@ -199,7 +199,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     let card = select(param_copy,'.card')[0];
     let suppress = select(param_copy,'.productSuppr')[0];
 
-    let fromStorage=JSON.parse(getItem(param_produit._id));
+    let fromStorage=(getItem(param_produit._id));
     for (let choice of fromStorage){
         console.log(choice.key);
     }
