@@ -248,7 +248,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
         optionTitlePanier.textContent = theOption[poss.key];
         optionQuantityPanier.value=poss.value;
         optionCostPanier.textContent= poss.value*param_produit.price;
-        optionList.appendChild(copyOption);
+        optionList[0].appendChild(copyOption);
     }
 
     //optionCostPanier = optionQuantityPanier *price
