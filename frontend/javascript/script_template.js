@@ -198,7 +198,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     let price = select(param_copy, '.singlePricePanier')[0];
     let card = select(param_copy,'.card')[0];
     let suppress = select(param_copy,'.productSuppr')[0];
-
+    let optionList=select(param_copy,'.optionList')[0];
     let fromStorage=(getItem(param_produit._id));
     for (let choice of fromStorage){
         console.log(choice.key);
@@ -207,29 +207,17 @@ const panierData = (param_copy, param_produit, param_body) =>{
     name.textContent=param_produit.name;
     image.setAttribute('src', param_produit.imageUrl);
     image.setAttribute('alt', imageAlternative[selectedProduct]);
-    
     price.textContent=(param_produit.price) / 100; 
 
     //keyId sert à sélection l'élément du correspondant au bon produit
     price.setAttribute('keyId',param_produit._id);
     suppress.setAttribute('keyId',param_produit._id);
     card.setAttribute('keyId', param_produit._id);
-
     param_body.appendChild(param_copy);
 
     supprimerUnProduitDuPanier();
-    //on clone la ligne pour les options
-    let templateOPtion = getId('optionPanier');    //template ligne option panier
-    let copyOption=clone(document,templateOPtion); // on  le clone 
    
-
-    let optionList = select(param_copy,'.optionList'); // là où on va le créer
-    let optionTitlePanier = select(copyOption,'.optionTitlePanier'); //label
-    let optionQuantityPanier = select(copyOption,'.optionQuantityPanier'); //input
-    let optionCostPanier = select(copyOption,'.optionCostPanier');
     
-    console.log(optionList);
-    /*
     console.log(getItem(param_produit._id));
     for (let poss of getItem(param_produit._id)){
         console.log('id:'+param_produit._id+' key: '+poss.key+' value: '+poss.value);
@@ -254,7 +242,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     }
 
     //optionCostPanier = optionQuantityPanier *price
-    */
+    
 }
 
 
