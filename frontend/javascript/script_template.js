@@ -249,6 +249,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
         optionQuantityPanier.name = optionInputName;
         optionCostPanier.textContent = (optionAmount)/100;
         optionList.appendChild(copy2);
+        console.log(copy2);
     }
         
     //optionCostPanier = optionQuantityPanier *price
