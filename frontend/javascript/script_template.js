@@ -246,10 +246,10 @@ const listenChange = () => {
                         for(let price of singlePricePanier)
                         {
                             console.log('price value: '+price.value);
-                          /*  if(getAttribute(price,'keyId')==targetId){
+                            if(getAttribute(price,'keyId')==targetId){
                                 amount = price.value*e.target.value;
                                 console.log(amount);
-                            }*/
+                            }
                         }
                         //opt.textContent=amount/100;
                     }
