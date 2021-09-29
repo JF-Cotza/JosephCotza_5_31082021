@@ -217,15 +217,15 @@ const panierData = (param_copy, param_produit, param_body) =>{
 
     supprimerUnProduitDuPanier();
    
-    let template2 = getId('optionPanier');
-    let copy2= clone(document,template2);
-    let optionTitlePanier = select(copy2,'.optionTitlePanier')[0];
-    let optionQuantityPanier = select(copy2, '.optionQuantityPanier')[0];
-    let optionCostPanier = select(copy2, '.optionCostPanier')[0];
+    
 
-    console.log(getItem(param_produit._id));
+
     for (let poss of getItem(param_produit._id)){
-        console.log('id:'+param_produit._id+' key: '+poss.key+' value: '+poss.value);
+        let template2 = getId('optionPanier');
+        let copy2 = clone(document, template2);
+        let optionTitlePanier = select(copy2, '.optionTitlePanier')[0];
+        let optionQuantityPanier = select(copy2, '.optionQuantityPanier')[0];
+        let optionCostPanier = select(copy2, '.optionCostPanier')[0];
         let theOption=[];
         if (type == 'teddies') {
             theOption=param_produit.colors;
@@ -250,7 +250,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
         optionCostPanier.textContent = (optionAmount)/100;
         optionList.appendChild(copy2);
     }
-
+        
     //optionCostPanier = optionQuantityPanier *price
     
 }
