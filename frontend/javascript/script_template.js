@@ -240,9 +240,14 @@ const panierData = (param_copy, param_produit, param_body) =>{
             console.log('furniture ' + theOption);
         }
         //console.log('test theOption: '+theOption[poss.key]);
-        optionTitlePanier.textContent = theOption[poss.key];
+        let optionInputName = param_produit.name + '_' + theOption[poss.key];
+        let optionAmount = poss.value * param_produit.price
+        optionTitlePanier.textContent = theOption[poss.key]; //label
+        optionTitlePanier.setAttribute('for', optionInputName)
         optionQuantityPanier.value=poss.value;
-        optionCostPanier.textContent= poss.value*param_produit.price;
+        optionQuantityPanier.id = optionInputName;
+        optionQuantityPanier.name = optionInputName;
+        optionCostPanier.textContent = (optionAmount)/100;
         optionList.appendChild(copy2);
     }
 
