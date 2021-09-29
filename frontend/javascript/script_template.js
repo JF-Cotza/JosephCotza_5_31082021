@@ -246,7 +246,7 @@ const listenChange = () => {
                         for(let price of singlePricePanier)
                         {
                             if(getAttribute(price,'keyId')==targetId){
-                                amount = singlePricePanier.value*e.target.value;
+                                amount = price.value*e.target.value;
                             }
                         }
                         opt.textContent=amount/100;
