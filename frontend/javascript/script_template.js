@@ -228,6 +228,8 @@ const panierData = (param_copy, param_produit, param_body) =>{
     let optionQuantityPanier = select(copyOption,'.optionQuantityPanier'); //input
     let optionCostPanier = select(copyOption,'.optionCostPanier');
     
+    console.log(optionList);
+    /*
     console.log(getItem(param_produit._id));
     for (let poss of getItem(param_produit._id)){
         console.log('id:'+param_produit._id+' key: '+poss.key+' value: '+poss.value);
@@ -252,6 +254,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     }
 
     //optionCostPanier = optionQuantityPanier *price
+    */
 }
 
 
