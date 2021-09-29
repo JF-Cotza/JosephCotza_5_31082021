@@ -39,3 +39,5 @@ const fetchAffichagePanier = () => {
             mistake(error);
         })
 }
+
+console.log('script_fetch_valid appelé');
