@@ -215,42 +215,10 @@ const panierData = (param_copy, param_produit, param_body) =>{
     card.setAttribute('keyId', param_produit._id);
     param_body.appendChild(param_copy);
 
+    panierProductOption(param_produit);
     supprimerUnProduitDuPanier();
    
     
-
-
-    for (let poss of getItem(param_produit._id)){
-        let template2 = getId('optionPanier');
-        let copy2 = clone(document, template2);
-        let optionTitlePanier = select(copy2, '.optionTitlePanier')[0];
-        let optionQuantityPanier = select(copy2, '.optionQuantityPanier')[0];
-        let optionCostPanier = select(copy2, '.optionCostPanier')[0];
-        let theOption=[];
-        if (type == 'teddies') {
-            theOption=param_produit.colors;
-            console.log('teddies '+ theOption);
-        }
-        else if (type == 'cameras') {
-            theOption = param_produit.lenses;
-            console.log('cameras ' + theOption);
-        }
-        else if (type == 'furniture') {
-            theOption= param_produit.varnish;
-            console.log('furniture ' + theOption);
-        }
-        //console.log('test theOption: '+theOption[poss.key]);
-        let optionInputName = param_produit.name + '_' + theOption[poss.key];
-        let optionAmount = poss.value * param_produit.price
-        optionTitlePanier.textContent = theOption[poss.key]; //label
-        optionTitlePanier.setAttribute('for', optionInputName)
-        optionQuantityPanier.value=poss.value;
-        optionQuantityPanier.id = optionInputName;
-        optionQuantityPanier.name = optionInputName;
-        optionCostPanier.textContent = (optionAmount)/100;
-        optionList.appendChild(copy2);
-        //console.log(copy2);
-    }
         
     //optionCostPanier = optionQuantityPanier *price
     
@@ -353,4 +321,39 @@ const storeToLocal=(param_produit)=>{
     });
     //on stock en local
     storage(param_produit._id, selectedProduct);
+}
+
+
+
+// fonction pour aficher les options du produit dans le panier
+const panierProductOption = (param_produit) => {
+    for (let poss of getItem(param_produit._id)) {
+        let template = getId('optionPanier');
+        let copy = clone(document, template);
+        let optionTitlePanier = select(copy, '.optionTitlePanier')[0];
+        let optionQuantityPanier = select(copy, '.optionQuantityPanier')[0];
+        let optionCostPanier = select(copy, '.optionCostPanier')[0];
+        let theOption = [];
+        if (type == 'teddies') {
+            theOption = param_produit.colors;
+            console.log('teddies ' + theOption);
+        }
+        else if (type == 'cameras') {
+            theOption = param_produit.lenses;
+            console.log('cameras ' + theOption);
+        }
+        else if (type == 'furniture') {
+            theOption = param_produit.varnish;
+            console.log('furniture ' + theOption);
+        }
+        let optionInputName = param_produit.name + '_' + theOption[poss.key];
+        let optionAmount = poss.value * param_produit.price
+        optionTitlePanier.textContent = theOption[poss.key]; //label
+        optionTitlePanier.setAttribute('for', optionInputName)
+        optionQuantityPanier.value = poss.value;
+        optionQuantityPanier.id = optionInputName;
+        optionQuantityPanier.name = optionInputName;
+        optionCostPanier.textContent = (optionAmount) / 100;
+        optionList.appendChild(copy);
+    }
 }
