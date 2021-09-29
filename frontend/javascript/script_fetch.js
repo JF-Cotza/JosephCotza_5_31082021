@@ -26,3 +26,7 @@ const fetchCustomer = () => {
     })
     .catch((error)=>mistake(error))
 }
+
+const fetchconfirmation=()=>{
+    console.log('confirmation');
+}

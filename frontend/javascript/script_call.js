@@ -15,3 +15,8 @@ if (getId('productCommand')) {
 if (getId('panier')) {
     fetchAffichagePanier();
 }
+
+//confirmation.html
+if (getid('confirmation')){
+    fetchconfirmation();
+}
