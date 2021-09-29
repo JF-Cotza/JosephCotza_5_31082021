@@ -245,6 +245,7 @@ const listenChange = () => {
                         let amount;
                         for(let price of singlePricePanier)
                         {
+                            console.log('price value: '+price.value);
                             if(getAttribute(price,'keyId')==targetId){
                                 amount = price.value*e.target.value;
                                 console.log(amount);
