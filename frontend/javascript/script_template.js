@@ -236,25 +236,29 @@ const listenChange = () => {
             if (e.target.value == 0) {
                 panierRemoveOption(e.target, targetId, targetOption);
             }
-            else 
-            {
+            
                 let optionCostPanier=getClass('optionCostPanier');
                 let singlePricePanier = getClass('singlePricePanier');
+                let productPrice=0;
+
+            if (getAttribute(price, 'keyId') == targetId) {
+                productPrice = price.value; 
+                console.log(productPrice);
+            }
+
+                
                 for (let opt of optionCostPanier){
                     if (getAttribute(opt,'keyId') == targetId && getAttribute(opt,'keyOption') == optionCostPanier){
                         let amount;
                         for(let price of singlePricePanier)
                         {
                             console.log('price value: '+price.value);
-                            if(getAttribute(price,'keyId')==targetId){
-                                amount = price.value*e.target.value;
-                                console.log(amount);
-                            }
+                            
                         }
                         //opt.textContent=amount/100;
                     }
                 }
-            }
+            
         })
     }
 }
