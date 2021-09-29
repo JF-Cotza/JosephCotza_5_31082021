@@ -223,7 +223,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     let copyOption=clone(document,templateOPtion); // on  le clone 
    
 
-    let optionList = select(copyOption,'optionList')[0]; // là où on va le créer
+    let optionList = select(copy,'optionList')[0]; // là où on va le créer
     let optionTitlePanier = select(copyOption,'.optionTitlePanier'); //label
     let optionQuantityPanier = select(copyOption,'.optionQuantityPanier'); //input
     let optionCostPanier = select(copyOption,'.optionCostPanier');
