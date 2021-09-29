@@ -172,7 +172,7 @@ const product=(param_fetchdata,param_idproduct)=> {
         }
     }
     //bouton panier
-    compteProduitsDuPanier(param_fetchdata)
+    compteProduitsDuPanier(param_fetchdata);
 }
 
 const panierExplorer=(param_fetchdata)=>{
@@ -222,34 +222,8 @@ const panierData = (param_copy, param_produit, param_body) =>{
     //optionCostPanier = optionQuantityPanier *price 
 }
 
-const listenChange=()=>{
-    let input=getType('input');
-    console.log(input);
-    for (let choice of input){
-        choice.addEventListener('change',(e)=>{
-            console.log('listen change:'+e.target.id+' value: '+e.target.value);
-            let targetId=e.target.getAttribute('keyId');
-            let targetOption=e.target.getAttribute('keyOption');
-            if (e.target.value == 0) {
-                e.target.remove();
-                let labels = getType('label');
-                let optionCostPanier = getClass('optionCostPanier')
-                for (let lab of labels) {
-                    if (lab.getAttribute('keyId') == targetId && lab.getAttribute('keyOption') == targetOption) {
-                        lab.remove();
-                    }
-                }
-                for (let opt of optionCostPanier) {
-                    if (opt.getAttribute('keyId') == targetId && opt.getAttribute('keyOption') == targetOption) {
-                        opt.remove();
-                    }
-                }
-            }
 
-            }
-        })
-    }
-}
+
 
 
 
@@ -312,7 +286,7 @@ const productOptionListener=(param_produit,param_option)=>{
                         e.target.remove();
                         let labels = document.getElementsByTagName('label');
                         for (let lab of labels) {
-                            if (lab.getAttribute('key') == toSuppress) {
+                            if (getAttribute(lab,'key') == toSuppress) {
                                 lab.remove();
                             }
                         }
