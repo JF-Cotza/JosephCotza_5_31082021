@@ -247,6 +247,7 @@ const listenChange = () => {
                         {
                             if(getAttribute(price,'keyId')==targetId){
                                 amount = price.value*e.target.value;
+                                console.log(amount);
                             }
                         }
                         opt.textContent=amount/100;
