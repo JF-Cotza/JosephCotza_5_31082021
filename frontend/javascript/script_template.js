@@ -228,6 +228,25 @@ const listenChange=()=>{
     for (let choice of input){
         choice.addEventListener('change',(e)=>{
             console.log('listen change:'+e.target.id+' value: '+e.target.value);
+            let targetId=e.target.getAttribute('keyId');
+            let targetOption=e.target.getAttribute('keyOption');
+            if (e.target.value == 0) {
+                e.target.remove();
+                let labels = getType('label');
+                let optionCostPanier = getClass('optionCostPanier')
+                for (let lab of labels) {
+                    if (lab.getAttribute('keyId') == targetId && lab.getAttribute('keyOption') == targetOption) {
+                        lab.remove();
+                    }
+                }
+                for (let opt of optionCostPanier) {
+                    if (opt.getAttribute('keyId') == targetId && opt.getAttribute('keyOption') == targetOption) {
+                        opt.remove();
+                    }
+                }
+            }
+
+            }
         })
     }
 }
