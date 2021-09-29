@@ -219,18 +219,34 @@ const panierData = (param_copy, param_produit, param_body) =>{
 
     supprimerUnProduitDuPanier();
     //on clone la ligne pour les options
-    let templateOPtion = getId('optionPanier');
-    let copyOption=clone(document,templateOPtion);
+    let templateOPtion = getId('optionPanier');    //template ligne option panier
+    let copyOption=clone(document,templateOPtion); // on  le clone 
    
-    let optionList = getClass('optionList');
-    let optionTitlePanier = getClass('optionTitlePanier');
-    let optionQuantityPanier = getClass('optionQuantityPanier');
-    let optionCostPanier = getClass('optionCostPanier');
+    let optionList = getClass('optionList'); // là où on va le créer
+    let optionTitlePanier = select(copyOption,'.optionTitlePanier'); //label
+    let optionQuantityPanier = select(copyOption,'.optionQuantityPanier'); //input
+    let optionCostPanier = select(copyOption,'.optionCostPanier');
     
     console.log(getItem(param_produit._id));
     for (let poss of getItem(param_produit._id)){
         console.log('id:'+param_produit._id+' key: '+poss.key+' value: '+poss.value);
+        if (type == 'teddies') {
+            let theOption=param_produit.colors;
+        }
+        else if (type == 'cameras') {
+            let theOption = param_produit.lenses;
+        }
+        else if (type == 'furniture') {
+            let theOption= param_produit.varnish;
+        }
+        
+        optionTitlePanier.textContent = theOption[poss.key];
+        optionQuantityPanier.value=poss.value;
+        optionCostPanier.textContent= poss.value*param_produit.price;
+        optionList.appendChild(copyOption);
     }
+
+    //optionCostPanier = optionQuantityPanier *price
 }
 
 
