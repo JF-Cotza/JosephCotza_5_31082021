@@ -234,7 +234,7 @@ const listenChange = () => {
             let targetOption = getAttribute(e.target, 'keyOption');
             //si l'objet arrive à 0
             if (e.target.value == 0) {
-                panierRemoveOption = (e.target, targetId, targetOption)
+                panierRemoveOption(e.target, targetId, targetOption);
             }
             else 
             {
