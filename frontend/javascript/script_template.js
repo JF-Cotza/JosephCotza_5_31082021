@@ -223,7 +223,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     let copyOption=clone(document,templateOPtion); // on  le clone 
    
 
-    let optionList = select(copy,'.optionList')[0]; // là où on va le créer
+    let optionList = select(param_copy,'.optionList')[0]; // là où on va le créer
     let optionTitlePanier = select(copyOption,'.optionTitlePanier'); //label
     let optionQuantityPanier = select(copyOption,'.optionQuantityPanier'); //input
     let optionCostPanier = select(copyOption,'.optionCostPanier');
@@ -244,7 +244,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
             theOption= param_produit.varnish;
             console.log('furniture ' + theOption);
         }
-        console.log('test theOption: '+theOption[poss.key]);
+        //console.log('test theOption: '+theOption[poss.key]);
         optionTitlePanier.textContent = theOption[poss.key];
         optionQuantityPanier.value=poss.value;
         optionCostPanier.textContent= poss.value*param_produit.price;
