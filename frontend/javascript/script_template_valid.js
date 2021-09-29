@@ -61,9 +61,9 @@ const panierProductOption = (param_produit, param_where) => {
         optionCostPanier.textContent = (optionAmount) / 100;
 
         //ajout de KeyId pour associer l'option au produit dans la suite
-        optionTitlePanier.setAttribute('keyId', param_produit.id);
-        optionQuantityPanier.setAttribute('keyId', param_produit.id);
-        optionCostPanier.setAttribute('keyId', param_produit.id);
+        optionTitlePanier.setAttribute('keyId', param_produit._id);
+        optionQuantityPanier.setAttribute('keyId', param_produit._id);
+        optionCostPanier.setAttribute('keyId', param_produit._id);
 
         //ajout de keyOption pour lier les différents éléments de l'option
         optionTitlePanier.setAttribute('keyOption', poss.key);
