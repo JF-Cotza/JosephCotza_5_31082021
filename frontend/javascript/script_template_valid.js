@@ -71,36 +71,24 @@ const panierProductOption = (param_produit, param_where) => {
     }
 }
 
-const listenChange = () => {
-    let input = getType('input');
 
-    for (let choice of input) {
-        choice.addEventListener('change', function(e) {// on va écouter tous les inputs
-            //on récupére les keyId et keyOpt de l'aobjet ayant été la cible de l'event.
-            let targetId = getAttribute(e.target, 'keyId');
-            let targetOption = getAttribute(e.target, 'keyOption');
-            //si l'objet arrive à 0
-            if (e.target.value == 0) {
-                e.target.remove();
-                let labels = getType('label');
-                let optionCostPanier = getClass('optionCostPanier');
-                console.log('labels: '+labels );
-                // On va parcourir tous les labels 
-                for (let lab of labels) {
-                    if (getAttribute(lab, 'keyId') == targetId && getAttribute(lab, 'keyOption') == targetOption) {
-                        lab.remove();
-                        console.log('remove lab');
-                    }
-                }
-                // On va parcourir tous les totaux d'option
-                for (let opt of optionCostPanier) {
-                    if (getAttribute(opt, 'keyId') == targetId && getAttribute(opt, 'keyOption') == targetOption) {
-                        opt.remove();
-                        console.log('remove cost');
-                    }
-                }
-            }
-        })
-    }//fermeture de for (let choice of input)
-
-}//fermeture de const
+const panierRemoveOption=(param_cible,param_id,param_option)=>{
+    param_cible.remove();
+    let labels = getType('label');
+    let optionCostPanier = getClass('optionCostPanier');
+    console.log('labels: ' + labels);
+    // On va parcourir tous les labels 
+    for (let lab of labels) {
+        if (getAttribute(lab, 'keyId') == targetId && getAttribute(lab, 'keyOption') == targetOption) {
+            lab.remove();
+            console.log('remove lab');
+        }
+    }
+    // On va parcourir tous les totaux d'option
+    for (let opt of optionCostPanier) {
+        if (getAttribute(opt, 'keyId') == param_id && getAttribute(opt, 'keyOption') == param_option) {
+            opt.remove();
+            console.log('remove cost');
+        }
+    }
+}

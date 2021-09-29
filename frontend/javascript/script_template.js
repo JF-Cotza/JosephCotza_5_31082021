@@ -212,6 +212,8 @@ const panierData = (param_copy, param_produit, param_body) =>{
     price.setAttribute('keyId',param_produit._id);
     suppress.setAttribute('keyId',param_produit._id);
     card.setAttribute('keyId', param_produit._id);
+    price.setAttribute('keyId', param_produit._id)
+
     param_body.appendChild(param_copy);
 
     panierProductOption(param_produit, optionList);
@@ -222,6 +224,38 @@ const panierData = (param_copy, param_produit, param_body) =>{
     //optionCostPanier = optionQuantityPanier *price 
 }
 
+const listenChange = () => {
+    let input = getType('input');
+
+    for (let choice of input) {
+        choice.addEventListener('change', function (e) {// on va écouter tous les inputs
+            //on récupére les keyId et keyOpt de l'aobjet ayant été la cible de l'event.
+            let targetId = getAttribute(e.target, 'keyId');
+            let targetOption = getAttribute(e.target, 'keyOption');
+            //si l'objet arrive à 0
+            if (e.target.value == 0) {
+                panierRemoveOption = (e.target, targetId, targetOption)
+            }
+            else 
+            {
+                let optionCostPanier=getClass('optionCostPanier');
+                let singlePricePanier = getClass('singlePricePanier');
+                for (let opt of optionCostPanier){
+                    if (getAttribute(opt,'keyId') == targetId && getAttribute(opt,'keyOption') == optionCostPanier){
+                        let amount;
+                        for(let price of singlePricePanier)
+                        {
+                            if(getAttribute(price,'keyId')==targetId){
+                                amount = singlePricePanier.value*e.target.value;
+                            }
+                        }
+                        opt.textContent=amount/100;
+                    }
+                }
+            }
+        })
+    }
+}
 
 
 
