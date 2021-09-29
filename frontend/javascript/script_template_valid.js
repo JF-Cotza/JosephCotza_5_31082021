@@ -41,15 +41,12 @@ const panierProductOption = (param_produit, param_where) => {
         let theOption = [];
         if (type == 'teddies') {
             theOption = param_produit.colors;
-            console.log('teddies ' + theOption);
         }
         else if (type == 'cameras') {
             theOption = param_produit.lenses;
-            console.log('cameras ' + theOption);
         }
         else if (type == 'furniture') {
             theOption = param_produit.varnish;
-            console.log('furniture ' + theOption);
         }
         let optionInputName = param_produit.name + '_' + theOption[poss.key];
         let optionAmount = poss.value * param_produit.price
@@ -87,6 +84,7 @@ const listenChange = () => {
                 e.target.remove();
                 let labels = getType('label');
                 let optionCostPanier = getClass('optionCostPanier');
+                console.log('labels: '+labels );
                 // On va parcourir tous les labels 
                 for (let lab of labels) {
                     if (getAttribute(opt, 'keyId') == targetId && getAttribute(opt, 'keyOption') == targetOption) {
