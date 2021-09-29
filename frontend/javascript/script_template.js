@@ -215,7 +215,7 @@ const panierData = (param_copy, param_produit, param_body) =>{
     card.setAttribute('keyId', param_produit._id);
     param_body.appendChild(param_copy);
 
-    panierProductOption(param_produit);
+    panierProductOption(param_produit, optionList);
     supprimerUnProduitDuPanier();
    
     
@@ -326,7 +326,7 @@ const storeToLocal=(param_produit)=>{
 
 
 // fonction pour aficher les options du produit dans le panier
-const panierProductOption = (param_produit) => {
+const panierProductOption = (param_produit, param_where) => {
     for (let poss of getItem(param_produit._id)) {
         let template = getId('optionPanier');
         let copy = clone(document, template);
@@ -354,6 +354,6 @@ const panierProductOption = (param_produit) => {
         optionQuantityPanier.id = optionInputName;
         optionQuantityPanier.name = optionInputName;
         optionCostPanier.textContent = (optionAmount) / 100;
-        optionList.appendChild(copy);
+        param_where.appendChild(copy);
     }
 }
