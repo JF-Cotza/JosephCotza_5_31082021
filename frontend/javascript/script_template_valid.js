@@ -37,6 +37,7 @@ const panierProductOption = (param_produit, param_where) => {
         let optionTitlePanier = select(copy, '.optionTitlePanier')[0];
         let optionQuantityPanier = select(copy, '.optionQuantityPanier')[0];
         let optionCostPanier = select(copy, '.optionCostPanier')[0];
+
         let theOption = [];
         if (type == 'teddies') {
             theOption = param_produit.colors;
@@ -58,6 +59,17 @@ const panierProductOption = (param_produit, param_where) => {
         optionQuantityPanier.id = optionInputName;
         optionQuantityPanier.name = optionInputName;
         optionCostPanier.textContent = (optionAmount) / 100;
+
+        //ajout de KeyId pour associer l'option au produit dans la suite
+        optionTitlePanier.setAttribute('keyId', param_produit.id);
+        optionQuantityPanier.setAttribute('keyId', param_produit.id);
+        optionCostPanier.setAttribute('keyId', param_produit.id);
+
+        //ajout de keyOption pour lier les différents éléments de l'option
+        optionTitlePanier.setAttribute('keyOption', poss.key);
+        optionQuantityPanier.setAttribute('keyOption', poss.key);
+        optionCostPanier.setAttribute('keyOption', poss.key);
+
         param_where.appendChild(copy);
     }
 }
