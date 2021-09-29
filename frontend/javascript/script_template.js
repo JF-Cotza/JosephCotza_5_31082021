@@ -222,10 +222,10 @@ const panierData = (param_copy, param_produit, param_body) =>{
     let templateOPtion = getId('optionPanier');
     let copyOption=clone(document,templateOPtion);
    
-    let optionList = getclass('optionList');
-    let optionTitlePanier = getclass('optionTitlePanier');
-    let optionQuantityPanier = getclass('optionQuantityPanier');
-    let optionCostPanier = getclass('optionCostPanier');
+    let optionList = getClass('optionList');
+    let optionTitlePanier = getClass('optionTitlePanier');
+    let optionQuantityPanier = getClass('optionQuantityPanier');
+    let optionCostPanier = getClass('optionCostPanier');
     
     console.log(getItem(param_produit._id));
 
