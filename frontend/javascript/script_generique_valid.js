@@ -16,7 +16,7 @@ const option = ['colors', 'lenses', 'varnishes']
 /**************** applications fléchées ****************************/
 //fonctions simplificatrices
 const storage = (param_nom, param_value) => { return localStorage.setItem(param_nom, JSON.stringify(param_value)) };
-const getItem = (param_nom) => { return localStorage.getItem(param_nom) };
+const getItem = (param_nom) => { return JSON.parse(localStorage.getItem(param_nom)) };
 const getType = (param_type) => { return document.getElementsByTagName(param_type) };
 const getClass = (param_class) => { return document.getElementsByClassName(param_class) };
 const getId = (param_id) => { return document.getElementById(param_id) };

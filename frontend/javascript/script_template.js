@@ -202,30 +202,31 @@ const panierData = (param_copy, param_produit, param_body) =>{
     for (let choice of fromStorage){
         console.log(choice.key);
     }
-    
-    /*  let option = select(param_copy, '.cardOptionSelect')[0];
-    
-    let detail = select(param_copy, '.cardDetails')[0];
-    let id = select(param_copy, '.cardId')[0];
-    */
-    
+      
     name.textContent=param_produit.name;
     image.setAttribute('src', param_produit.imageUrl);
     image.setAttribute('alt', imageAlternative[selectedProduct]);
     
     price.textContent=(param_produit.price) / 100; 
-    
+
+    //keyId sert à sélection l'élément du correspondant au bon produit
+    price.setAttribute('keyId',param_produit._id);
     suppress.setAttribute('keyId',param_produit._id);
     card.setAttribute('keyId', param_produit._id);
 
     param_body.appendChild(param_copy);
 
     supprimerUnProduitDuPanier();
+    //on clone la ligne pour les options
+    let templateOPtion = getId('optionPanier');
+    let copyOption=clone(document,templateOPtion);
+   
+    let optionList = getclass('optionList');
+    let optionTitlePanier = getclass('optionTitlePanier');
+    let optionQuantityPanier = getclass('optionQuantityPanier');
+    let optionCostPanier = getclass('optionCostPanier');
     
-    '.optionList'
-    '.optionTitlePanier'
-    '.optionQuantityPanier'
-    '.optionCostPanier'
+    console.log(getItem(param_produit._id));
 
 }
 
