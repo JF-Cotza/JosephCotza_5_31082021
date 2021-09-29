@@ -14,7 +14,6 @@ const index=(param_fetchdata)=>{
 }
 
 const productData = (param_copy, param_produit, param_body) => {
-    console.log(param_produit);
     let url = select(param_copy, '.cardLink')[0];
     let name = select(param_copy, '.cardModelName')[0];
     let option = select(param_copy, '.cardOption')[0];
@@ -218,11 +217,21 @@ const panierData = (param_copy, param_produit, param_body) =>{
     panierProductOption(param_produit, optionList);
     supprimerUnProduitDuPanier();
    
-    
+    listenChange();
         
-    //optionCostPanier = optionQuantityPanier *price
-    
+    //optionCostPanier = optionQuantityPanier *price 
 }
+
+const listenChange=()=>{
+    let input=getType('input');
+    console.log(input);
+    for (let choice of input){
+        choice.addEventListener('change',(e)=>{
+            console.log('listen change:'+e.target+' value: '+e.target.value);
+        })
+    }
+}
+
 
 
 
@@ -325,35 +334,3 @@ const storeToLocal=(param_produit)=>{
 
 
 
-// fonction pour aficher les options du produit dans le panier
-const panierProductOption = (param_produit, param_where) => {
-    for (let poss of getItem(param_produit._id)) {
-        let template = getId('optionPanier');
-        let copy = clone(document, template);
-        let optionTitlePanier = select(copy, '.optionTitlePanier')[0];
-        let optionQuantityPanier = select(copy, '.optionQuantityPanier')[0];
-        let optionCostPanier = select(copy, '.optionCostPanier')[0];
-        let theOption = [];
-        if (type == 'teddies') {
-            theOption = param_produit.colors;
-            console.log('teddies ' + theOption);
-        }
-        else if (type == 'cameras') {
-            theOption = param_produit.lenses;
-            console.log('cameras ' + theOption);
-        }
-        else if (type == 'furniture') {
-            theOption = param_produit.varnish;
-            console.log('furniture ' + theOption);
-        }
-        let optionInputName = param_produit.name + '_' + theOption[poss.key];
-        let optionAmount = poss.value * param_produit.price
-        optionTitlePanier.textContent = theOption[poss.key]; //label
-        optionTitlePanier.setAttribute('for', optionInputName)
-        optionQuantityPanier.value = poss.value;
-        optionQuantityPanier.id = optionInputName;
-        optionQuantityPanier.name = optionInputName;
-        optionCostPanier.textContent = (optionAmount) / 100;
-        param_where.appendChild(copy);
-    }
-}
