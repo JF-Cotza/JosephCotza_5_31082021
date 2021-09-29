@@ -79,7 +79,7 @@ const panierRemoveOption=(param_cible,param_id,param_option)=>{
     console.log('labels: ' + labels);
     // On va parcourir tous les labels 
     for (let lab of labels) {
-        if (getAttribute(lab, 'keyId') == targetId && getAttribute(lab, 'keyOption') == targetOption) {
+        if (getAttribute(lab, 'keyId') == param_id && getAttribute(lab, 'keyOption') == param_option) {
             lab.remove();
             console.log('remove lab');
         }
