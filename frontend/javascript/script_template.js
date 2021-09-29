@@ -230,16 +230,21 @@ const panierData = (param_copy, param_produit, param_body) =>{
     console.log(getItem(param_produit._id));
     for (let poss of getItem(param_produit._id)){
         console.log('id:'+param_produit._id+' key: '+poss.key+' value: '+poss.value);
+        let theOption=[];
         if (type == 'teddies') {
-            let theOption=param_produit.colors;
+            theOption=param_produit.colors;
+            console.log('teddies '+ theOption);
         }
         else if (type == 'cameras') {
-            let theOption = param_produit.lenses;
+            theOption = param_produit.lenses;
+            console.log('cameras ' + theOption);
         }
         else if (type == 'furniture') {
-            let theOption= param_produit.varnish;
+            theOption= param_produit.varnish;
+            console.log('furniture ' + theOption);
         }
         
+        console.log('test theOption: '+theOption)
         optionTitlePanier.textContent = theOption[poss.key];
         optionQuantityPanier.value=poss.value;
         optionCostPanier.textContent= poss.value*param_produit.price;
