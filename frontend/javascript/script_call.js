@@ -9,6 +9,7 @@ if (getId('allProducts')) {
 if (getId('productCommand')) {
     let value = getInUrl('id');
     fetchProduct(value);
+    
 };
 
 //panier.html
