@@ -227,7 +227,7 @@ const listenChange=()=>{
     console.log(input);
     for (let choice of input){
         choice.addEventListener('change',(e)=>{
-            console.log('listen change:'+e.target+' value: '+e.target.value);
+            console.log('listen change:'+e.target.id+' value: '+e.target.value);
         })
     }
 }
