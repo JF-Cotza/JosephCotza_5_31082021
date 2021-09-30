@@ -258,7 +258,6 @@ const productShowing = (param_copy, param_produit, param_body) => {
     }
 }
 
-
 /********************* page panier ************************/
 //suppression d'éléments du panier
 const supprimerUnProduitDuPanier = () => {
@@ -431,6 +430,7 @@ const panierData = (param_copy, param_produit, param_body) => {
     supprimerUnProduitDuPanier();
 
     listenChange();
+    totalPanier();
 }
 
 const panierExplorer = (param_fetchdata) => {
