@@ -108,6 +108,10 @@ const panierExplorer=(param_fetchdata)=>{
     videPanier(param_fetchdata);
 }
 
+
+
+/*
+
 const panierData = (param_copy, param_produit, param_body) =>{
     let image= select(param_copy,'.imagePanier')[0];
     let name = select(param_copy,'.modelePanier')[0];
@@ -119,11 +123,11 @@ const panierData = (param_copy, param_produit, param_body) =>{
     for (let choice of fromStorage){
         console.log(choice.key);
     }
-      
+
     name.textContent=param_produit.name;
     image.setAttribute('src', param_produit.imageUrl);
     image.setAttribute('alt', imageAlternative[selectedProduct]);
-    price.value=(param_produit.price) / 100; 
+    price.value=(param_produit.price) / 100;
 
     //keyId sert à sélection l'élément du correspondant au bon produit
     price.setAttribute('keyId',param_produit._id);
@@ -137,11 +141,10 @@ const panierData = (param_copy, param_produit, param_body) =>{
 
     panierProductOption(param_produit, optionList);
     supprimerUnProduitDuPanier();
-   
+
     listenChange();
 }
 
-/*
 
 */
 
