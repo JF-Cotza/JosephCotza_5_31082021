@@ -194,12 +194,9 @@ const listenChange = () => {
                 let singlePricePanier = getClass('singlePricePanier');
                 let productPrice=0;
 
-           
-
                 
                 for (let opt of optionCostPanier){
-                    if (getAttribute(opt,'keyId') == targetId && getAttribute(opt,'keyOption') == optionCostPanier){
-                        let amount;
+                    if (getAttribute(opt, 'keyId') == targetId && getAttribute(opt, 'keyOption') == targetOption){
                         for(let price of singlePricePanier)
                         {
                             if (getAttribute(price, 'keyId') == targetId) {
