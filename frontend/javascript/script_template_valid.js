@@ -141,6 +141,7 @@ const panierRemoveOption=(param_cible,param_id,param_option)=>{
 
 const panierSupprimeCard=()=>{
     let cardClass = getClass('card');
+    let optionCostPanier = getClass('optionCostPanier');
     for (let card of cardClass) {
         let keyId = getAttribute(card, 'keyId');
         let counting = 0;

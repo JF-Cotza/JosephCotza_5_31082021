@@ -190,9 +190,9 @@ const listenChange = () => {
                 panierRemoveOption(e.target, targetId, targetOption);
             }
             
-                let optionCostPanier=getClass('optionCostPanier');
+                
                 let singlePricePanier = getClass('singlePricePanier');
-            
+                let optionCostPanier = getClass('optionCostPanier');
                 
                 panierSupprimeCard();
 
