@@ -214,7 +214,7 @@ const cancellation = () => {
         getType('input').remove;
     })
 }
-
+/*
 //surveille si l'on sélectionne une option
 const productOptionListener=(param_produit,param_option)=>{
     param_option.addEventListener('change', function () {
@@ -253,34 +253,7 @@ const productOptionListener=(param_produit,param_option)=>{
     })
 }
 
-/*
-const storeToLocal=(param_produit)=>{
-    let selectedProduct=[];
-    let selectedOptions=getType('input');
-    
-    for (let option of selectedOptions){
-        let toPush={'key':'','value':''};
-        if (getAttribute(option, 'key')){
-            let key = getAttribute(option, 'key');
-            let howMany = option.value;
-            toPush.key=key;
-            toPush.value=howMany;
-            selectedProduct.push(toPush);
-        }
-    }    
-
-    
-    //on trie les options par clés
-    selectedProduct.sort(function compare(a, b) {
-        if (a.key < b.key)
-            return -1;
-        if (a.key > b.key)
-            return 1;
-        return 0;
-    });
-    //on stock en local
-    storage(param_produit._id, selectedProduct);
-}
-
 */
+
+
 
