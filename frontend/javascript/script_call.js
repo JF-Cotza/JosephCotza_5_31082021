@@ -17,7 +17,14 @@ if (getId('panier')) {
     fetchAffichagePanier();
 }
 
+if (getId('forCustomerInformations')){
+    getId('forCustomerInformations').addEventListener('click',()=>{
+        getId('customerInformations').classList.remove('d-none');
+    })
+}
+
 //confirmation.html
 if (getId('confirmation')){
     fetchconfirmation();
 }
+
