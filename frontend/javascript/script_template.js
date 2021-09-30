@@ -196,7 +196,6 @@ const listenChange = () => {
                 
                 panierSupprimeCard();
 
-
                 for (let opt of optionCostPanier){
                     if (getAttribute(opt, 'keyId') == targetId && getAttribute(opt, 'keyOption') == targetOption){
                         for(let price of singlePricePanier)
