@@ -164,6 +164,8 @@ const panierData = (param_copy, param_produit, param_body) =>{
     suppress.setAttribute('keyId',param_produit._id);
     card.setAttribute('keyId', param_produit._id);
     price.setAttribute('keyId', param_produit._id)
+    price.setAttribute('disbled','disabled');
+    price.setAttribute('name','price_'+param_produit.id);
 
     param_body.appendChild(param_copy);
 
