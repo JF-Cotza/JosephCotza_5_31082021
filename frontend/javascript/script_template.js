@@ -1,4 +1,4 @@
-
+/*
 //affiche le produit sélectionné
 const productShowing = (param_copy, param_produit, param_body) => {
     let showingProduct = { 'id': '', 'name': '', 'price': '', 'option': [] };
@@ -89,30 +89,6 @@ const productShowing = (param_copy, param_produit, param_body) => {
     })
     }    
 }
-
-
-/*
-
-const panierExplorer=(param_fetchdata)=>{
-    //on sélectionne le template par son ID
-    let template = document.querySelector('#basePanier');
-    //on sélectionne là où on on créera les cartes.
-    let body = select(document, '#panier')[0];
-    for (let produit of param_fetchdata){
-        if(getItem(produit._id))
-        {
-            //on clone le template
-            let copy = clone(document, template);
-            panierData(copy,produit,body);        
-        }    
-    }
-    videPanier(param_fetchdata);
-}
-
-
-
-
-
 
 
 */
