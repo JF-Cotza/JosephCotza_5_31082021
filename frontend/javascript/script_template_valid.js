@@ -152,7 +152,7 @@ const panierSupprimeCard=()=>{
         }
         if (counting == 0) {
             card.parentNode.removeChild(card);
-            console.log('panier supprime card');
+            console.log(counting+' panier supprime card');
             //storageRemove(id);
         }
     }
