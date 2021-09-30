@@ -208,48 +208,12 @@ const optionMaker=(param_produit,param_option)=>{
 }
 
 
+
+/*
 const cancellation = () => {
     getId('cancel').addEventListener('click', () => {
         preventDefault();
         getType('input').remove;
-    })
-}
-/*
-//surveille si l'on sélectionne une option
-const productOptionListener=(param_produit,param_option)=>{
-    param_option.addEventListener('change', function () {
-        let qty=getClass('qty');
-        let allready=0;
-        if(qty){
-            for (let member of qty) {
-                if (getAttribute(member, 'key') == param_option.value){
-                    allready++
-                }
-            }
-            if (allready!=0){
-                infos.textContent='Option déjà sélectionnée';
-            }
-            else{
-                optionMaker(param_produit, param_option);
-                infos.textContent='';
-            }
-        }       
-        if(qty){
-            for(let member of qty){
-                member.addEventListener('change', (e) => {
-                    if (e.target.value == 0) {
-                        let toSuppress = e.target.getAttribute('key');
-                        e.target.remove();
-                        let labels = document.getElementsByTagName('label');
-                        for (let lab of labels) {
-                            if (getAttribute(lab,'key') == toSuppress) {
-                                lab.remove();
-                            }
-                        }
-                    }
-                })
-            }
-        }                
     })
 }
 
