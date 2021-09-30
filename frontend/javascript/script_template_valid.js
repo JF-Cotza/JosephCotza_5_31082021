@@ -144,6 +144,28 @@ const productOptionListener = (param_produit, param_option) => {
     })
 }
 
+//crée l'input pour les options et les quantités
+const optionMaker = (param_produit, param_option) => {
+    let label = document.createElement('Label');
+    let input = document.createElement('input');
+    let commande = getClass('commande')[0];
+
+    //définition du label
+    label.setAttribute('for', param_produit.colors[param_option.value]);
+    label.setAttribute('key', param_option.value);
+    label.innerHTML = param_produit.colors[param_option.value];
+
+    //définition de l'input
+    input.id = param_produit.colors[param_option.value];
+    input.name = param_produit.colors[param_option.value];
+    input.setAttribute('key', param_option.value);  //servira de controle pour savoir la couleur a déjà été sélectionnée
+    input.type = 'number';
+    input.setAttribute('min', 0);
+    input.value = 1;
+    input.classList.add('qty');
+    commande.appendChild(label);
+    commande.appendChild(input);
+}
 
 
 /********************* page panier ************************/

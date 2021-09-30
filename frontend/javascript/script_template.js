@@ -143,9 +143,12 @@ const panierData = (param_copy, param_produit, param_body) =>{
     //optionCostPanier = optionQuantityPanier *price 
 }
 
+
+
+/*
+
 const listenChange = () => {
     let input = getType('input');
-
     for (let choice of input) {
         choice.addEventListener('change', function (e) {// on va écouter tous les inputs
             //on récupére les keyId et keyOpt de l'aobjet ayant été la cible de l'event.
@@ -155,10 +158,9 @@ const listenChange = () => {
             if (e.target.value == 0) {
                 panierRemoveOption(e.target, targetId, targetOption);
             }
-                            
                 let singlePricePanier = getClass('singlePricePanier');
                 let optionCostPanier = getClass('optionCostPanier');
-                
+
                 panierSupprimeCard();
 
                 for (let opt of optionCostPanier){
@@ -166,43 +168,16 @@ const listenChange = () => {
                         for(let price of singlePricePanier)
                         {
                             if (getAttribute(price, 'keyId') == targetId) {
-                        
                                 opt.value = price.value*e.target.value;
                             }
-                            
                         }
                         //opt.textContent=amount/100;
                     }
                 }
-            
         })
     }
 }
 
-/*
-
-//crée l'input pour les options et les quantités
-const optionMaker=(param_produit,param_option)=>{
-    let label = document.createElement('Label');
-    let input = document.createElement('input');
-    let commande = getClass('commande')[0];
-
-    //définition du label
-    label.setAttribute('for', param_produit.colors[param_option.value]);
-    label.setAttribute('key', param_option.value);
-    label.innerHTML = param_produit.colors[param_option.value];
-
-    //définition de l'input
-    input.id = param_produit.colors[param_option.value];
-    input.name = param_produit.colors[param_option.value];
-    input.setAttribute('key', param_option.value);  //servira de controle pour savoir la couleur a déjà été sélectionnée
-    input.type = 'number';
-    input.setAttribute('min', 0);
-    input.value = 1;
-    input.classList.add('qty');
-    commande.appendChild(label);
-    commande.appendChild(input);
-}
 
 
 */
