@@ -197,15 +197,15 @@ const listenChange = () => {
                 
                 for (let card of cardClass){
                     let keyId=getAttribute(card,'keyId');
+                    let counting = 0;
                     for(let opt of optionCostPanier){
-                        let counting = 0;
-                        if (getAttribute(card,'keyId')==keyId){
+                        if (getAttribute(opt,'keyId')==keyId){
                             counting++
                         }
-                        if (counting==0){
-                            card.parentNode.removeChild(card);
-                            //storageRemove(id);
-                        }
+                    }
+                    if (counting == 0) {
+                        card.parentNode.removeChild(card);
+                        //storageRemove(id);
                     }
                 }
 
