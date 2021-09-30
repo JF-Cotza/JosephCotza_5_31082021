@@ -120,17 +120,14 @@ const panierProductOption = (param_produit, param_where) => {
     }
 }
 
-
 const panierRemoveOption=(param_cible,param_id,param_option)=>{
     param_cible.remove();
     let labels = getType('label');
     let optionCostPanier = getClass('optionCostPanier');
-    console.log('labels: ' + labels);
     // On va parcourir tous les labels 
     for (let lab of labels) {
         if (getAttribute(lab, 'keyId') == param_id && getAttribute(lab, 'keyOption') == param_option) {
             lab.remove();
-            console.log('remove lab');
         }
     }
     // On va parcourir tous les totaux d'option
@@ -140,4 +137,22 @@ const panierRemoveOption=(param_cible,param_id,param_option)=>{
             console.log('remove cost');
         }
     }
+}
+
+const panierSupprimeCard=()=>{
+    let cardClass = getClass('card');
+    for (let card of cardClass) {
+        let keyId = getAttribute(card, 'keyId');
+        let counting = 0;
+        for (let opt of optionCostPanier) {
+            if (getAttribute(opt, 'keyId') == keyId) {
+                counting++
+            }
+        }
+        if (counting == 0) {
+            card.parentNode.removeChild(card);
+            //storageRemove(id);
+        }
+    }
+
 }

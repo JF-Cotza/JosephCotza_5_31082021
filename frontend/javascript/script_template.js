@@ -193,21 +193,9 @@ const listenChange = () => {
                 let optionCostPanier=getClass('optionCostPanier');
                 let singlePricePanier = getClass('singlePricePanier');
             
-                let cardClass=getClass('card');
                 
-                for (let card of cardClass){
-                    let keyId=getAttribute(card,'keyId');
-                    let counting = 0;
-                    for(let opt of optionCostPanier){
-                        if (getAttribute(opt,'keyId')==keyId){
-                            counting++
-                        }
-                    }
-                    if (counting == 0) {
-                        card.parentNode.removeChild(card);
-                        //storageRemove(id);
-                    }
-                }
+                panierSupprimeCard();
+
 
                 for (let opt of optionCostPanier){
                     if (getAttribute(opt, 'keyId') == targetId && getAttribute(opt, 'keyOption') == targetOption){
