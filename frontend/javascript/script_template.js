@@ -200,8 +200,8 @@ const listenChange = () => {
                         for(let price of singlePricePanier)
                         {
                             if (getAttribute(price, 'keyId') == targetId) {
-                                productPrice = price.value;
-                                console.log(productPrice);
+                        
+                                opt.value = price.value*e.target.value;
                             }
                             
                         }
