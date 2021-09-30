@@ -203,7 +203,6 @@ const listenChange = () => {
                                 productPrice = price.value;
                                 console.log(productPrice);
                             }
-                            console.log('price value: '+price.value);
                             
                         }
                         //opt.textContent=amount/100;
