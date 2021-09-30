@@ -108,7 +108,7 @@ const storeToLocal = (param_produit) => {
 
 //surveille si l'on sélectionne une option
 const productOptionListener = (param_produit, param_option) => {
-    param_option.addEventListener('change', function () {
+    param_option.addEventListener('change', ()=> {
         let qty = getClass('qty');
         let allready = 0;
         if (qty) {

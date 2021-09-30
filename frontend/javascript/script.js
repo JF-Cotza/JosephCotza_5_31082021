@@ -45,7 +45,7 @@ let toLocalstorage = getId('toLocalstorage');
 if (toLocalstorage){
    // console.log(toLocalstorage);
 
-    toLocalstorage.addEventListener('click',function(e){
+    toLocalstorage.addEventListener('click',(e)=>{
         //console.log('toLocalstorage');
         e.preventDefault();
         //storage('customerDatas',customerinfo);

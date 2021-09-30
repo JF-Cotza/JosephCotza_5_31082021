@@ -72,7 +72,7 @@ const afficherLePanier = (param_totalPanier) => {
     if (param_totalPanier <= 0) {
         textLook.textContent = 'Panier vide';
         look.title = 'panier vide, bouton de panier neutralisé';
-        look.addEventListener('click', function (e) {
+        look.addEventListener('click', (e)=>{
             e.preventDefault();
         })
     }
