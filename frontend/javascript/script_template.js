@@ -87,44 +87,10 @@ const productShowing = (param_copy, param_produit, param_body) => {
             }
         }
     })
-    }
-
-    
+    }    
 }
 
-const product=(param_fetchdata,param_idproduct)=> {
-    //on sélectionne le template par son ID
-    let template = document.querySelector('#productTemplate');
 
-    //on sélectionne là où on on créera les cartes.
-    let body = select(document, '#productCommand')[0];
-    let count = 0;
-    //on explore les produits
-    for (let produit of param_fetchdata) {
-        
-        let length = param_fetchdata.length;
-        let copy = clone(document, template);
-        
-        if(produit._id==param_idproduct){
-            productShowing(copy,produit,body);   //affiche le produit sélectionné     
-        
-           
-            //click sur le bouton annuler
-            cancellation();
-            
-        }
-        else{//si l'id est erronné
-            if(count<(length-1)){
-                count++;
-            }
-            else{
-                infos.textContent="Désolé, le produit n'est plus disponible";
-            }
-        }
-    }
-    //bouton panier
-    compteProduitsDuPanier(param_fetchdata);
-}
 
 const panierExplorer=(param_fetchdata)=>{
     //on sélectionne le template par son ID
@@ -189,8 +155,7 @@ const listenChange = () => {
             if (e.target.value == 0) {
                 panierRemoveOption(e.target, targetId, targetOption);
             }
-            
-                
+                            
                 let singlePricePanier = getClass('singlePricePanier');
                 let optionCostPanier = getClass('optionCostPanier');
                 
@@ -288,6 +253,7 @@ const productOptionListener=(param_produit,param_option)=>{
     })
 }
 
+/*
 const storeToLocal=(param_produit)=>{
     let selectedProduct=[];
     let selectedOptions=getType('input');
@@ -316,5 +282,5 @@ const storeToLocal=(param_produit)=>{
     storage(param_produit._id, selectedProduct);
 }
 
-
+*/
 
