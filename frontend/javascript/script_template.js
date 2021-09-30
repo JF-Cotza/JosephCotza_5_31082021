@@ -91,6 +91,7 @@ const productShowing = (param_copy, param_produit, param_body) => {
 }
 
 
+/*
 
 const panierExplorer=(param_fetchdata)=>{
     //on sélectionne le template par son ID
@@ -110,40 +111,8 @@ const panierExplorer=(param_fetchdata)=>{
 
 
 
-/*
 
-const panierData = (param_copy, param_produit, param_body) =>{
-    let image= select(param_copy,'.imagePanier')[0];
-    let name = select(param_copy,'.modelePanier')[0];
-    let price = select(param_copy, '.singlePricePanier')[0];
-    let card = select(param_copy,'.card')[0];
-    let suppress = select(param_copy,'.productSuppr')[0];
-    let optionList=select(param_copy,'.optionList')[0];
-    let fromStorage=(getItem(param_produit._id));
-    for (let choice of fromStorage){
-        console.log(choice.key);
-    }
 
-    name.textContent=param_produit.name;
-    image.setAttribute('src', param_produit.imageUrl);
-    image.setAttribute('alt', imageAlternative[selectedProduct]);
-    price.value=(param_produit.price) / 100;
-
-    //keyId sert à sélection l'élément du correspondant au bon produit
-    price.setAttribute('keyId',param_produit._id);
-    suppress.setAttribute('keyId',param_produit._id);
-    card.setAttribute('keyId', param_produit._id);
-    price.setAttribute('keyId', param_produit._id)
-    price.setAttribute('disabled','disabled');
-    price.setAttribute('name','price_'+param_produit._id);
-
-    param_body.appendChild(param_copy);
-
-    panierProductOption(param_produit, optionList);
-    supprimerUnProduitDuPanier();
-
-    listenChange();
-}
 
 
 */
