@@ -407,10 +407,11 @@ const panierData = (param_copy, param_produit, param_body) => {
     let suppress = select(param_copy, '.productSuppr')[0];
     let optionList = select(param_copy, '.optionList')[0];
     let fromStorage = (getItem(param_produit._id));
+    /*
     for (let choice of fromStorage) {
         console.log(choice.key);
     }
-
+    */
     name.textContent = param_produit.name;
     image.setAttribute('src', param_produit.imageUrl);
     image.setAttribute('alt', imageAlternative[selectedProduct]);
