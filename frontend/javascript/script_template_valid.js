@@ -63,10 +63,6 @@ const product = (param_fetchdata, param_idproduct) => {
 
         if (produit._id == param_idproduct) {
             productShowing(copy, produit, body);   //affiche le produit sélectionné     
-
-            //click sur le bouton annuler
-            //cancellation();
-
         }
         else {//si l'id est erronné
             if (count < (length - 1)) {

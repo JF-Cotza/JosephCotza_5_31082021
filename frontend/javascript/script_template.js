@@ -179,10 +179,7 @@ const listenChange = () => {
     }
 }
 
-
-
-
-
+/*
 
 //crée l'input pour les options et les quantités
 const optionMaker=(param_produit,param_option)=>{
@@ -207,15 +204,6 @@ const optionMaker=(param_produit,param_option)=>{
     commande.appendChild(input);
 }
 
-
-
-/*
-const cancellation = () => {
-    getId('cancel').addEventListener('click', () => {
-        preventDefault();
-        getType('input').remove;
-    })
-}
 
 */
 
