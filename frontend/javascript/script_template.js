@@ -21,9 +21,8 @@ const checkrequired=()=>{
             }
     }
   
-  
-    
     console.log('required:' +count);
+    }
 }
 
 
