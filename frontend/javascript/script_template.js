@@ -40,11 +40,11 @@ const checkValidity=()=>{
             }
         }
         if(getAttribute(typed,'pattern')){
-            if(typed.oninvalid){
+            typed.oninvalid=()=>{
                 countPaterned++;
             }
         }
     }
-    console.log('erreurs typed 5: '+countTyped+' erreur pattern: '+countPaterned);
+    console.log('erreurs typed 6: '+countTyped+' erreur pattern: '+countPaterned);
 }
 
