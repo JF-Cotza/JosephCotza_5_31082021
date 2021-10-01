@@ -16,6 +16,7 @@ const checkrequired=()=>{
     let count = 0;
     for (let item of inputs){
         if (getAttribute(item, 'required')){
+            console.log('check required');
             if (!item.value) {
                 count++;
                 console.log('pas de valeur')
@@ -23,6 +24,9 @@ const checkrequired=()=>{
             else{
                 console.log('valeur');
             }
+        }
+        else{
+            console.log('pas de required');
         }
     }
     console.log('required:' + count);
