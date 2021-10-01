@@ -16,7 +16,7 @@ const checkrequired=()=>{
     let count = 0;
     for (let item of inputs){
         if (getAttribute(item, 'required')){
-            if (item.value = '') {
+            if (!item.value) {
                 count++
             }
     }
