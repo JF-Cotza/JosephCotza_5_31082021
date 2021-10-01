@@ -449,4 +449,13 @@ const panierExplorer = (param_fetchdata) => {
     videPanier(param_fetchdata);
 }
 
+const idList = () => {
+    let idListing = []
+    for (let value of getClass('card')) {
+        if (getAttribute(value, 'keyId') != null) {
+            idListing.push(getAttribute(value, 'keyId'))
+        }
+    }
+    return idListing;
+}
 

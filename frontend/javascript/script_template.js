@@ -11,16 +11,10 @@ const totalPanier=()=>{
     }
 }
 
-const idList=()=>{
-    let idListing=[]
-    for(let value of getClass('card')){
-        if(getAttribute(value,'keyId')!=null){
-            idListing.push(getAttribute(value,'keyId'))
-        }
-    }
-    console.log(idListing);
-}
 
+
+
+//si on clique sur le bouton idListen, on génere la liste des id
 if (getId('idListen')){
     getId('idListen').addEventListener('click',()=>{
         idList();
