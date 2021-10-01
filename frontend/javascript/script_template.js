@@ -23,10 +23,9 @@ const checkrequired=()=>{
             else{
                 console.log('valeur');
             }
+        }
     }
-  
-    console.log('required:' +count);
-    }
+    console.log('required:' + count);
 }
 
 
