@@ -30,7 +30,7 @@ const fetchCustomer = () => {
 
 
 const orderGet=()=>{
-fetch(apiLink+'/order/:product')
+fetch(apiLink+'/order')
     .then(function(res){
         console.log('test order get');
     })
@@ -38,4 +38,8 @@ fetch(apiLink+'/order/:product')
         console.log('pas de data product');
         mistake(error);
     })
+}
+
+if(getId('confirmation')){
+    orderGet();
 }
