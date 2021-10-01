@@ -17,6 +17,7 @@ const checkrequired=()=>{
     for (let item of inputs){
         if (getAttribute(item, 'required')==false){
             console.log('check required');
+            count++;
         }
         else if (getAttribute(item, 'required') == true) {
             console.log('pas de check required');
@@ -25,6 +26,7 @@ const checkrequired=()=>{
             console.log('pas de required détecté')
         }
     }
+    console.log('count required '+count);
 }
 
 
