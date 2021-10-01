@@ -39,6 +39,6 @@ const checkValidity=()=>{
             }
         }
     }
-    console.log('erreurs validity: '+count);
+    console.log('erreurs validity 4: '+count);
 }
 
