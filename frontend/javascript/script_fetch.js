@@ -30,7 +30,7 @@ const fetchCustomer = () => {
 
 
 const orderGet=()=>{
-fetch(apiLink+'/order')
+fetch(apiLink+'/order/:product')
     .then(function(res){
         console.log(res.json());
     })
