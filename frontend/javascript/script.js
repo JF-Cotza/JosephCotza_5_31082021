@@ -16,7 +16,7 @@ const getCustomerDatas = () => {
 };
 
 //variables
-
+/*
 let commande=[];
 let test = 000;
 let getFormData = getId('getFormData');
@@ -26,7 +26,7 @@ let voidStorage = getId('voidStorage');
 if (getFormData){
     getFormData.addEventListener('click',getCustomerDatas);
 }
-
+*/
 /*
     storage('customer',customer);
     fetchCustomer(getItem('customer'));
@@ -43,14 +43,15 @@ let toConfirmation = getId('toConfirmation');
 
 if (toConfirmation){
     toConfirmation.addEventListener('click',(e)=>{
-        if (checkrequired()!=0){
+        /*if (checkrequired()!=0){
             e.preventDefault();
             fetchCustomer();
         }
         else{
             console.log(idList()); //génére la liste des id
-        }
-        
+        }*/
+        e.preventDefault();
+        checkValidity();
         
     
         //storage('customerDatas',customerinfo);
