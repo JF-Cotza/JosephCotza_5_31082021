@@ -1,16 +1,29 @@
 const totalPanier=()=>{
     let quantity=getClass('quantity');
     let singlePricePanier = getClass('singlePricePanier ');
+    let idArray=[];
     for (let input of  quantity )
     {
         if(input.value>0){
-        console.log('id:' + getAttribute(input, 'keyId') + ' option '+getAttribute(input, 'keyOption')+' qty '+input.value)
+            console.log('id:' + getAttribute(input, 'keyId') + ' option '+getAttribute(input, 'keyOption')+' qty '+input.value)
+            
         }
     }
 }
 
+const idList=()=>{
+    let idListing=[]
+    for(let value of getClass('card')){
+        idList.push(getAttribute(value,'keyId'))
+    }
+    console.log(idListing);
+}
 
-
+if (getId('idlisten')){
+    getId('idlisten').addEventlistener('click',()=>{
+        idList();
+    })
+}
 
 
 
