@@ -19,8 +19,8 @@ const idList=()=>{
     console.log(idListing);
 }
 
-if (getId('idlisten')){
-    getId('idlisten').addEventListener('click',()=>{
+if (getId('idListen')){
+    getId('idListen').addEventListener('click',()=>{
         idList();
     })
 }
