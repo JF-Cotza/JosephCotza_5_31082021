@@ -20,7 +20,7 @@ const idList=()=>{
 }
 
 if (getId('idlisten')){
-    getId('idlisten').addEventlistener('click',()=>{
+    getId('idlisten').addEventListener('click',()=>{
         idList();
     })
 }
