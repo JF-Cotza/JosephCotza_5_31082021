@@ -44,11 +44,18 @@ let toConfirmation = getId('toConfirmation');
 
 if (toConfirmation){
     toConfirmation.addEventListener('click',(e)=>{
-        e.preventDefault();
-        idList();//génére la liste des id
-        checkrequired();
+        if (checkrequired()!=0){
+            e.preventDefault();
+            fetchCustomer();
+        }
+        else{
+            console.log(idList()); //génére la liste des id
+        }
+        
+        
+    
         //storage('customerDatas',customerinfo);
-        fetchCustomer();
+        
     })
     
 }

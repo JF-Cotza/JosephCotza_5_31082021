@@ -29,6 +29,7 @@ const checkrequired=()=>{
         } 
     }
     console.log('count required :'+countFalse+' not required :'+countTrue);
+    return countFalse
 }
 
 
