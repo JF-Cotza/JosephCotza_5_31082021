@@ -31,14 +31,20 @@ const checkrequired=()=>{
 
 const checkValidity=()=>{
     let inputs=getType('input');
-    let count=0;
-    for (let patterned of inputs){
-        if(getAttribute(patterned,'type')){
-            if(patterned.validity.typeMismatch){
-                    count++;
+    let countTyped=0;
+    let countPaterned=0;
+    for (let typed of inputs){
+        if(getAttribute(typed,'type')){
+            if(typed.validity.typeMismatch){
+                countTyped++;
+            }
+        }
+        if(getAttribute(typed,'pattern')){
+            if(typed.oninvalid){
+                countPaterned++;
             }
         }
     }
-    console.log('erreurs validity 4: '+count);
+    console.log('erreurs typed 5: '+countTyped+' erreur pattern: '+countPaterned);
 }
 
