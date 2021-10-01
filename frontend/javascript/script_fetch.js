@@ -23,7 +23,7 @@ const fetchCustomer = () => {
     .then(function(value){
         console.log(value.postData.text);
         infos.textContent='test fetch post';
-        orderGet();
+        
     })
     .catch((error)=>mistake(error))
 }
