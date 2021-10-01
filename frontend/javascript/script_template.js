@@ -14,7 +14,7 @@ const totalPanier=()=>{
 const idList=()=>{
     let idListing=[]
     for(let value of getClass('card')){
-        idList.push(getAttribute(value,'keyId'))
+        idListing.push(getAttribute(value,'keyId'))
     }
     console.log(idListing);
 }
