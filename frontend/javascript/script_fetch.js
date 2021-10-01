@@ -33,4 +33,8 @@ fetch(apiLink+'/order/:product')
     .then(function(res){
         console.log('test order get');
     })
+    .catch((error)=>{
+        console.log('pas de data product');
+        mistake(error);
+    })
 }
