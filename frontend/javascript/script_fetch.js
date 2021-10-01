@@ -12,6 +12,7 @@ const fetchCustomer = () => {
         body:JSON.stringify(bodyConst) //on stringifie la constante body
     })
     .then(function(res){
+        storage('datas',res);
         if(res.ok){
             return res.json();
         }
