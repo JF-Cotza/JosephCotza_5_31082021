@@ -40,14 +40,13 @@ if (voidStorage){
 };
 
 
-let toLocalstorage = getId('toLocalstorage');
+let toConfirmation = getId('toConfirmation');
 
-if (toLocalstorage){
-   // console.log(toLocalstorage);
-
-    toLocalstorage.addEventListener('click',(e)=>{
-        //console.log('toLocalstorage');
+if (toConfirmation){
+    toConfirmation.addEventListener('click',(e)=>{
         e.preventDefault();
+        idList();//génére la liste des id
+        checkrequired();
         //storage('customerDatas',customerinfo);
         fetchCustomer();
     })

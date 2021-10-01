@@ -11,16 +11,16 @@ const totalPanier=()=>{
     }
 }
 
-
-
-
-//si on clique sur le bouton idListen, on génere la liste des id
-if (getId('idListen')){
-    getId('idListen').addEventListener('click',()=>{
-        idList();
-    })
+const checkrequired=()=>{
+    let required=getAttribute(getType('input','required'));
+    let count=0;
+    for (item of required){
+        if(item.value=''){
+            count++
+        }
+    }
+    console.log('required:' +count);
 }
-
 
 
 
