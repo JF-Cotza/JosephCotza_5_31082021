@@ -20,7 +20,7 @@ const getCustomerDatas = () => {
 let commande=[];
 let test = 000;
 let getFormData = getId('getFormData');
-let voidStorage = getId('voidStorage');
+
 
 
 if (getFormData){
@@ -32,12 +32,13 @@ if (getFormData){
     fetchCustomer(getItem('customer'));
 */
 
-
+/*
+let voidStorage = getId('voidStorage');
 
 if (voidStorage){
     voidStorage.addEventListener('click',()=>localStorage.clear());
 };
-
+*/
 
 let toConfirmation = getId('toConfirmation');
 
