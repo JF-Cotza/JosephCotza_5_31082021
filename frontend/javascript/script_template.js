@@ -12,7 +12,7 @@ const totalPanier=()=>{
 }
 
 const checkrequired=()=>{
-    let required=getAttribute(getType('input','required'));
+    let required=getAttribute(getType('input'),'required');
     let count=0;
     for (item of required){
         if(item.value=''){
