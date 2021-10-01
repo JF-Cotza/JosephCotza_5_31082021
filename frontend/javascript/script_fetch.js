@@ -1,15 +1,15 @@
 const fetchCustomer = () => {
-    const body = {
+    const bodyConst = {
         contact: getCustomerDatas(),
-        products: idList()};
-    
+        products: idList()
+    };
     fetch(apiLink+'/order', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body:JSON.stringify(body) //on stringifie la constante body
+        body:JSON.stringify(bodyConst) //on stringifie la constante body
     })
     .then(function(res){
         if(res.ok){

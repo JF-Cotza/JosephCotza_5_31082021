@@ -23,8 +23,3 @@ if (getId('forCustomerInformations')){
     })
 }
 
-//confirmation.html
-if (getId('confirmation')){
-    fetchconfirmation();
-}
-
