@@ -19,16 +19,13 @@ const checkrequired=()=>{
         if (getAttribute(item, 'required')==false){
             if(!item.value || item.value.length==0)
             {
-                console.log('check required');
                 countFalse++;
             }
             else {
-            console.log('pas de check required');
             countTrue++;
             }
         } 
-    }
-    console.log('count required :'+countFalse+' not required :'+countTrue);
+    }  
     return countFalse
 }
 
