@@ -3,16 +3,15 @@ const getCustomerDatas = () => {
     let customer = { 'lastName': '', 'firstName': '', 'address': {}, 'city': '', 'email': '' };
     customer.firstName = getId('firstName').value;
     customer.lastName = getId('customerType').value + ' ' + getId('lastName').value;
-    customer.address = {
-        'adressNumber': getId('adressNumber').value,
-        'adressStreet': getId('adressStreet').value,
-        'adressDoor': getId('adressDoor').value,
-        'adressBuilding': getId('adressBuilding').value,
-        'adressAdding': getId('adressAdding').value
-    }
+    customer.address = 
+        getId('adressNumber').value+' '+
+        getId('adressStreet').value+' '+
+        getId('adressDoor').value+' '+
+        getId('adressBuilding').value+' '+
+        getId('adressAdding').value;
+    
     customer.email=getId('mail').value;
     customer.city = getId('adressCode').value + ' ' + getId('adressCity').value
-    //storage('customer',customer);
     return customer;
 };
 

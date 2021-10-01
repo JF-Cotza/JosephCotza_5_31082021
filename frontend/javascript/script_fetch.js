@@ -1,7 +1,8 @@
 const fetchCustomer = () => {
-    const body = {contact: getCustomerDatas(),
-        productsId: ['id', 'vfdnkvjfbkjdjkbjf', 'vbfuigfbgsg', 'kjdnsnbkb', 'cdhvdsvuk']};
-    console.log(body);
+    const body = {
+        contact: getCustomerDatas(),
+        products: idList()};
+    
     fetch(apiLink+'/order', {
         method: "POST",
         headers: {
