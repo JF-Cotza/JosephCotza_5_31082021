@@ -33,7 +33,7 @@ const checkValidity=()=>{
     let inputs=getType('input');
     let count=0;
     for (let patterned of inputs){
-        if(getAttribute(patterned,'pattern')){
+        if(getAttribute(patterned,'type')){
             if(patterned.validity.typeMismatch){
                     count++;
             }
