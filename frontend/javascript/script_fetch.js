@@ -32,7 +32,7 @@ const fetchCustomer = () => {
 const orderGet=()=>{
 fetch(apiLink+'/order')
     .then(function(res){
-        infos.innerHTML=res.json();
+        console.log('res.json '+res.json());
     })
     .catch((error)=>{
         console.log('pas de data product');
