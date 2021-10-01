@@ -22,10 +22,15 @@ const fetchCustomer = () => {
     .then(function(value){
         console.log(value.postData.text);
         infos.textContent='test fetch post';
+        orderGet();
     })
     .catch((error)=>mistake(error))
 }
 
-const fetchconfirmation=()=>{
-    console.log('confirmation');
+
+const orderGet=()=>{
+fetch(apiLink+'/order/:product')
+    .then(function(res){
+        console.log('test order get');
+    })
 }
