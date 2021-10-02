@@ -459,3 +459,47 @@ const idList = () => {
     return idListing;
 }
 
+//controle des données de formulaire client
+const checkValidity = () => {
+    let inputs = getType('input');
+    let countTyped = 0;
+    let countPatterned = 0;
+    let countRequired = 0;
+    let message = { 'type': '', 'pattern': '', 'required': '' };
+    let toInfo = { 'message': '', 'total': '' };
+    for (let typed of inputs) {
+        if (getAttribute(typed, 'required') == false) {
+            if (!typed.value || typed.value.length == 0) {
+                countRequired++;
+            }
+        }
+        if (getAttribute(typed, 'type')) {
+            if (typed.validity.typeMismatch) {
+                countTyped++;
+            }
+        }
+        if (getAttribute(typed, 'pattern')) {
+            if (typed.validity.patternMismatch) {
+                countPatterned++;
+            }
+        }
+    }
+    if (countTyped != 0) {
+        message.type = ` ${countTyped} erreurs de types de saisie /`;
+    }
+    if (countPatterned != 0) {
+        message.pattern = ` ${countPatterned} erreurs de format de saisie /`;
+    }
+    if (countRequired != 0) {
+        message.required = ` ${countRequired} champs obligatoires non renseignés`;
+    }
+    if (countTyped == 0 && countPatterned == 0 && countRequired == 0) {
+        toInfo.message = " Aucune erreur détectée";
+        toInfo.total = 0;
+    }
+    else {
+        toInfo.message = 'Il y a : ' + message.type + message.pattern + message.required;
+        toInfo.total = countTyped + countPatterned + countRequired;
+    }
+    return toInfo;
+}

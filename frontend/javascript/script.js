@@ -54,7 +54,7 @@ if (toConfirmation){
         }
         else{
             console.log(idList()); //génére la liste des id
-            getCustomerDatas(); //récupère les données du client
+            console.log(getCustomerDatas()); //récupère les données du client
         }
         /*
         e.preventDefault();
