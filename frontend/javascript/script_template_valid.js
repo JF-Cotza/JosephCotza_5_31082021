@@ -397,7 +397,7 @@ const listenChange = () => {
                 }
             }
 
-            getId('totalPanier').textContent=totalPanier();
+            //getId('totalPanier').textContent=totalPanier();
         })
     }
 }
@@ -434,7 +434,7 @@ const panierData = (param_copy, param_produit, param_body) => {
     supprimerUnProduitDuPanier();
 
     listenChange();
-    getId('totalPanier').textContent=totalPanier(); //ok
+    getId('totalPanier').textContent=totalPanier(); //ok nécessaire lors du reload
 }
 
 const panierExplorer = (param_fetchdata) => {
@@ -542,7 +542,7 @@ const totalPanier = () => {
     }
 
     for (let i = 0; i < totalList.length; i++) {
-        total +='12 : ' + totalList[i];
+        total +='14 : ' + totalList[i];
     }
 
     return total;
