@@ -53,8 +53,8 @@ if (toConfirmation){
             console.log(checkValidity().total);
 
         }
-        else{
-            e.preventDefault();
+        else if (checkValidity().total= 0){
+           // e.preventDefault();
             console.log(idList()); //génére la liste des id
             console.log(getCustomerDatas()); //récupère les données du client
         }
