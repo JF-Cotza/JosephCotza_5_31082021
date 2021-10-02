@@ -28,7 +28,7 @@ const fetchCustomer = () => {
     .catch((error)=>mistake(error))
 }
 
-
+/*
 const orderGet=()=>{
 fetch(apiLink+'/order')
     .then(function(res){
@@ -43,3 +43,4 @@ fetch(apiLink+'/order')
 if(getId('confirmation')){
     orderGet();
 }
+*/

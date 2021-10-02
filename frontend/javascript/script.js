@@ -15,6 +15,8 @@ const getCustomerDatas = () => {
     return customer;
 };
 
+
+
 //variables
 /*
 let commande=[];
@@ -62,4 +64,19 @@ if (toConfirmation){
     
 }
 
+/*
+const testId=()=>{
+    fetch(apiLink +'/:_id=5beaa8bf1c9d440000a57d94')
+    .then(function(res){
+        return res.json()
+    })
+    .then((data)=>{
+        
+            console.log(data)
+   })
+    .catch((error)=>console.log("pas d'id : "+error.message))
+}
+
 //testingFunction();
+testId();
+*/
