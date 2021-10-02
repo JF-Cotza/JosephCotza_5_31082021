@@ -44,19 +44,20 @@ let toConfirmation = getId('toConfirmation');
 
 if (toConfirmation){
     toConfirmation.addEventListener('click',(e)=>{
-        /*if (checkrequired()!=0){
+        if (checkValidity().total!=0){
             e.preventDefault();
-            fetchCustomer();
+            infos.textContent=checkValidity().message;
         }
         else{
             console.log(idList()); //génére la liste des id
-        }*/
+        }
+        /*
         e.preventDefault();
-        checkValidity();
+        console.log(checkValidity());
         
-    
+        fetchCustomer();
         //storage('customerDatas',customerinfo);
-        
+        */
     })
     
 }
