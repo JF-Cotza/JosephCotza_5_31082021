@@ -434,7 +434,7 @@ const panierData = (param_copy, param_produit, param_body) => {
     supprimerUnProduitDuPanier();
 
     listenChange();
-    //getId('totalPanier').textContent=totalPanier();
+    getId('totalPanier').textContent=totalPanier(); //ok
 }
 
 const panierExplorer = (param_fetchdata) => {
