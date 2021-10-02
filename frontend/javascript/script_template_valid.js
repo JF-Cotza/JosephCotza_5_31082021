@@ -542,8 +542,10 @@ const totalPanier = () => {
     }
 
     for (let i = 0; i < totalList.length; i++) {
-        total +='test 23: ' + totalList[i];
+        total +=totalList[i];
     }
 
-    return total;
+    let tot = 'test 24: '+total;
+
+    return tot;
 }
