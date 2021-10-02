@@ -1,6 +1,3 @@
-if (getId('totalPanier')){
-    majPanier()
-}
 
 const majPanier=()=>{
     let panier=getId('totalPanier');
@@ -11,6 +8,11 @@ const majPanier=()=>{
             console.log('majPanier');
         });
     }
+}
+
+
+if (getId('totalPanier')) {
+    majPanier()
 }
 
 
