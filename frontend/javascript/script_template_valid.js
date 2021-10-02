@@ -397,7 +397,7 @@ const listenChange = () => {
                 }
             }
 
-           // getId('totalPanier').textContent=totalPanier();//ok pour mise à jour des valeurs
+           getId('totalPanier').textContent=totalPanier();//ok pour mise à jour des valeurs
         })
     }
 }
@@ -542,7 +542,7 @@ const totalPanier = () => {
     }
 
     for (let i = 0; i < totalList.length; i++) {
-        total +='test 20 : ' + totalList[i];
+        total +='test 21: ' + totalList[i];
     }
 
     return total;
