@@ -17,7 +17,8 @@ const totalPanier=()=>{
     for(let i=0;i<totalList.length;i++){
         total+=totalList[i];
     }
-    console.log(total);
+
+    getId('totalPanier').textContent='7: '+total;
 }
 
 
