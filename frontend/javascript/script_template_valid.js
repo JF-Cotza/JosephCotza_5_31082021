@@ -265,7 +265,6 @@ const supprimerUnProduitDuPanier = () => {
     for (let prod of suppressClass) {
         prod.addEventListener('click', () => {
             let id = getAttribute(prod, 'keyId');
-            console.log('prod pressed');
             for (cardlisted of getClass('card')) {
                 if (getAttribute(cardlisted, 'keyId') == id) {
                     cardlisted.parentNode.removeChild(cardlisted);
@@ -274,6 +273,7 @@ const supprimerUnProduitDuPanier = () => {
             }
         })
     }
+    totalPanier();
 }
 
 const videPanier = (param_fetchdata) => {
