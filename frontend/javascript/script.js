@@ -48,11 +48,13 @@ if (toConfirmation){
     toConfirmation.addEventListener('click',(e)=>{
         if (checkValidity().total!=0){
             e.preventDefault();
-            infos.textContent=checkValidity().message;
+            infos.textContent = checkValidity().message;
             console.log(getCustomerDatas())
+            
 
         }
         else{
+            e.preventDefault();
             console.log(idList()); //génére la liste des id
             console.log(getCustomerDatas()); //récupère les données du client
         }
