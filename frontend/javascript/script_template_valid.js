@@ -271,9 +271,10 @@ const supprimerUnProduitDuPanier = () => {
                     storageRemove(id);
                 }
             }
+            totalPanier();
         })
     }
-    totalPanier();
+    
 }
 
 const videPanier = (param_fetchdata) => {
