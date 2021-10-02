@@ -11,7 +11,7 @@ if (toConfirmation){
             infos.textContent = checkValidity().message;
             console.log(getCustomerDatas())
             console.log(checkValidity().total);
-
+            console.log('totalPanier'+ totalPanier());
         }
         else if (checkValidity().total= 0){  //il n'y a pas d'erreur
            // e.preventDefault();
