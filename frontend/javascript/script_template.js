@@ -4,9 +4,12 @@ if (getId('totalPanier')){
 
 const majPanier=()=>{
     let panier=getId('totalPanier');
-    let input=getClass('quantity');
-    for(let item of input){
-        item.addEventListener('change',()=>{panier.textContent=totalPanier()});
+    let inputs = getClass('optionQuantityPanier');
+    for(let item of inputs){
+        item.addEventListener('change',()=>{
+            panier.textContent=totalPanier();
+            console.log('majPanier');
+        });
     }
 }
 

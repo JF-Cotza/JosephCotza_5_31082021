@@ -542,7 +542,7 @@ const totalPanier = () => {
     }
 
     for (let i = 0; i < totalList.length; i++) {
-        total +='16 : ' + totalList[i];
+        total +='17 : ' + totalList[i];
     }
 
     return total;
