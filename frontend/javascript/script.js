@@ -49,9 +49,12 @@ if (toConfirmation){
         if (checkValidity().total!=0){
             e.preventDefault();
             infos.textContent=checkValidity().message;
+            console.log(getCustomerDatas())
+
         }
         else{
             console.log(idList()); //génére la liste des id
+            getCustomerDatas(); //récupère les données du client
         }
         /*
         e.preventDefault();
