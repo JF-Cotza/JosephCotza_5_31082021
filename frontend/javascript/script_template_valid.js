@@ -271,7 +271,7 @@ const supprimerUnProduitDuPanier = () => {
                     storageRemove(id);
                 }
             }
-            totalPanier();
+            getId('totalPanier').textContent='8: '+totalPanier();
         })
     }
     

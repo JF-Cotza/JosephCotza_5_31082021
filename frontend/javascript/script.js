@@ -9,7 +9,7 @@ if (toConfirmation){
         if (checkValidity().total!=0){
             e.preventDefault();
             infos.textContent = checkValidity().message;
-            totalPanier();
+            getId('totalPanier').textContent = '8: '+totalPanier();
             console.log(getCustomerDatas())
             console.log(checkValidity().total);
 
