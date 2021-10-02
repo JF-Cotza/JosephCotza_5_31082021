@@ -434,7 +434,7 @@ const panierData = (param_copy, param_produit, param_body) => {
     supprimerUnProduitDuPanier();
 
     listenChange();
-    getId('totalPanier').textContent=totalPanier();
+    //getId('totalPanier').textContent=totalPanier();
 }
 
 const panierExplorer = (param_fetchdata) => {
@@ -542,7 +542,7 @@ const totalPanier = () => {
     }
 
     for (let i = 0; i < totalList.length; i++) {
-        total +='11 : ' + totalList[i];
+        total +='12 : ' + totalList[i];
     }
 
     return total;
