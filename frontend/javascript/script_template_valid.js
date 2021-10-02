@@ -525,7 +525,7 @@ const getCustomerDatas = () => {
 
 //total du panier
 const totalPanier = () => {
-    let quantity = getClass('quantity');
+    let quantity = getClass('optionQuantityPanier');
     let singlePricePanier = getClass('singlePricePanier ');
     let totalList = []
     let total = 0;
@@ -542,7 +542,7 @@ const totalPanier = () => {
     }
 
     for (let i = 0; i < totalList.length; i++) {
-        total +='test 21: ' + totalList[i];
+        total +='test 22: ' + totalList[i];
     }
 
     return total;
