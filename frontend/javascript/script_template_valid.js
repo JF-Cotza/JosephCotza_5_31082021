@@ -395,6 +395,8 @@ const listenChange = () => {
                     }
                 }
             }
+
+            totalPanier();
         })
     }
 }

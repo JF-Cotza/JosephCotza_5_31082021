@@ -13,13 +13,11 @@ const totalPanier=()=>{
                 }
             }        
         }
-    }
-    
+    }   
     for(let i=0;i<totalList.length;i++){
         total+=totalList[i];
     }
-
-    console.log("liste des totaux:" + totalList+' somme: '+total);
+    console.log(total);
 }
 
 
