@@ -271,7 +271,7 @@ const supprimerUnProduitDuPanier = () => {
                     storageRemove(id);
                 }
             }
-            //getId('totalPanier').textContent=totalPanier();
+            getId('totalPanier').textContent=totalPanier(); //ok pour mise à jour lors suppression d'une carte
         })
     }
     
@@ -397,7 +397,7 @@ const listenChange = () => {
                 }
             }
 
-            getId('totalPanier').textContent=totalPanier();//ok pour mise à jour des valeurs
+           // getId('totalPanier').textContent=totalPanier();//ok pour mise à jour des valeurs
         })
     }
 }
@@ -542,7 +542,7 @@ const totalPanier = () => {
     }
 
     for (let i = 0; i < totalList.length; i++) {
-        total +='15 : ' + totalList[i];
+        total +='16 : ' + totalList[i];
     }
 
     return total;
