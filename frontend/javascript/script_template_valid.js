@@ -503,3 +503,19 @@ const checkValidity = () => {
     }
     return toInfo;
 }
+
+const getCustomerDatas = () => {
+    let customer = { 'lastName': '', 'firstName': '', 'address': {}, 'city': '', 'email': '' };
+    customer.firstName = getId('firstName').value;
+    customer.lastName = getId('customerType').value + ' ' + getId('lastName').value;
+    customer.address =
+        getId('adressNumber').value + ' ' +
+        getId('adressStreet').value + ' ' +
+        getId('adressDoor').value + ' ' +
+        getId('adressBuilding').value + ' ' +
+        getId('adressAdding').value;
+
+    customer.email = getId('mail').value;
+    customer.city = getId('adressCode').value + ' ' + getId('adressCity').value
+    return customer;
+}

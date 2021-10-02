@@ -28,19 +28,3 @@ const fetchCustomer = () => {
     .catch((error)=>mistake(error))
 }
 
-/*
-const orderGet=()=>{
-fetch(apiLink+'/order')
-    .then(function(res){
-        console.log('res.json '+res.json());
-    })
-    .catch((error)=>{
-        console.log('pas de data product');
-        mistake(error);
-    })
-}
-
-if(getId('confirmation')){
-    orderGet();
-}
-*/
