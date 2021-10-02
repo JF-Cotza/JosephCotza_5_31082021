@@ -50,7 +50,7 @@ if (toConfirmation){
             e.preventDefault();
             infos.textContent = checkValidity().message;
             console.log(getCustomerDatas())
-            
+            console.log(checkValidity().total);
 
         }
         else{
