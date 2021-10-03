@@ -228,14 +228,14 @@ const productShowing = (param_copy, param_produit, param_body) => {
 
     showingProduct.price = param_produit.price;
     showingProduct.name = param_produit.name;
-    showingProduct.id = param_produit.id;
+    showingProduct.id = param_produit._id;
     showingProduct.option = tableOption;
 
     image.setAttribute('alt', imageAlt);
     param_body.appendChild(param_copy); //on crée la carte produit
 
-    if (getItem(param_produit.id)){
-        console.log('test 1: present: '+getItem(param_produit.id));
+    if (getItem(param_produit._id)){
+        console.log('test 1: present: '+getItem(param_produit._id));
     }
     else{
         console.log('test 1: absent');
