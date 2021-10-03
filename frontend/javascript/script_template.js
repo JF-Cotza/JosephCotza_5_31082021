@@ -18,11 +18,11 @@ if (getId('totalPanier')) {
 
 
 const allreadyExisting=(param_produit)=>{
-    let commande=getClass('commande'); 
+    let commande=getClass('commande')[0]; 
     let parag = document.createElement('p')
     let text;
     for (let entry of getItem(param_produit._id)) {
-        text+='test 5: present: key' + entry.key + 'value' + entry.value;      
+        text+='test 6: present: key' + entry.key + 'value' + entry.value;      
     }
     
     parag.textContent = text;
