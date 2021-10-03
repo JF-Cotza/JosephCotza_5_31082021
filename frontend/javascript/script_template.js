@@ -22,7 +22,9 @@ const allreadyExisting=(param_produit)=>{
     let parag = document.createElement('p')
     let text;
     for (let entry of getItem(param_produit._id)) {
-        text+='test 4: present: key' + entry.key + 'value' + entry.value;      
+        text+='test 5: present: key' + entry.key + 'value' + entry.value;      
     }
+    
     parag.textContent = text;
+    commande.appendChild(parag);
 }

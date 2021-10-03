@@ -235,7 +235,7 @@ const productShowing = (param_copy, param_produit, param_body) => {
     param_body.appendChild(param_copy); //on crée la carte produit
 
     if (getItem(param_produit._id)){
-            allreadyExisting();
+        allreadyExisting(param_produit);
     }
 
 
