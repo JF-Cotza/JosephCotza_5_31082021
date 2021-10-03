@@ -102,6 +102,11 @@ const storeToLocal = (param_produit) => {
             return 1;
         return 0;
     });
+
+    //si l'objet est déjà dans le localStorage, on le supprime ce qui permettra de mettre à jour à partir de la sélection actuelle.
+    if (getItem(param_produit._id)){
+        localStorage.remove(param_produit._id);
+    }
     //on stock en local
     storage(param_produit._id, selectedProduct);
 }
@@ -228,6 +233,12 @@ const productShowing = (param_copy, param_produit, param_body) => {
 
     image.setAttribute('alt', imageAlt);
     param_body.appendChild(param_copy); //on crée la carte produit
+
+    if (getItem(param_produit.id)){
+        console.log(getItem(param_produit.id));
+    }
+
+
     //on regarde si une option est sélectionnée
     productOptionListener(param_produit, option); //surveille si une option est sélectionnée
     let submit = getClass('submit');
