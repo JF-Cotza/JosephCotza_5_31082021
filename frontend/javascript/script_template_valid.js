@@ -235,13 +235,9 @@ const productShowing = (param_copy, param_produit, param_body) => {
     param_body.appendChild(param_copy); //on crée la carte produit
 
     if (getItem(param_produit._id)){
-        for (let entry of getItem(param_produit._id )){
-        console.log('test 3: present: ' + entry.key + ' ' + entry.value);
-        }
+            allreadyExisting();
     }
-    else{
-        console.log('test 3: absent');
-    }
+
 
     //on regarde si une option est sélectionnée
     productOptionListener(param_produit, option); //surveille si une option est sélectionnée
