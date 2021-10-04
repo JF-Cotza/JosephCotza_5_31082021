@@ -11214,10 +11214,6 @@ img {
   margin-top: 10px;
 }
 
-#price::after {
-  content: " €";
-}
-
 .h3 {
   font-size: 1rem;
   font-weight: bolder;
@@ -11250,8 +11246,12 @@ img {
   font-size: 1rem;
 }
 
-.unitaire:hover {
+.nom:hover, .unitaire:hover {
   background: red;
+}
+
+#price::after {
+  content: " €";
 }
 
 /*# sourceMappingURL=style.css.map */

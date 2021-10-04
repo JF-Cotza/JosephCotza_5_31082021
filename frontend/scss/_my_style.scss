@@ -3,11 +3,9 @@
     visibility: collapse;
 }
 
-
 .col-12{
     background: yellowgreen;
 }
-
 
 .truncate-overflow{
     overflow: auto;
@@ -44,8 +42,7 @@
 }
 
 .border-solid, .border-left, .border-right{
-    border:2px solid black;    
-    
+    border:2px solid black;       
 }
 
 .border-solid{
@@ -77,10 +74,10 @@
 .border-optionBottom{
     border-left:2px solid black;
     border-right:2px solid black;
-    border-bottom:2px solid black;
-    
+    border-bottom:2px solid black; 
     text-align: center;
 }
+
 .border-command{
     border: 1px solid grey;
 }
@@ -106,16 +103,10 @@ img{
     margin-top: 10px;
 }
 
-#price::after{
-    content:' €';
-}
-
 .h3{
     font-size: 1rem;
     font-weight: bolder;
 }
-
-
 
 #logo{
     border: 2px solid black;
@@ -139,12 +130,19 @@ img{
 }
 
 .singlePricePanier::after{
-    content: '\€ pièce';
+    content: '€ pièce';
     border:5px solid red;
     font-size: 1rem;
 }
 
-.unitaire:hover{
+
+.nom:hover, .unitaire:hover{
     background: red;
 }
+
+
+#price::after{
+    content:' €';
+}
+
 
