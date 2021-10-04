@@ -2,7 +2,7 @@
 const confirmFill=()=>{
     //getId('customerName').textContent=customer.lastName;
     getId('totalAmount').textContent=getItem('totalPanier');
-    console.log('confirmation fill test 7');
+    console.log('confirmation fill test 8');
 }
 
 

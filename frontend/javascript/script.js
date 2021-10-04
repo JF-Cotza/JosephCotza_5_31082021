@@ -20,7 +20,7 @@ if (toConfirmation){
             console.log(getCustomerDatas()); //récupère les données du client
             localStorage.clear();
             storage('totalPanier', totalPanier());
-            console.log('confirmation 6');
+            console.log('confirmation 8');
             //fetchCustomer();
         }
     })
