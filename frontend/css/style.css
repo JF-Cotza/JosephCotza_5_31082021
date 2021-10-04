@@ -11231,6 +11231,8 @@ img {
 #logo {
   border: 2px solid black;
   border-radius: 10px;
+  max-width: 400px;
+  height: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
