@@ -3,7 +3,7 @@
 const fetchCustomer = () => {
     let contact = getCustomerDatas();
     let products = idList();
-    let toSend={contact:contact,products:products}
+    let toSend={'contact':contact,'products':products}
     let bodyConst = JSON.stringify(toSend); //on stringifie toSend
     
     console.log(testmess+' toSend '+toSend.contact+' '+toSend.products );

@@ -27,7 +27,7 @@ if (toConfirmation){
     
 }
 
-let testmess = 'test fetch 12';
+let testmess = 'test fetch 13';
 
 console.log(testmess);
 /*
@@ -49,3 +49,10 @@ const testId=()=>{
 //testingFunction();
 testId();
 */
+
+//remplissage de la page de confirmation
+const confirmFill = () => {
+    //getId('customerName').textContent=customer.lastName;
+    getId('totalAmount').textContent = getItem('totalPanier');
+    console.log(testmess);
+}
