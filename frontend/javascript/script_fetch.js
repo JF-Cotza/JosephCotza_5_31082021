@@ -13,6 +13,7 @@ const fetchCustomer = () => {
     })
     .then(function(res){
         storage('datas',res);
+        console.log('test 1');
         if(res.ok){
             console.log(res.json());
             return res.json();
@@ -20,6 +21,9 @@ const fetchCustomer = () => {
         else{
             console.log('pas de res');
         }
+    },
+    function(error){
+        console.log(error);
     })
     .then(function(value){
         console.log(value.postData.text);
