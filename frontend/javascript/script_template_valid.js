@@ -255,7 +255,10 @@ const productShowing = (param_copy, param_produit, param_body) => {
             }
 
             if (getItem(param_produit._id)) {
-                infos.textContent = 'Produit déjà choisi';
+                localStorage.remove(param_produit._id);
+                if (exist > 0) {
+                    storeToLocal(param_produit);
+                }
             }
             else {
                 if (exist > 0) {
