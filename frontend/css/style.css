@@ -11240,6 +11240,10 @@ img {
   display: inline-block;
 }
 
+.singlePricePanier {
+  position: relative;
+}
+
 .singlePricePanier::after {
   content: "€ pièce";
   border: 5px solid red;
@@ -11256,7 +11260,7 @@ img {
 }
 
 .unitaire:hover {
-  background: red;
+  background: yellow;
 }
 
 #price::after {
