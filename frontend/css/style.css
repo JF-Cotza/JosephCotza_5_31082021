@@ -11223,4 +11223,8 @@ img {
   font-weight: bolder;
 }
 
+.singlePricePanier::after {
+  content: "€ pièce";
+}
+
 /*# sourceMappingURL=style.css.map */
