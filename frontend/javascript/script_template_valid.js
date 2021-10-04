@@ -126,7 +126,7 @@ const productOptionListener = (param_produit, param_option) => {
                 infos.textContent = 'Option déjà sélectionnée';
             }
             else {
-                optionMaker(param_produit, param_option);
+                optionMaker(param_produit, param_option,1);
                 infos.textContent = '';
             }
         }
@@ -150,7 +150,7 @@ const productOptionListener = (param_produit, param_option) => {
 }
 
 //crée l'input pour les options et les quantités
-const optionMaker = (param_produit, param_option) => {
+const optionMaker = (param_produit, param_option,param_quantity) => {
     let label = document.createElement('Label');
     let input = document.createElement('input');
     let commande = getClass('commande')[0];
@@ -166,7 +166,7 @@ const optionMaker = (param_produit, param_option) => {
     input.setAttribute('key', param_option.value);  //servira de controle pour savoir la couleur a déjà été sélectionnée
     input.type = 'number';
     input.setAttribute('min', 0);
-    input.value = 1;
+    input.value = param_quantity;
     input.classList.add('qty');
     commande.appendChild(label);
     commande.appendChild(input);
@@ -556,7 +556,7 @@ const totalPanier = () => {
         total +=totalList[i];
     }
 
-    let tot = 'test 24: '+total;
+    //let tot = 'test 24: '+total;
 
-    return tot;
+    return total;
 }
