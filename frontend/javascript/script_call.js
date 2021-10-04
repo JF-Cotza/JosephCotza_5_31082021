@@ -7,8 +7,7 @@ if (getId('allProducts')) {
 //product.html
 if (getId('productCommand')) {
     let value = getInUrl('id');
-    fetchProduct(value);
-    
+    fetchProduct(value);   
 };
 
 //panier.html

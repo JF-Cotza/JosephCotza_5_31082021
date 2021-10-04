@@ -1,11 +1,11 @@
-let testmess='test fetch 5';
+
 
 const fetchCustomer = () => {
     let contact = getCustomerDatas();
     let products = idList();
-
+    let toSend={'contact':contact,'products':products}
     const bodyConst = {
-        contact,products           
+        toSend//contact,products           
     };
     console.log(bodyConst);
     const promise = fetch(apiLink+'/order', {
