@@ -11,7 +11,7 @@ const fetchCustomer = () => {
     const promise = fetch(apiLink+'/order', {
         method: "POST",
         headers: {
-            'Accept': 'application/json',
+           // 'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: bodyConst
