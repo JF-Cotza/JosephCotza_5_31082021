@@ -8,7 +8,7 @@ const fetchCustomer = () => {
     
     console.log(testmess+' toSend '+toSend.contact+' '+toSend.products );
     console.log('bodyConst: '+bodyConst);
-    
+    console.log('bibi');
     /*
     promise = fetch(apiLink+'/order', {
         method: "POST",
