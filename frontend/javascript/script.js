@@ -6,6 +6,7 @@ let toConfirmation = getId('toConfirmation');
 
 if (toConfirmation){
     toConfirmation.addEventListener('click',(e)=>{
+        
         if (checkValidity().total!=0){ //il y a au moins 1 erreur
             e.preventDefault();
             infos.textContent = checkValidity().message;
@@ -17,7 +18,8 @@ if (toConfirmation){
            // e.preventDefault();
             console.log(idList()); //génére la liste des id
             console.log(getCustomerDatas()); //récupère les données du client
-            storage('totalPanier',totalPanier())
+            localStorage.clear();
+            storage('totalPanier', totalPanier())
             fetchCustomer();
         }
     })
