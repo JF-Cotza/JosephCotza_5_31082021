@@ -18,14 +18,14 @@ if (getId('totalPanier')) {
 
 
 const allreadyExisting=(param_produit)=>{
-    let commande=getClass('commande')[0]; 
-    let parag = document.createElement('p')
-    let text;
+    //let commande=getClass('commande')[0]; 
+    //let parag = document.createElement('p')
+    //let text='';
     for (let entry of getItem(param_produit._id)) {
-        optionMaker(param_produit,entry.key,entry.value);
-        text+='test 9: present: key' + entry.key + 'value' + entry.value+' id'+param_produit._id;      
+        let param_option={'value':entry.key};
+        optionMaker(param_produit,param_option,entry.value);
     }
     
-    parag.textContent = text;
-    commande.appendChild(parag);
+    //parag.textContent = text;
+    //commande.appendChild(parag);
 }
