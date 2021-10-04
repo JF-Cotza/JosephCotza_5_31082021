@@ -9,7 +9,7 @@ const fetchCustomer = () => {
             email: 'string'
          };
          //getCustomerDatas();
-    let productsend = {'id':1}; //idList();
+    let productsend = ['id1']; //idList();
     /*let toSend={'contact':contact,'products':products}
     let bodyConst = JSON.stringify(toSend); //on stringifie toSend
     
@@ -24,8 +24,9 @@ const fetchCustomer = () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            contact:contacting,
-            products:productsend
+            
+            products:productsend,
+            contact: contacting
         }) ,
     })
     promise.then(async (res)=>{
