@@ -6,9 +6,9 @@ const fetchCustomer = () => {
     let toSend={contact:contact,products:products}
     let bodyConst = JSON.stringify(toSend); //on stringifie toSend
     
-    console.log('toSend '+toSend.contact+' '+toSend.products );
-    //console.log('bodyConst: '+bodyConst);
-    const promise = fetch(apiLink+'/order', {
+    console.log(testmess+' toSend '+toSend.contact+' '+toSend.products );
+    console.log('bodyConst: '+bodyConst);
+/*    const promise = fetch(apiLink+'/order', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -32,7 +32,7 @@ const fetchCustomer = () => {
         catch(error){
             console.log(error.message);
         }       
-    })
+    })*/
 }
 
     /*(error)=>{
