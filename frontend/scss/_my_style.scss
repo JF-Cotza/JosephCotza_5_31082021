@@ -116,5 +116,6 @@ img{
 }
 
 .singlePricePanier::after{
-    content:'€ pièce';
+    content:'\€ pièce';
+    border:5px solid red;
 }

@@ -11225,6 +11225,7 @@ img {
 
 .singlePricePanier::after {
   content: "€ pièce";
+  border: 5px solid red;
 }
 
 /*# sourceMappingURL=style.css.map */
