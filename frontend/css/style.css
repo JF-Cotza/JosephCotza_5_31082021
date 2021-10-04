@@ -11223,12 +11223,6 @@ img {
   font-weight: bolder;
 }
 
-.singlePricePanier::after {
-  content: "€ pièce";
-  border: 5px solid red;
-  font-size: 1rem;
-}
-
 #logo {
   border: 2px solid black;
   border-radius: 10px;
@@ -11248,6 +11242,16 @@ img {
 .w-30 {
   width: 30%;
   display: inline-block;
+}
+
+.singlePricePanier::after {
+  content: "€ pièce";
+  border: 5px solid red;
+  font-size: 1rem;
+}
+
+.unitaire:hover {
+  background: red;
 }
 
 /*# sourceMappingURL=style.css.map */
