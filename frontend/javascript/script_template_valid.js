@@ -143,6 +143,9 @@ const optionMaker = (param_produit, param_option,param_quantity) => {
     //définition du label
     label.setAttribute('for', param_produit.colors[param_option.value]);
     label.setAttribute('key', param_option.value);
+    label.classList.add('grey-3');
+    label.classList.add('border-optionTop');
+    label.classList.add('mt-2');
     label.innerHTML = param_produit.colors[param_option.value];
 
     //définition de l'input
@@ -153,6 +156,8 @@ const optionMaker = (param_produit, param_option,param_quantity) => {
     input.setAttribute('min', 0);
     input.value = param_quantity;
     input.classList.add('qty');
+    input.classList.add('border-optionBottom');
+    input.classList.add('mb-2');
     commande.appendChild(label);
     commande.appendChild(input);
 }
