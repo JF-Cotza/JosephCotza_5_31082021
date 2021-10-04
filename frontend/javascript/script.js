@@ -1,5 +1,3 @@
-// fonction
-
 //variables
 
 let toConfirmation = getId('toConfirmation');

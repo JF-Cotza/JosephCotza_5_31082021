@@ -16,6 +16,14 @@ const fetchCustomer = () => {
     console.log(testmess+' toSend '+toSend.contact+' '+toSend.products );
     console.log('bodyConst: '+bodyConst);
     console.log('bibi');
+
+    !req.body.contact.firstName ||
+    !req.body.contact.lastName ||
+    !req.body.contact.address ||
+    !req.body.contact.city ||
+    !req.body.contact.email ||
+    !req.body.products) {
+
     */
     let promise = fetch(apiLink+'/order', {
         method: "POST",
@@ -23,12 +31,10 @@ const fetchCustomer = () => {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            
-            products:productsend,
-            contact: contacting
-        }) ,
-    })
+        body: 
+            JSON.stringify({contact: contacting, products:productsend})            
+        })
+    
     promise.then(async (res)=>{
         console.log('lac titi caca');
         try{
