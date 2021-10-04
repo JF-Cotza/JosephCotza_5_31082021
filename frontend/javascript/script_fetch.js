@@ -1,13 +1,14 @@
 
 
 const fetchCustomer = () => {
-    let contact = getCustomerDatas();
+    let contact = 'toto';//getCustomerDatas();
     let products = idList();
     let toSend={'contact':contact,'products':products}
     const bodyConst = {
-        toSend//contact,products           
+        toSend
+                   
     };
-    console.log(bodyConst);
+    console.log('toSend '+toSend.contact+' '+toSend.products );
     const promise = fetch(apiLink+'/order', {
         method: "POST",
         headers: {
