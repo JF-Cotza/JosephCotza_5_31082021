@@ -9,7 +9,7 @@ const fetchCustomer = () => {
                    
     };
     console.log('toSend '+toSend.contact+' '+toSend.products );
-    console.log('bodyConst: '+bodyConst);
+    //console.log('bodyConst: '+bodyConst);
     const promise = fetch(apiLink+'/order', {
         method: "POST",
         headers: {
