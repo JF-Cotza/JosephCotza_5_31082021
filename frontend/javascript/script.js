@@ -25,9 +25,7 @@ if (toConfirmation){
     
 }
 
-let testmess = 'test fetch 11';
 
-console.log(testmess);
 /*
 let given_id = '5beaa8bf1c9d440000a57d94';
 
@@ -54,3 +52,7 @@ const confirmFill = () => {
     getId('totalAmount').textContent = getItem('totalPanier');
     console.log(testmess);
 }
+
+let testmess = 'test fetch 13';
+
+console.log(testmess);
