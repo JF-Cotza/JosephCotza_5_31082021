@@ -11244,9 +11244,18 @@ img {
   content: "€ pièce";
   border: 5px solid red;
   font-size: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
 }
 
-.nom:hover, .unitaire:hover {
+.unitaire {
+  position: relative;
+}
+
+.unitaire:hover {
   background: red;
 }
 
