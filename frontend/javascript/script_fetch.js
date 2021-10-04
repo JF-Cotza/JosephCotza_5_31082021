@@ -1,5 +1,3 @@
-
-
 const fetchCustomer = () => {
     let contacting = {
             firstName: 'string',
@@ -8,15 +6,16 @@ const fetchCustomer = () => {
             city: 'string',
             email: 'string'
          };
+
          //getCustomerDatas();
     let productsend = JSON.stringify(['id1']); //idList();
     contacting=JSON.stringify(contacting);
+
     /*let toSend={'contact':contact,'products':products}
     let bodyConst = JSON.stringify(toSend); //on stringifie toSend
     
     console.log(testmess+' toSend '+toSend.contact+' '+toSend.products );
     console.log('bodyConst: '+bodyConst);
-    console.log('bibi');
 
     !req.body.contact.firstName ||
     !req.body.contact.lastName ||
@@ -34,10 +33,10 @@ const fetchCustomer = () => {
         },
         body: 
             {contact: contacting, products:productsend}           
-        })
+        });
     
     promise.then(async (res)=>{
-        console.log('lac titi caca');
+        console.log('contact:'+ contact);
         try{
             //storage('datas',res);
             console.log('in promise '+testmess);
