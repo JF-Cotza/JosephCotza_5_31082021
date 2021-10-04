@@ -27,7 +27,9 @@ if (toConfirmation){
     
 }
 
-let testmess = 'test fetch 10';
+let testmess = 'test fetch 11';
+
+console.log(testmess);
 /*
 let given_id = '5beaa8bf1c9d440000a57d94';
 

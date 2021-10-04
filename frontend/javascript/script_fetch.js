@@ -3,11 +3,9 @@
 const fetchCustomer = () => {
     let contact = getCustomerDatas();
     let products = idList();
-    let toSend={'contact':contact,'products':products}
-    const bodyConst = {
-        toSend
-                   
-    };
+    let toSend={contact:contact,products:products}
+    let bodyConst = JSON.stringify(toSend); //on stringifie toSend
+    
     console.log('toSend '+toSend.contact+' '+toSend.products );
     //console.log('bodyConst: '+bodyConst);
     const promise = fetch(apiLink+'/order', {
@@ -16,7 +14,7 @@ const fetchCustomer = () => {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body:JSON.stringify(bodyConst) //on stringifie la constante body
+        body: bodyConst
     });
     
     promise.then(async (res)=>{
