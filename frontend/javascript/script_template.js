@@ -1,6 +1,6 @@
 //remplissage de la page de confirmation
 const confirmFill=()=>{
-    getId('customerName').textContent=customer.lastName;
+    //getId('customerName').textContent=customer.lastName;
     getId('totalAmount').textContent=getItem('totalPanier');
     console.log('confirmation test 2');
 }
