@@ -11226,6 +11226,7 @@ img {
 .singlePricePanier::after {
   content: "€ pièce";
   border: 5px solid red;
+  font-size: 1rem;
 }
 
 #logo {
