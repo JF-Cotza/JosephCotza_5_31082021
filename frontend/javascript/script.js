@@ -27,7 +27,7 @@ if (toConfirmation){
     
 }
 
-let testmess = 'test fetch 5';
+let testmess = 'test fetch 6';
 
 console.log(testmess);
 /*

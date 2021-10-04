@@ -1,8 +1,15 @@
 
 
 const fetchCustomer = () => {
-    let contacting = getCustomerDatas();
-    let productsend = idList();
+    let contacting = {
+            firstName: 'string',
+            lastName: 'string',
+            address: 'string',
+            city: 'string',
+            email: 'string'
+         };
+         //getCustomerDatas();
+    let productsend = [1, 2]//idList();
     /*let toSend={'contact':contact,'products':products}
     let bodyConst = JSON.stringify(toSend); //on stringifie toSend
     
@@ -21,7 +28,7 @@ const fetchCustomer = () => {
             products:productsend
         }) ,
     })
-    .then(async (res)=>{
+    promise.then(async (res)=>{
         console.log('lac titi caca');
         try{
             //storage('datas',res);
