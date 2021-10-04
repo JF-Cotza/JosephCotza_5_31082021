@@ -255,7 +255,7 @@ const productShowing = (param_copy, param_produit, param_body) => {
             }
 
             if (getItem(param_produit._id)) {
-                localStorage.remove(param_produit._id);
+                localStorage.removeItem(param_produit._id);
                 if (exist > 0) {
                     storeToLocal(param_produit);
                 }
