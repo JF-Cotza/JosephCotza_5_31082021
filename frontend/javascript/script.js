@@ -30,7 +30,7 @@ if (toConfirmation){
 let given_id = '5beaa8bf1c9d440000a57d94';
 
 const testId=()=>{
-    fetch(apiLink +'/:_id',given_id)
+    fetch(apiLink +'/'+given_id)
     .then(function(res){
         return res.json()
     })

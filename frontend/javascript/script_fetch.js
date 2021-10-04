@@ -14,6 +14,7 @@ const fetchCustomer = () => {
     .then(function(res){
         storage('datas',res);
         if(res.ok){
+            console.log(res.json());
             return res.json();
         }
         else{
