@@ -11235,4 +11235,10 @@ img {
   height: auto;
 }
 
+#allProducts img {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
