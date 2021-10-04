@@ -11244,19 +11244,16 @@ img {
   position: relative;
 }
 
-.singlePricePanier::after {
-  content: " €";
-  border: 5px solid red;
-  font-size: 1rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50px;
-  height: 50px;
-}
-
 .unitaire {
   position: relative;
+}
+
+.unitaire span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: aqua;
+  z-index: 2;
 }
 
 .unitaire:hover {
