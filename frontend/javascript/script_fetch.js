@@ -3,6 +3,7 @@ const fetchCustomer = () => {
         contact: getCustomerDatas(),
         products: idList()
     };
+
     const promise = fetch(apiLink+'/order', {
         method: "POST",
         headers: {
@@ -10,12 +11,12 @@ const fetchCustomer = () => {
             'Content-Type': 'application/json'
         },
         body:JSON.stringify(bodyConst) //on stringifie la constante body
-    })
+    });
     
     promise.then(async (res)=>{
         try{
-            storage('datas',res);
-            console.log('test 2');
+            //storage('datas',res);
+            console.log('test 3');
             if(res.ok){
                 console.log(res.json());
                 return res.json();
@@ -23,12 +24,14 @@ const fetchCustomer = () => {
             else{
                 console.log('pas de res');
             }
-        }catch(error){
+        }
+        catch(error){
             console.log(error);
         }       
-    },
+    })
+}
 
-    (error)=>{
+    /*(error)=>{
         console.log(error);
     })
     .then(function(value){
@@ -37,5 +40,7 @@ const fetchCustomer = () => {
         
     })
     .catch((error)=>mistake(error))
-}
+}*/
+
+
 
