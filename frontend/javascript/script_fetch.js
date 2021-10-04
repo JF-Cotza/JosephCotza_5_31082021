@@ -37,6 +37,7 @@ const fetchCustomer = () => {
     
     promise.then(async (res)=>{
         console.log('contact:'+ contact);
+        /*
         try{
             //storage('datas',res);
             console.log('in promise '+testmess);
@@ -47,11 +48,12 @@ const fetchCustomer = () => {
             else{
                 console.log('pas de res');
             }
-        }
+        }    
         catch(error){
             console.log(error.message);
-        }      
+        }*/      
     })
+    .catch((error)=>{console.log('catch: '+error.message )})
 }
 
     /*(error)=>{
