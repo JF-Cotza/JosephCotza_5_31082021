@@ -8,16 +8,16 @@ const fetchCustomer = () => {
     
     console.log(testmess+' toSend '+toSend.contact+' '+toSend.products );
     console.log('bodyConst: '+bodyConst);
-    const promise = fetch(apiLink+'/order', {
+    promise = fetch(apiLink+'/order', {
         method: "POST",
         headers: {
-           // 'Accept': 'application/json',
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: bodyConst
-    });
-    
-    promise.then(async (res)=>{
+        body: bodyConst,
+    })
+    .then(async (res)=>{
+        console.log('lac titi caca');
         try{
             //storage('datas',res);
             console.log('in promise '+testmess);
