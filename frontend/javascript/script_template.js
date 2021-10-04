@@ -23,7 +23,7 @@ const allreadyExisting=(param_produit)=>{
     let text;
     for (let entry of getItem(param_produit._id)) {
         optionMaker(param_produit,entry.key,entry.value)
-        text+='test 7: present: key' + entry.key + 'value' + entry.value;      
+        text+='test 8: present: key' + entry.key + 'value' + entry.value+' id'+param_produit._id;      
     }
     
     parag.textContent = text;
