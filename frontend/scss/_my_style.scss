@@ -134,7 +134,7 @@ img{
 }
 
 .singlePricePanier::after{
-    content: '€ pièce';
+    content:' €';
     border:5px solid red;
     font-size: 1rem;
     position: absolute;
@@ -149,7 +149,7 @@ img{
 }
 
 .unitaire:hover{
-    background: yellow;
+    background: blue;
 }
 
 
