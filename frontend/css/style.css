@@ -11246,6 +11246,7 @@ img {
 
 .w-30 {
   width: 30%;
+  display: inline-block;
 }
 
 /*# sourceMappingURL=style.css.map */
