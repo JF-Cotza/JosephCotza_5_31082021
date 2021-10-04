@@ -18,24 +18,24 @@ if (toConfirmation){
             console.log(idList()); //génére la liste des id
             console.log(getCustomerDatas()); //récupère les données du client
             storage('totalPanier',totalPanier())
+            fetchCustomer();
         }
     })
     
 }
 
-/*
+let given_id = '5beaa8bf1c9d440000a57d94';
+
 const testId=()=>{
-    fetch(apiLink +'/:_id=5beaa8bf1c9d440000a57d94')
+    fetch(apiLink +'/:_id',given_id)
     .then(function(res){
         return res.json()
     })
     .then((data)=>{
-        
-            console.log(data)
+            console.log(data.name)
    })
     .catch((error)=>console.log("pas d'id : "+error.message))
 }
 
 //testingFunction();
 testId();
-*/

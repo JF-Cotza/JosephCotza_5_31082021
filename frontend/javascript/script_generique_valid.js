@@ -79,7 +79,7 @@ const afficherLePanier = (param_totalPanier) => {
     else {
         let span = document.createElement('span');
         look.title = 'afficher le panier';
-        span.textContent = `Le panier contient :${param_totalPanier} produits`
+        span.textContent = `Le panier contient :${param_totalPanier} produits`;
         textLook.appendChild(span);
     }
 }

@@ -134,26 +134,6 @@ const productOptionListener = (param_produit, param_option) => {
     })
 }
 
-const quantityListener=(param_quantity)=>{
-    if (param_quantity) {
-        for (let member of param_quantity) {
-            member.addEventListener('change', (e) => {
-                if (e.target.value == 0) {
-                    let toSuppress = e.target.getAttribute('key');
-                    e.target.remove();
-                    let labels = document.getElementsByTagName('label');
-                    for (let lab of labels) {
-                        if (getAttribute(lab, 'key') == toSuppress) {
-                            lab.remove();
-                        }
-                    }
-                }
-            })
-        }
-    }
-}
-
-
 //crée l'input pour les options et les quantités
 const optionMaker = (param_produit, param_option,param_quantity) => {
     let label = document.createElement('Label');
@@ -274,6 +254,36 @@ const productShowing = (param_copy, param_produit, param_body) => {
                 }
             }
         })
+    }
+}
+
+//vérifie si le produit existe déjà dans le panier
+const allreadyExisting = (param_produit) => {
+    for (let entry of getItem(param_produit._id)) {
+        let param_option = { 'value': entry.key };
+        optionMaker(param_produit, param_option, entry.value);
+    }
+    let qty = getClass('qty');
+    quantityListener(qty);
+}
+
+//surveille l'évolution des options produits
+const quantityListener = (param_quantity) => {
+    if (param_quantity) {
+        for (let member of param_quantity) {
+            member.addEventListener('change', (e) => {
+                if (e.target.value == 0) {
+                    let toSuppress = e.target.getAttribute('key');
+                    e.target.remove();
+                    let labels = document.getElementsByTagName('label');
+                    for (let lab of labels) {
+                        if (getAttribute(lab, 'key') == toSuppress) {
+                            lab.remove();
+                        }
+                    }
+                }
+            })
+        }
     }
 }
 

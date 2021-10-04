@@ -1,4 +1,14 @@
+//remplissage de la page de confirmation
+const confirmFill=()=>{
+    getId('customerName').textContent=customer.lastName;
+    getId('totalAmount').textContent=getItem('totalPanier');
+    console.log('confirmation test 2');
+}
 
+
+
+
+/*
 const majPanier=()=>{
     let panier=getId('totalPanier');
     let inputs = getClass('optionQuantityPanier');
@@ -15,19 +25,5 @@ const majPanier=()=>{
 if (getId('totalPanier')) {
     majPanier()
 }
+*/
 
-
-const allreadyExisting=(param_produit)=>{
-    //let commande=getClass('commande')[0]; 
-    //let parag = document.createElement('p')
-    //let text='';
-    for (let entry of getItem(param_produit._id)) {
-        let param_option={'value':entry.key};
-        optionMaker(param_produit,param_option,entry.value);
-        
-    }
-    let qty = getClass('qty');
-    quantityListener(qty);
-    //parag.textContent = text;
-    //commande.appendChild(parag);
-}
