@@ -16,9 +16,9 @@ const fetchCustomer = () => {
         },
         body: bodyConst,
     })
-    .then(async (res)=>{
+    /*.then(async (res)=>{
         console.log('lac titi caca');
-       /* try{
+        try{
             //storage('datas',res);
             console.log('in promise '+testmess);
             if(res.ok){
@@ -31,8 +31,8 @@ const fetchCustomer = () => {
         }
         catch(error){
             console.log(error.message);
-        }*/       
-    })
+        }      
+    })*/
 }
 
     /*(error)=>{
