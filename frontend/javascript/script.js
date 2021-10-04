@@ -15,7 +15,7 @@ if (toConfirmation){
             console.log('totalPanier'+ totalPanier());
         }
         else if (checkValidity().total= 0){  //il n'y a pas d'erreur
-            //e.preventDefault();
+            e.preventDefault();
             console.log(idList()); //génére la liste des id
             console.log(getCustomerDatas()); //récupère les données du client
             localStorage.clear();
