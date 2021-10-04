@@ -8,6 +8,8 @@ const fetchCustomer = () => {
     
     console.log(testmess+' toSend '+toSend.contact+' '+toSend.products );
     console.log('bodyConst: '+bodyConst);
+    
+    /*
     promise = fetch(apiLink+'/order', {
         method: "POST",
         headers: {
@@ -16,7 +18,7 @@ const fetchCustomer = () => {
         },
         body: bodyConst,
     })
-    /*.then(async (res)=>{
+    .then(async (res)=>{
         console.log('lac titi caca');
         try{
             //storage('datas',res);
