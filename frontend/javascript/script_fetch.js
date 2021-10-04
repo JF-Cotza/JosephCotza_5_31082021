@@ -1,3 +1,5 @@
+let testmess='test fetch 5';
+
 const fetchCustomer = () => {
     let contact = getCustomerDatas();
     let products = idList();
@@ -18,7 +20,7 @@ const fetchCustomer = () => {
     promise.then(async (res)=>{
         try{
             //storage('datas',res);
-            console.log('test 4');
+            console.log('in promise '+testmess);
             if(res.ok){
                 console.log(res.json());
                 return res.json();
