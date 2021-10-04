@@ -11250,7 +11250,7 @@ img {
 
 .unitaire span {
   position: absolute;
-  right: -10px;
+  right: 20px;
   top: 0;
   z-index: 2;
 }
