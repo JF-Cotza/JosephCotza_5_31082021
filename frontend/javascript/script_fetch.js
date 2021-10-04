@@ -9,7 +9,7 @@ const fetchCustomer = () => {
             email: 'string'
          };
          //getCustomerDatas();
-    let productsend = [1, 2]//idList();
+    let productsend = [1]//idList();
     /*let toSend={'contact':contact,'products':products}
     let bodyConst = JSON.stringify(toSend); //on stringifie toSend
     
