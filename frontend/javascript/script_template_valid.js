@@ -130,24 +130,29 @@ const productOptionListener = (param_produit, param_option) => {
                 infos.textContent = '';
             }
         }
-        if (qty) {
-            for (let member of qty) {
-                member.addEventListener('change', (e) => {
-                    if (e.target.value == 0) {
-                        let toSuppress = e.target.getAttribute('key');
-                        e.target.remove();
-                        let labels = document.getElementsByTagName('label');
-                        for (let lab of labels) {
-                            if (getAttribute(lab, 'key') == toSuppress) {
-                                lab.remove();
-                            }
-                        }
-                    }
-                })
-            }
-        }
+        quantityListener(qty)
     })
 }
+
+const quantityListener=(param_quantity)=>{
+    if (param_quantity) {
+        for (let member of param_quantity) {
+            member.addEventListener('change', (e) => {
+                if (e.target.value == 0) {
+                    let toSuppress = e.target.getAttribute('key');
+                    e.target.remove();
+                    let labels = document.getElementsByTagName('label');
+                    for (let lab of labels) {
+                        if (getAttribute(lab, 'key') == toSuppress) {
+                            lab.remove();
+                        }
+                    }
+                }
+            })
+        }
+    }
+}
+
 
 //crée l'input pour les options et les quantités
 const optionMaker = (param_produit, param_option,param_quantity) => {
