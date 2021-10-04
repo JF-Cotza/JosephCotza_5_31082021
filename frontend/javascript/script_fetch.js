@@ -1,9 +1,11 @@
 const fetchCustomer = () => {
-    const bodyConst = {
-        contact: getCustomerDatas(),
-        products: idList()
-    };
+    let contact = getCustomerDatas();
+    let products = idList();
 
+    const bodyConst = {
+        contact,products           
+    };
+    console.log(bodyConst);
     const promise = fetch(apiLink+'/order', {
         method: "POST",
         headers: {
@@ -16,7 +18,7 @@ const fetchCustomer = () => {
     promise.then(async (res)=>{
         try{
             //storage('datas',res);
-            console.log('test 3');
+            console.log('test 4');
             if(res.ok){
                 console.log(res.json());
                 return res.json();
