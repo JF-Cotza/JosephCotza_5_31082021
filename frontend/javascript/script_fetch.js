@@ -32,10 +32,11 @@ const fetchCustomer = () => {
             'Content-Type': 'application/json'
         },
         body: 
-            {contact: contacting, products:productsend}           
+            JSON.stringify({contact: contacting, products:productsend})           
         });
     
-    promise.then(async (res)=>{
+    promise
+        .then(async (res)=>{
         console.log('contact:'+ contact);
         /*
         try{
@@ -52,8 +53,8 @@ const fetchCustomer = () => {
         catch(error){
             console.log(error.message);
         }*/      
-    })
-    .catch((error)=>{console.log('catch: '+error.message )})
+        })
+        .catch((error)=>{console.log('catch: '+error.message )})
 }
 
     /*(error)=>{
