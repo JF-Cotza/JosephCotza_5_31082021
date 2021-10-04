@@ -24,9 +24,10 @@ const allreadyExisting=(param_produit)=>{
     for (let entry of getItem(param_produit._id)) {
         let param_option={'value':entry.key};
         optionMaker(param_produit,param_option,entry.value);
-        listenChange();
+        
     }
-    
+    let qty = getClass('qty');
+    quantityListener(qty);
     //parag.textContent = text;
     //commande.appendChild(parag);
 }
