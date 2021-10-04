@@ -11235,13 +11235,13 @@ img {
   height: auto;
 }
 
-#allProducts img {
+#allProducts img, .cardImage {
   border: 1px solid black;
   border-radius: 10px;
 }
 
-.cardLink {
-  margin-top: 5px;
+.cardLink, .cardImage {
+  margin-top: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
