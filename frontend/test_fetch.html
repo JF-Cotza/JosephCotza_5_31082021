@@ -55,8 +55,8 @@
                 body: JSON.stringify(bodycontent)
             })
             .then((res)=>{
-                    console.log('bodycontent: '+bodycontent);
-                    console.log('res return: '+res.json());
+                    console.log('fetch bodycontent: '+bodycontent);
+                    console.log('fetch res return: '+res.json());
                     return res.json()
                 })
             .then((value)=>{
@@ -92,8 +92,7 @@
                 !req.body.products) {
 */
 
-    function send() {
-       
+    function send() {  
         fetch(apilink, {
             method: "POST",
             headers: {
@@ -116,7 +115,6 @@
             });
     }
 
-   // document.getElementById("form").addEventListener("submit", send);
 
 
 
