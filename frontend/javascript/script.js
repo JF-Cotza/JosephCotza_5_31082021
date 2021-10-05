@@ -42,6 +42,7 @@ if (toConfirmation){
                 products: prod()
             }
 
+            console.log(apilink);
                             //callingF(bodycontent)
                 fetch(apilink, {
                     method: "POST",
@@ -50,6 +51,7 @@ if (toConfirmation){
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(bodyFonction)
+                        
                 })
                     .then(async (res) => {
                         console.log(apilink);
@@ -73,7 +75,7 @@ if (toConfirmation){
     
 }
 
-console.log('test direct 4');
+console.log('test direct 5');
 
 /*
 let given_id = '5beaa8bf1c9d440000a57d94';
