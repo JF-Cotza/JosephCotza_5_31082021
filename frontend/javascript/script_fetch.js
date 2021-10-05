@@ -49,7 +49,7 @@
 
 const fetchCustomer = () => {   
     let bodyContent={
-        contact:getCustomerDatas(),
+        contact: getCustomerDatas(),
         products: idList()
     }
     
@@ -61,13 +61,14 @@ const fetchCustomer = () => {
         },
         body: JSON.stringify(bodyContent)
     })
-        .then( (res)=>{
-        console.log('contact:'+ res.json());
-        console.log('test X4');
+        .then((res)=>{
+            console.log('contact:'+ res.json());
+            
         })
         .catch((error)=>{console.log('catch: '+error.message )})
 }
 
+console.log('test X5');
 
 
 
