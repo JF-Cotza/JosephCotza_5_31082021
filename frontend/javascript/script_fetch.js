@@ -59,12 +59,12 @@ const fetchCustomer = () => {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(bodycontent)
+        body: JSON.stringify(bodyContent)
     })
   
         .then( (res)=>{
         console.log('contact:'+ res.json());
-        console.log('test X2')
+        console.log('test X3')
         })
         .catch((error)=>{console.log('catch: '+error.message )})
 }
