@@ -61,14 +61,17 @@ const fetchCustomer = () => {
         },
         body: JSON.stringify(bodyContent)
     })
-        .then((res)=>{
-            console.log('contact:'+ res.json());
-            
+    .then((res)=>{
+            return res.json();
         })
-        .catch((error)=>{console.log('catch: '+error.message )})
+    .then((data)=>{
+        console.log('lac titi caca');
+        console.log(value);
+    })
+    .catch((error)=>{console.log('catch: '+error.message )})
 }
 
-console.log('test X5');
+console.log('test X6');
 
 
 
