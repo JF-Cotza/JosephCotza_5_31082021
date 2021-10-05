@@ -7,13 +7,29 @@
     <title>test fetch</title>
 </head>
 <body>
-    <button id='fetch'>Fetch</button>
-
+    <button id='fetch'>Fetch avec body content</button>
+    <button id='fetch2'>Fetch avec fonction</button>
 
     <script>
         let fetchButton=document.getElementById('fetch');
+        let fetchButton2 = document.getElementById('fetch2');
         let apilink='http://localhost:3000/api/teddies/order';
-        let bodycontent= {
+        
+            
+        const prod=()=>{
+            return ['5beaa8bf1c9d440000a57d94', '5be9c8541c9d440000665243'];
+        }
+
+        const conta=()=>{
+            return {
+                firstName: 'a',
+                lastName: 'b',
+                address: 'c',
+                city: 'd',
+                email: 'a.b@gmail.com'};
+        }
+
+        let bodycontent = {
                 contact: {
                     firstName: 'a',
                     lastName: 'b',
@@ -21,53 +37,13 @@
                     city: 'd',
                     email: 'a.b@gmail.com'
                 },
-                products: ['5beaa8bf1c9d440000a57d94','5be9c8541c9d440000665243']
+                products: ['5beaa8bf1c9d440000a57d94', '5be9c8541c9d440000665243']
             }
 
-            bodycontentQuote = {
-                    contact: {
-                        'firstName': 'a',
-                        'lastName': 'b',
-                        'address': 'c',
-                        'city': 'd',
-                        'email': 'a.b@gmail.com'
-                    },
-                    products: ['5beaa8bf1c9d440000a57d94','5be9c8541c9d440000665243']
-                }
-       /* const callingF=($value)=>{fetch(apilink, {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body:JSON.stringify($value)
-        })
-        }*/ //bug
-    function send() {
-        fetch(apilink, {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(bodycontent)
-        })
-            /*.then(function (res) {
-                if (res.ok) {
-                    console.log('bodycontent / send')
-                    return res.json();
-                }
-                else {
-                    console.log('send pas de res');
-                }
-            })
-            .then(function (value) {
-                console.log('bodycontent/ send /value: ' + postData.products)
-            });*/
-    }
-       
-
-
+        let bodyFonction={
+            contact:conta(),
+            products:prod()
+        }
 
         fetchButton.addEventListener('click',()=>{
             //callingF(bodycontent)
@@ -81,24 +57,47 @@
             })
             .then((res)=>{
                     console.log('fetch bodycontent: '+bodycontent.contact.firstName+' '+bodycontent.products);
-                    console.log('fetch res return: '+res.json().contact+' '+res.json().products);
-                    for (let entity of(res.json())){
-                        console.log(entity);
-                    }
+                   
                     return res.json()
                 })
             .then((value)=>{
-                    console.log('lac titi caca');         
-                    console.log(value.postData.text)
+                    console.log('lac titi caca');
+                    console.log(value);         
+                   
                     })
             .catch((error)=>{
                     console.log(error.message)
                     console.log('test 3')}
                     );
-            
-           send();
-
         });
+
+        fetchButton2.addEventListener('click', () => {
+                //callingF(bodycontent)
+                fetch(apilink, {
+                    method: "POST",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(bodyFonction)
+                })
+                    .then((res) => {
+                        console.log('fetch bodycontent: ' + bodyFonction.contact.firstName + ' ' + bodyFonction.products);
+
+                        return res.json()
+                    })
+                    .then((value) => {
+                        console.log('lac titi caca');
+                        console.log(value);
+
+                    })
+                    .catch((error) => {
+                        console.log(error.message)
+                        console.log('test 3')
+                    }
+                    );
+            });
+
 
         /*extrait du controler
     * Expects request to contain:
