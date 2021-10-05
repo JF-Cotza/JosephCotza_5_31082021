@@ -83,12 +83,14 @@ const fetchCustomer = () => {
 }
 */
 
-let bodycontent={
-    contact: getCustomerDatas(),
-        products: idList()
-        }
 
-const fetchCustomer = () => {
+
+const fetchCustomer = (param_contact,param_id) => {
+    let bodycontent = {
+        contact: param_contact,
+        products: param_id
+    }
+
 fetch(apilink+'/order', {
     method: "POST",
     headers: {
@@ -114,7 +116,7 @@ fetch(apilink+'/order', {
 }
 
 
-console.log('test X9');
+console.log('test 10');
 
 
 

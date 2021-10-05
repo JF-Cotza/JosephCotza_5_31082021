@@ -19,7 +19,7 @@ if (toConfirmation){
             localStorage.clear();
             storage('totalPanier', totalPanier());
             
-            fetchCustomer();
+            fetchCustomer(getCustomerDatas(), idList());
         }
     })
     
