@@ -88,7 +88,7 @@ const fetchCustomer = () => {
 const fetchCustomer = (param_contact,param_id) => {
     let bodycontent = {
         contact: param_contact,
-        products: param_id
+        products: ['5beaa8bf1c9d440000a57d94', '5be9c8541c9d440000665243']//param_id
     }
 
 fetch(apiLink+'/order', {
@@ -117,7 +117,7 @@ fetch(apiLink+'/order', {
 }
 
 
-console.log('test 14');
+console.log('test 15');
 
 
 
