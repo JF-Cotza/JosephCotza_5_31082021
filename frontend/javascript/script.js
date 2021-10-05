@@ -49,11 +49,12 @@ if (toConfirmation){
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
+                       
                     },
                     body: JSON.stringify(bodyFonction)
                         
                 })
-                    .then(async (res) => {
+                    .then((res) => {
                         console.log(apilink);
                         console.log('fetch bodycontent: ' + bodyFonction.contact.firstName + ' ' + bodyFonction.products);
 
@@ -75,7 +76,7 @@ if (toConfirmation){
     
 }
 
-console.log('test direct 5');
+console.log('test direct 6');
 
 /*
 let given_id = '5beaa8bf1c9d440000a57d94';
