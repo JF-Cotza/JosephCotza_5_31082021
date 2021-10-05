@@ -86,8 +86,18 @@ const fetchCustomer = () => {
 
 
 const fetchCustomer = (param_contact,param_id) => {
+    const conta = () => {
+        return {
+            firstName: 'a',
+            lastName: 'b',
+            address: 'c',
+            city: 'd',
+            email: 'a.b@gmail.com'
+        };
+    }
+
     let bodycontent = {
-        contact: param_contact,
+        contact:conta(), //param_contact,
         products: ['5beaa8bf1c9d440000a57d94', '5be9c8541c9d440000665243']//param_id
     }
 
@@ -117,7 +127,7 @@ fetch(apiLink+'/order', {
 }
 
 
-console.log('test 15');
+console.log('test 16');
 
 
 
