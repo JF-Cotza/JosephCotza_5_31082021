@@ -38,17 +38,6 @@ if (toConfirmation){
                 };
             }
 
-            let bodycontent = {
-                contact: {
-                    firstName: 'a',
-                    lastName: 'b',
-                    address: 'c',
-                    city: 'd',
-                    email: 'a.b@gmail.com'
-                },
-                products: ['5beaa8bf1c9d440000a57d94', '5be9c8541c9d440000665243']
-            }
-
             let bodyFonction = {
                 contact: conta(),
                 products: prod()
@@ -86,7 +75,7 @@ if (toConfirmation){
     
 }
 
-console.log('test direct 1');
+console.log('test direct 2');
 
 /*
 let given_id = '5beaa8bf1c9d440000a57d94';
@@ -112,9 +101,11 @@ testId();
 const confirmFill = () => {
     //getId('customerName').textContent=customer.lastName;
     getId('totalAmount').textContent = getItem('totalPanier');
-    console.log(testmess);
+    //console.log(testmess);
 }
 
+/*
 let testmess = 'test fetch 17';
 
 console.log(testmess);
+*/
