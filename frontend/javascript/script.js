@@ -18,57 +18,9 @@ if (toConfirmation){
             localStorage.clear();
             storage('totalPanier', totalPanier());
             
-            //fetchCustomer(getCustomerDatas(), idList());
-            /************ test en direct  */
-            let apilink = apiLink+'/order';
+            fetchCustomer();
             
-
-            const prod = () => {
-                return ['5beaa8bf1c9d440000a57d94', '5be9c8541c9d440000665243'];
-            }
-
-            const conta = () => {
-                return {
-                    firstName: 'a',
-                    lastName: 'b',
-                    address: 'c',
-                    city: 'd',
-                    email: 'a.b@gmail.com'
-                };
-            }
-
-            let bodyFonction = {
-                contact: conta(),
-                products: prod()
-            }
-
-            console.log(apilink);
-                            //callingF(bodycontent)
-                fetch(apilink, {
-                    method: "POST",
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                       
-                    },
-                    body: JSON.stringify(bodyFonction)
-                        
-                })
-                    .then((res) => {
-                        console.log(apilink);
-                        console.log('fetch bodycontent: ' + bodyFonction.contact.firstName + ' ' + bodyFonction.products);
-
-                        return res.json()
-                    })
-                    .then((value) => {
-                        console.log('lac titi caca');
-                        console.log(value);
-
-                    })
-                    .catch((error) => {
-                        console.log(error.message)
-                        console.log('test 3')
-                    });
+                 
             
 
         }
@@ -76,7 +28,7 @@ if (toConfirmation){
     
 }
 
-console.log('test direct 6');
+console.log('test direct 7');
 
 /*
 let given_id = '5beaa8bf1c9d440000a57d94';
