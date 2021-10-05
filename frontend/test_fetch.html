@@ -21,7 +21,7 @@
                     city: 'd',
                     email: 'a.b@gmail.com'
                 },
-                products: ['a', 'b']
+                products: ['5beaa8bf1c9d440000a57d94','5be9c8541c9d440000665243']
             }
 
             bodycontentQuote = {
@@ -32,7 +32,7 @@
                         'city': 'd',
                         'email': 'a.b@gmail.com'
                     },
-                    products: ['a', 'b']
+                    products: ['5beaa8bf1c9d440000a57d94','5be9c8541c9d440000665243']
                 }
        /* const callingF=($value)=>{fetch(apilink, {
             method: "POST",
@@ -43,6 +43,31 @@
             body:JSON.stringify($value)
         })
         }*/ //bug
+    function send() {
+        fetch(apilink, {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bodycontent)
+        })
+            /*.then(function (res) {
+                if (res.ok) {
+                    console.log('bodycontent / send')
+                    return res.json();
+                }
+                else {
+                    console.log('send pas de res');
+                }
+            })
+            .then(function (value) {
+                console.log('bodycontent/ send /value: ' + postData.products)
+            });*/
+    }
+       
+
+
 
         fetchButton.addEventListener('click',()=>{
             //callingF(bodycontent)
@@ -55,8 +80,11 @@
                 body: JSON.stringify(bodycontent)
             })
             .then((res)=>{
-                    console.log('fetch bodycontent: '+bodycontent);
-                    console.log('fetch res return: '+res.json());
+                    console.log('fetch bodycontent: '+bodycontent.contact+' '+bodycontent.products);
+                    console.log('fetch res return: '+res.json().contact+' '+res.json().products);
+                    for (let entity of(res.json())){
+                        console.log(entity);
+                    }
                     return res.json()
                 })
             .then((value)=>{
@@ -67,7 +95,9 @@
                     console.log(error.message)
                     console.log('test 3')}
                     );
-            send();
+            
+           send();
+
         });
 
         /*extrait du controler
@@ -92,32 +122,10 @@
                 !req.body.products) {
 */
 
-    function send() {  
-        fetch(apilink, {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(bodycontent)
-        })
-            .then(function (res) {
-                if (res.ok) {
-                    console.log('bodycontent / send')
-                    return res.json();
-                }
-                else{
-                    console.log('send pas de res');
-                }
-            })
-            .then(function (value) {
-                console.log('bodycontent: '+value)
-            });
-    }
+    
 
 
-
-
+    
     </script>
 </body>
 </html>
