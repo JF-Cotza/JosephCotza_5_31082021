@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test fetch</title>
+</head>
+<body>
+    <button id='fetch'>Fetch</button>
+
+
+    <script>
+        let fetchButton=document.getElementById('fetch');
+        let apilink='http://localhost:3000/api/teddies/order';
+        let bodycontent= {
+                contact: {
+                    firstName: 'a',
+                    lastName: 'b',
+                    address: 'c',
+                    city: 'd',
+                    email: 'a.b@gmail.com'
+                },
+                products: ['a', 'b']
+            }
+
+            bodycontentQuote = {
+                    contact: {
+                        'firstName': 'a',
+                        'lastName': 'b',
+                        'address': 'c',
+                        'city': 'd',
+                        'email': 'a.b@gmail.com'
+                    },
+                    products: ['a', 'b']
+                }
+       /* const callingF=($value)=>{fetch(apilink, {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify($value)
+        })
+        }*/ //bug
+
+        fetchButton.addEventListener('click',()=>{
+            //callingF(bodycontent)
+            fetch(apilink, {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(bodycontent)
+            })
+            .then((res)=>{
+                    console.log('bodycontent: '+bodycontent);
+                    console.log('res return: '+res.json());
+                    return res.json()
+                })
+            .then((value)=>{
+                    console.log('lac titi caca');         
+                    console.log(value.postData.text)
+                    })
+            .catch((error)=>{
+                    console.log(error.message)
+                    console.log('test 3')}
+                    );
+            send();
+        });
+
+        /*extrait du controler
+    * Expects request to contain:
+        * contact: {
+        * firstName: string,
+        * lastName: string,
+        * address: string,
+        * city: string,
+        * email: string
+                        * }
+        * products: [string] < --array of product _id
+            *
+ * 
+        exports.orderTeddies = (req, res, next) => {
+            if (!req.body.contact ||
+                !req.body.contact.firstName ||
+                !req.body.contact.lastName ||
+                !req.body.contact.address ||
+                !req.body.contact.city ||
+                !req.body.contact.email ||
+                !req.body.products) {
+*/
+
+    function send() {
+       
+        fetch(apilink, {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bodycontent)
+        })
+            .then(function (res) {
+                if (res.ok) {
+                    console.log('bodycontent / send')
+                    return res.json();
+                }
+                else{
+                    console.log('send pas de res');
+                }
+            })
+            .then(function (value) {
+                console.log('bodycontent: '+value)
+            });
+    }
+
+   // document.getElementById("form").addEventListener("submit", send);
+
+
+
+    </script>
+</body>
+</html>
