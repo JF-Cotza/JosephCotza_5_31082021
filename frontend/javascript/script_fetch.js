@@ -48,8 +48,18 @@
 
 
 const fetchCustomer = () => {   
+    const  contacted = () => {
+        
+        return {
+        firstName: getCustomerDatas().firstName,
+        lastName: getCustomerDatas().lastName,
+        address: getCustomerDatas().address,
+        city: getCustomerDatas().city,
+        email: getCustomerDatas().email}
+        };
+
     let bodyContent={
-        contact: getCustomerDatas(),
+        contact:contacted() ,
         products: idList()
     }
     
@@ -66,12 +76,12 @@ const fetchCustomer = () => {
         })
     .then((data)=>{
         console.log('lac titi caca');
-        console.log(value);
+        console.log(data);
     })
     .catch((error)=>{console.log('catch: '+error.message )})
 }
 
-console.log('test X6');
+console.log('test X7');
 
 
 
