@@ -131,5 +131,3 @@ const fetchCustomer = () => {
     })
     .catch((error)=>mistake(error))
 }*/
-
-console.log('test x8')
