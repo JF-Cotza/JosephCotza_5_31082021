@@ -4,7 +4,6 @@ let toConfirmation = getId('toConfirmation');
 
 if (toConfirmation){
     toConfirmation.addEventListener('click',(e)=>{
-        
         if (checkValidity().total!=0){ //il y a au moins 1 erreur
             e.preventDefault();
             infos.textContent = checkValidity().message;
@@ -22,7 +21,7 @@ if (toConfirmation){
             //fetchCustomer(getCustomerDatas(), idList());
             /************ test en direct  */
             let apilink = apiLink+'/order';
-
+            
 
             const prod = () => {
                 return ['5beaa8bf1c9d440000a57d94', '5be9c8541c9d440000665243'];
@@ -43,8 +42,7 @@ if (toConfirmation){
                 products: prod()
             }
 
-            fetchButton.addEventListener('click', () => {
-                //callingF(bodycontent)
+                            //callingF(bodycontent)
                 fetch(apilink, {
                     method: "POST",
                     headers: {
@@ -54,6 +52,7 @@ if (toConfirmation){
                     body: JSON.stringify(bodyFonction)
                 })
                     .then((res) => {
+                        console.log(apilink);
                         console.log('fetch bodycontent: ' + bodyFonction.contact.firstName + ' ' + bodyFonction.products);
 
                         return res.json()
@@ -66,16 +65,15 @@ if (toConfirmation){
                     .catch((error) => {
                         console.log(error.message)
                         console.log('test 3')
-                    }
-                    );
-            });
+                    });
+            
 
         }
     })
     
 }
 
-console.log('test direct 2');
+console.log('test direct 3');
 
 /*
 let given_id = '5beaa8bf1c9d440000a57d94';
