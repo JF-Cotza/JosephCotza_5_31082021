@@ -80,7 +80,7 @@
                 body: JSON.stringify(bodycontent)
             })
             .then((res)=>{
-                    console.log('fetch bodycontent: '+bodycontent.contact+' '+bodycontent.products);
+                    console.log('fetch bodycontent: '+bodycontent.contact.firstName+' '+bodycontent.products);
                     console.log('fetch res return: '+res.json().contact+' '+res.json().products);
                     for (let entity of(res.json())){
                         console.log(entity);
