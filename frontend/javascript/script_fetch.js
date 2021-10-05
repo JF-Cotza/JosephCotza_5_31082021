@@ -109,14 +109,15 @@ fetch(apiLink+'/order', {
         console.log(value);
 
     })
+    /*
     .catch((error) => {
         console.log(error.message)
         console.log('test 3')
-    });
+    });*/
 }
 
 
-console.log('test 12');
+console.log('test 13');
 
 
 
