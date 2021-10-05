@@ -91,7 +91,7 @@ const fetchCustomer = (param_contact,param_id) => {
         products: param_id
     }
 
-fetch(apilink+'/order', {
+fetch(apiLink+'/order', {
     method: "POST",
     headers: {
         'Accept': 'application/json',
@@ -116,7 +116,7 @@ fetch(apilink+'/order', {
 }
 
 
-console.log('test 10');
+console.log('test 11');
 
 
 
