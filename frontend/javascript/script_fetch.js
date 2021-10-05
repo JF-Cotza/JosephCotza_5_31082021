@@ -99,7 +99,7 @@ fetch(apiLink+'/order', {
     },
     body: JSON.stringify(bodycontent)
     })
-    .then((res) => {
+    .then(async (res) => {
         console.log('fetch bodycontent: ' + bodycontent.contact.firstName + ' ' + bodycontent.products);
 
         return res.json()
@@ -116,7 +116,7 @@ fetch(apiLink+'/order', {
 }
 
 
-console.log('test 11');
+console.log('test 12');
 
 
 
