@@ -72,6 +72,7 @@ const fetchCustomer = () => {
         body: JSON.stringify(bodyContent)
     })
     .then((res)=>{
+            console.log(contacted);
             return res.json();
         })
     .then((data)=>{
@@ -81,7 +82,7 @@ const fetchCustomer = () => {
     .catch((error)=>{console.log('catch: '+error.message )})
 }
 
-console.log('test X7');
+console.log('test X8');
 
 
 
