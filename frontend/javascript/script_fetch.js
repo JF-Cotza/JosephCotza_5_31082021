@@ -83,7 +83,7 @@ const fetchCustomer = () => {
 }
 */
 
-
+/*
 
 const fetchCustomer = (param_contact,param_id) => {
     const conta = () => {
@@ -124,11 +124,11 @@ fetch(apiLink+'/order', {
         console.log(error.message)
         console.log('test 3')
     });*/
-}
-
+//}
+/*
 
 console.log('test 17');
-
+*/
 
 
 

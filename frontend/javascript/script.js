@@ -19,12 +19,74 @@ if (toConfirmation){
             localStorage.clear();
             storage('totalPanier', totalPanier());
             
-            fetchCustomer(getCustomerDatas(), idList());
+            //fetchCustomer(getCustomerDatas(), idList());
+            /************ test en direct  */
+            let apilink = apiLink+'/order';
+
+
+            const prod = () => {
+                return ['5beaa8bf1c9d440000a57d94', '5be9c8541c9d440000665243'];
+            }
+
+            const conta = () => {
+                return {
+                    firstName: 'a',
+                    lastName: 'b',
+                    address: 'c',
+                    city: 'd',
+                    email: 'a.b@gmail.com'
+                };
+            }
+
+            let bodycontent = {
+                contact: {
+                    firstName: 'a',
+                    lastName: 'b',
+                    address: 'c',
+                    city: 'd',
+                    email: 'a.b@gmail.com'
+                },
+                products: ['5beaa8bf1c9d440000a57d94', '5be9c8541c9d440000665243']
+            }
+
+            let bodyFonction = {
+                contact: conta(),
+                products: prod()
+            }
+
+            fetchButton.addEventListener('click', () => {
+                //callingF(bodycontent)
+                fetch(apilink, {
+                    method: "POST",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(bodyFonction)
+                })
+                    .then((res) => {
+                        console.log('fetch bodycontent: ' + bodyFonction.contact.firstName + ' ' + bodyFonction.products);
+
+                        return res.json()
+                    })
+                    .then((value) => {
+                        console.log('lac titi caca');
+                        console.log(value);
+
+                    })
+                    .catch((error) => {
+                        console.log(error.message)
+                        console.log('test 3')
+                    }
+                    );
+            });
+
         }
     })
     
 }
 
+console.log('test direct 1');
 
 /*
 let given_id = '5beaa8bf1c9d440000a57d94';
