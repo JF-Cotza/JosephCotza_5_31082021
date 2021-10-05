@@ -1,19 +1,14 @@
-const fetchCustomer = () => {
-    let contacting = {
+/*let contacting = {
             firstName: 'string',
             lastName: 'string',
             address: 'string',
             city: 'string',
             email: 'string'
-         };
+         };*/
 
-         //getCustomerDatas();
-    let productsend = JSON.stringify(['id1']); //idList();
-    contacting=JSON.stringify(contacting);
-
-    /*let toSend={'contact':contact,'products':products}
+/*let toSend={'contact':contact,'products':products}
     let bodyConst = JSON.stringify(toSend); //on stringifie toSend
-    
+
     console.log(testmess+' toSend '+toSend.contact+' '+toSend.products );
     console.log('bodyConst: '+bodyConst);
 
@@ -23,22 +18,8 @@ const fetchCustomer = () => {
     !req.body.contact.city ||
     !req.body.contact.email ||
     !req.body.products) {
-
-    */
-    let promise = fetch(apiLink+'/order', {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: 
-            JSON.stringify({contact: contacting, products:productsend})           
-        });
-    
-    promise
-        .then(async (res)=>{
-        console.log('contact:'+ contact);
-        /*
+*/
+/*
         try{
             //storage('datas',res);
             console.log('in promise '+testmess);
@@ -49,14 +30,11 @@ const fetchCustomer = () => {
             else{
                 console.log('pas de res');
             }
-        }    
+        }
         catch(error){
             console.log(error.message);
-        }*/      
-        })
-        .catch((error)=>{console.log('catch: '+error.message )})
-}
-
+        }
+*/
     /*(error)=>{
         console.log(error);
     })
@@ -67,6 +45,33 @@ const fetchCustomer = () => {
     })
     .catch((error)=>mistake(error))
 }*/
+
+
+const fetchCustomer = () => {   
+    let bodyContent={
+        contact:getCustomerDatas(),
+        products: idList()
+    }
+    
+    let promise = fetch(apiLink+'/order', {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: 
+            JSON.stringify(bodyContent)           
+        });
+    
+    promise
+        .then(async (res)=>{
+        console.log('contact:'+ res.json());
+        console.log('test X1')
+        })
+        .catch((error)=>{console.log('catch: '+error.message )})
+}
+
+
 
 
 
