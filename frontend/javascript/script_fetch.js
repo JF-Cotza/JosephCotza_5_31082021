@@ -46,7 +46,7 @@
     .catch((error)=>mistake(error))
 }*/
 
-
+/*
 const fetchCustomer = () => {   
     const  contacted = () => {
         
@@ -81,8 +81,40 @@ const fetchCustomer = () => {
     })
     .catch((error)=>{console.log('catch: '+error.message )})
 }
+*/
 
-console.log('test X8');
+let bodycontent={
+    contact: getCustomerDatas(),
+        products: idList()
+        }
+
+const fetchCustomer = () => {
+fetch(apilink+'/order', {
+    method: "POST",
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(bodycontent)
+    })
+    .then((res) => {
+        console.log('fetch bodycontent: ' + bodycontent.contact.firstName + ' ' + bodycontent.products);
+
+        return res.json()
+    })
+    .then((value) => {
+        console.log('lac titi caca');
+        console.log(value);
+
+    })
+    .catch((error) => {
+        console.log(error.message)
+        console.log('test 3')
+    });
+}
+
+
+console.log('test X9');
 
 
 
