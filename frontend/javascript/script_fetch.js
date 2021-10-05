@@ -53,20 +53,18 @@ const fetchCustomer = () => {
         products: idList()
     }
     
-    let promise = fetch(apiLink+'/order', {
+    fetch(apiLink+'/order', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: 
-            JSON.stringify(bodyContent)           
-        });
-    
-    promise
-        .then(async (res)=>{
+        body: JSON.stringify(bodycontent)
+    })
+  
+        .then( (res)=>{
         console.log('contact:'+ res.json());
-        console.log('test X1')
+        console.log('test X2')
         })
         .catch((error)=>{console.log('catch: '+error.message )})
 }
