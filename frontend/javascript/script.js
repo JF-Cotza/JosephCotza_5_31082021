@@ -90,6 +90,10 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
          //getCustomerDatas();
     let productsend = await param_prod;
     
+    let bodyFonction={
+        contact:await contacting,
+        products : await productsend
+    }
    
     let promise = fetch(apiLink+'/order', {
         method: "POST",
@@ -98,10 +102,10 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
             'Content-Type': 'application/json'
         },
         body: 
-            JSON.stringify({contact: contacting, products: productsend})           
+            JSON.stringify(bodyFonction)           
         });
     //console.log(promise);
-    console.log('productsend ' + productsend + ' contacting: ' + contacting + 'paramdata: ' + param_data);
+    console.log('productsend ' + productsend + 'paramdata: ' + param_data.firstName);
 
     promise
         .then((res)=>{
@@ -126,4 +130,4 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
     .catch((error)=>mistake(error))
 }*/
 
-console.log('test async 9');
+console.log('test async 10');
