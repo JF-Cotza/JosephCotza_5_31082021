@@ -110,6 +110,7 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
         
         })
         .catch((error)=>{
+            console.log('bodyf:'+bodyFonction);
             console.log('catch: '+error.message );
             console.log('error datas:'+ param_data.firstName+' products '+param_prod)
         })
@@ -126,4 +127,4 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
     .catch((error)=>mistake(error))
 }*/
 
-console.log('test async 14');
+console.log('test async 15');
