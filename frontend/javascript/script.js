@@ -45,7 +45,7 @@ const fetchCustomer = () => {
     !req.body.products) {
 
     */
-    let promise = fetch(apiLink + '/order', {
+    fetch(apiLink + '/order', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -53,12 +53,7 @@ const fetchCustomer = () => {
         },
         body:
             JSON.stringify({ contact: contacting, products: productsend })
-    });
-    //console.log(promise);
-
-    if(productsend!=[])
-    {
-    promise
+    })
         .then((res) => {
             //window.location.href = "./confirmation.html";
             console.log(res.json());
@@ -66,26 +61,10 @@ const fetchCustomer = () => {
         })
         .then((value)=>{
             console.log('produits: ' + value.products)
-          
-            /*
-            try{
-                //storage('datas',res);
-                console.log('in promise '+testmess);
-                if(res.ok){
-                    console.log(res.json());
-                    return res.json();
-                }
-                else{
-                    console.log('pas de res');
-                }
-            }    
-            catch(error){
-                console.log(error.message);
-            }*/
         })
 
         .catch((error) => { console.log('catch: ' + error.message) })
-    }
+    
 
 }
 
@@ -96,4 +75,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x6');
+console.log('check storage x7');
