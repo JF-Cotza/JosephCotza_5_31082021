@@ -37,7 +37,20 @@ testId();
 
 
 
+ /*let toSend={'contact':contact,'products':products}
+    let bodyConst = JSON.stringify(toSend); //on stringifie toSend
+    
+    console.log(testmess+' toSend '+toSend.contact+' '+toSend.products );
+    console.log('bodyConst: '+bodyConst);
 
+    !req.body.contact.firstName ||
+    !req.body.contact.lastName ||
+    !req.body.contact.address ||
+    !req.body.contact.city ||
+    !req.body.contact.email ||
+    !req.body.products) {
+
+    */
 //variables
 
 let toConfirmation = getId('toConfirmation');
@@ -82,22 +95,8 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
 
          //getCustomerDatas();
     let productsend = await param_prod;
-    console.log('productsend '+productsend+' contacting: '+contacting);
-
-    /*let toSend={'contact':contact,'products':products}
-    let bodyConst = JSON.stringify(toSend); //on stringifie toSend
     
-    console.log(testmess+' toSend '+toSend.contact+' '+toSend.products );
-    console.log('bodyConst: '+bodyConst);
-
-    !req.body.contact.firstName ||
-    !req.body.contact.lastName ||
-    !req.body.contact.address ||
-    !req.body.contact.city ||
-    !req.body.contact.email ||
-    !req.body.products) {
-
-    */
+   
     let promise = fetch(apiLink+'/order', {
         method: "POST",
         headers: {
@@ -107,7 +106,9 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
         body: 
             JSON.stringify({contact: contacting, products: productsend})           
         });
-    console.log(promise);
+    //console.log(promise);
+    console.log('productsend ' + productsend + ' contacting: ' + contacting + 'paramdata: ' + param_data);
+
     promise
         .then(async (res)=>{
         console.log(res.json());
@@ -127,4 +128,4 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
     .catch((error)=>mistake(error))
 }*/
 
-console.log('test async 4');
+console.log('test async 5');
