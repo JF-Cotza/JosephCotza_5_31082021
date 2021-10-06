@@ -13,12 +13,14 @@ if (toConfirmation) {
         else if (checkValidity().total == 0) {  //il n'y a pas d'erreur
             localStorage.clear();
             storage('totalPanier', totalPanier());
+            storage('id',idList());
+            storage('customer', getCustomerDatas());
             fetchCustomer();
         }
     })
 };
 
-const fetchCustomer = async () => {
+const fetchCustomer = () => {
     let contacting = {
         firstName: 'string',
         lastName: 'string',
@@ -27,7 +29,7 @@ const fetchCustomer = async () => {
         email: 'string'
     };
 
-    //getCustomerDatas();
+    
     let productsend = idList();
     contacting = contacting;
 
@@ -87,3 +89,6 @@ const fetchCustomer = async () => {
 const confirmFill = () => {
     getId('totalAmount').textContent = getItem('totalPanier');
 }
+
+
+console.log('check storage x1');
