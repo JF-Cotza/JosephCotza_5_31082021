@@ -104,13 +104,14 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
     console.log('productsend ' + productsend + ' contacting: ' + contacting + 'paramdata: ' + param_data);
 
     promise
-        .then(async (res)=>{
-        console.log(res.json());
+        .then((res)=>{
+            console.log('ok: datas:' + param_data.firstName + ' products ' + param_prod)
+            console.log(res.json());
         
         })
         .catch((error)=>{
             console.log('catch: '+error.message );
-            console.log('datas:'+ param_data.firstName+' products '+param_prod)
+            console.log('error datas:'+ param_data.firstName+' products '+param_prod)
         })
 }
 
@@ -125,4 +126,4 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
     .catch((error)=>mistake(error))
 }*/
 
-console.log('test async 8');
+console.log('test async 9');
