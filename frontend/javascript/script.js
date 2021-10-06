@@ -55,6 +55,9 @@ const fetchCustomer = async () => {
             JSON.stringify({ contact: contacting, products: productsend })
     });
     console.log(promise);
+
+    if(productsend!=[])
+    {
     promise
         .then(async (res) => {
             console.log(res.json());
@@ -75,9 +78,9 @@ const fetchCustomer = async () => {
             }*/
         })
         .catch((error) => { console.log('catch: ' + error.message) })
+    }
+
 }
-
-
 
 
 //remplissage de la page de confirmation avec le total panier
