@@ -18,7 +18,7 @@ if (toConfirmation) {
     })
 };
 
-const fetchCustomer = () => {
+const fetchCustomer = async () => {
     let contacting = {
         firstName: 'string',
         lastName: 'string',
