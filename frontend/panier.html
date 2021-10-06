@@ -44,67 +44,81 @@
 <!-- le client -->
             <div id="customerInformations" class="d-none">
                 <fieldset class='border-solid d-flex flex-column col-lg-6 mx-lg-auto pb-3 px-3'>
+                  
                     <legend>Vous</legend>
-                    <label for="customerType">Votre Genre
-                        <select name="customerType" id="customerType">
+                    <div class='row'>
+                    <label for="customerType" class='col-3'>Votre Genre</label>
+                        <select name="customerType" id="customerType" class='col-9'>
                             <option value="M">M.</option>
                             <option value="Mme">Mme</option>
                             <option value=" ">Autre</option>
                         </select>
-                    </label>
-                    <label for="firstName">Votre Prénom
-                        <input type="text" name="firstName" id="firstName" pattern='[a-zA-Zéèùäëïöü ]{1,30}' required>
-                    </label>
-                    <label for="lastName">Votre Nom
-                        <input type="text" name="lastName" id="lastName" pattern='[a-zA-Zéèùäëïöü ]{1,30}' required>
-                    </label>
+                    </div>
+                    <div class='row'>
+                        <label for="firstName" class='col-3'>Votre Prénom</label>
+                        <input type="text" name="firstName" id="firstName" pattern='[a-zA-Zéèùäëïöü ]{1,30}' required class='col-9'>
+                    </div>
+
+                    <div class='row'>
+                        <label for="lastName" class='col-3'>Votre Nom</label>
+                        <input type="text" name="lastName" id="lastName" pattern='[a-zA-Zéèùäëïöü ]{1,30}' required class='col-9'>
+                    </div>
                 </fieldset>
                 <fieldset class='border-solid flex-column col-lg-6 mx-lg-auto pb-3 px-3'>
                     <legend>Vos coordonnées</legend>
-                    <label for="mail" class=pb-3>Votre Mail
-                        <input type="email" name="mail" id="mail" required placeholder="exemple: prénom.nom@gmail.com">
-                    </label>
+                    <div class="row">
+                        <label for="mail" class='pb-3 col-3'>Votre Mail</label>
+                        <input type="email" name="mail" id="mail" required placeholder="exemple: prénom.nom@gmail.com" class='col-9'>
+                    </div>
                     <fieldset class='border-solid flex-column mx-lg-auto pb-3 px-3'>
                         <legend>Votre Adresse Postale</legend>
                         <!-- pour les éléments de l'adresse postale, il a été choisi de tous les commencer par adress -->
                         
-                        <label for="adressNumber">Numéro
-                            <input type="text" name="adressNumber" id="adressNumber" pattern='[a-zA-Z0-9 -]{0,10}' placeholder="exemple: 7, 7-7bis, 7Ter" maxlength=10>
-                        </label>
-                        <label for="adressStreet" class="w-100">Voie
-                            <input type="text" name="adressStreet" id="adressStreet" required pattern='[a-zA-Z0-9àéèùäëïöüÿ ]{3,50}'
+                        <div class="row">
+                            <label for="adressNumber" class='col-3'>Numéro</label>
+                            <input type="text" name="adressNumber" class='col-9' id="adressNumber" pattern='[a-zA-Z0-9 -]{0,10}' placeholder="exemple: 7, 7-7bis, 7Ter" maxlength=10>
+                        </div>
+                        <div class="row">
+                            <label for="adressStreet" class="col-3">Voie</label>
+                            <input type="text" name="adressStreet" class='col-9' id="adressStreet" required pattern='[a-zA-Z0-9àéèùäëïöüÿ ]{3,50}'
                                 placeholder="exemple: avenue des Champs Elysées" maxlength="50" class='w-75'>
-                        </label>
-                        <p class='w100 bb-success'></p>
+                        </div>
+                        </br>
 
-                        <label for="adressDoor">Appartement
-                            <input type="text" name="adressDoor" id="adressDoor"
+                        <div class="row">
+                            <label for="adressDoor" class='col-3'>Appartement</label>
+                            <input type="text" name="adressDoor" class='col-9' id="adressDoor"
                                 pattern='[a-zA-Z0-9 ]{0,10}'
                                 placeholder="exemple: A210" maxlength="10">
-                        </label>
-                        <label for="adressBuilding">Bâtiment
-                            <input type="text" name="adressBuilding" id="adressBuilding"
+                        </div>
+                        <div class="row">
+                            <label for="adressBuilding" class='col-3'>Bâtiment</label>
+                            <input type="text" name="adressBuilding" class='col-9' id="adressBuilding"
                                 pattern='[a-zA-Z0-9 ]{0,30}'
                                 placeholder="exemple: Total Tour Coupole"
                                 maxlength="30">
-                        </label>
-                        <br>
-                        <p class='w100 bb-success'></p>
-
-                        <label for="adressAdding">Complément d'adresse
-                            <input type="text" name="adressAdding" id="adressAdding" pattern='[a-zA-Z0-9àéèùäëïöüÿ ]{0,50}'
+                        </div>
+                        </br>
+                        
+                        <div class="row">
+                            <label for="adressAdding" class='col-3'>Complément d'adresse</label>
+                            <input type="text" name="adressAdding" class='col-9' id="adressAdding" pattern='[a-zA-Z0-9àéèùäëïöüÿ ]{0,50}'
                             placeholder="hameau de Busseau sur Creuse"
                             maxlength="50">
-                        </label>
-                        <label for="adressCode">Code Postal
-                            <input type="text" name="adressCode" id="adressCode" required pattern='[0-9]{5}' minlength="5" maxlength="5">
-                        </label>
-                        <label for="adressCity">Ville
-                            <input type="text" name="adressCity" id="adressCity" required pattern='[a-zA-Z0-9éèà ]{3,50}' maxlength="50">
-                        </label>
+                        </div>
+                        <div class="row">
+                            <label for="adressCode" class='col-3'>Code Postal</label>
+                            <input type="text" name="adressCode" class='col-9' id="adressCode" required pattern='[0-9]{5}' minlength="5" maxlength="5">
+                        </div>
+                        <div class="row">
+                            <label for="adressCity"  class='col-3'>Ville</label>
+                            <input type="text" name="adressCity" class='col-9' id="adressCity" required pattern='[a-zA-Z0-9éèà ]{3,50}' maxlength="50">
+                        </div>
                     </fieldset>                
                 </fieldset>
+                <div class='d-flex justify-content-center my-4'>
                 <a href='./confirmation.html' class='btn border-solid mx-auto text-center' id='toConfirmation'>Commander</a>
+                </div>
             </div>
         </main>
 
