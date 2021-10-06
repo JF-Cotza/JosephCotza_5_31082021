@@ -146,6 +146,7 @@ const optionMaker = (param_produit, param_option,param_quantity) => {
     label.classList.add('grey-3');
     label.classList.add('border-optionTop');
     label.classList.add('mt-2');
+    label.classList.add('w-95');
     label.innerHTML = param_produit.colors[param_option.value];
 
     //définition de l'input
@@ -158,6 +159,7 @@ const optionMaker = (param_produit, param_option,param_quantity) => {
     input.classList.add('qty');
     input.classList.add('border-optionBottom');
     input.classList.add('mb-2');
+    input.classList.add('w-95');
     commande.appendChild(label);
     commande.appendChild(input);
 }

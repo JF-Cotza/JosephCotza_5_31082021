@@ -1,8 +1,6 @@
 /*
 let given_id = '5beaa8bf1c9d440000a57d94';
 
-
-
 const testId=()=>{
     fetch(apiLink +'/'+given_id)
     .then(function(res){
@@ -110,7 +108,7 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
         
         })
         .catch((error)=>{
-            console.log('bodyf:'+bodyFonction);
+            console.log('bodyf:'+bodyFonction.contact+' '+bodyFonction.products);
             console.log('catch: '+error.message );
             console.log('error datas:'+ param_data.firstName+' products '+param_prod)
         })

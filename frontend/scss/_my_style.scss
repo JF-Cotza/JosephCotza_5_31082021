@@ -75,6 +75,8 @@
     border-left:2px solid black;
     border-right:2px solid black;
     border-bottom:2px solid black; 
+    border-bottom-right-radius: 10px ;
+    border-bottom-left-radius: 10px ;
     text-align: center;
 }
 
@@ -127,6 +129,12 @@ img{
 .w-30{
     width: 30%;
     display: inline-block;
+}
+
+.w-95{
+    width: 95%;
+    margin-left:auto;
+    margin-right: auto;
 }
 
 .singlePricePanier{
