@@ -85,13 +85,7 @@ const confirmFill = () => {
 }
 
 const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions fléchées on mets le async avant la parenthése de paramétres
-    let contacting = {
-            firstName: 'string',
-            lastName: 'string',
-            address: 'string',
-            city: 'string',
-            email: 'string'
-         };
+    let contacting = await param_data;
 
          //getCustomerDatas();
     let productsend = await param_prod;
@@ -114,7 +108,10 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
         console.log(res.json());
         
         })
-        .catch((error)=>{console.log('catch: '+error.message )})
+        .catch((error)=>{
+            console.log('catch: '+error.message );
+            console.log('datas:'+ param_data+' products '+param_prod)
+        })
 }
 
     /*(error)=>{
@@ -128,4 +125,4 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
     .catch((error)=>mistake(error))
 }*/
 
-console.log('test async 5');
+console.log('test async 6');
