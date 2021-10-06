@@ -15,7 +15,10 @@ if (toConfirmation) {
             storage('totalPanier', totalPanier());
             storage('id',idList());
             storage('customer', getCustomerDatas());
-            fetchCustomer();
+            if(getItem('id') && getItem('customer'))
+            {
+                fetchCustomer();
+            }
         }
     })
 };
