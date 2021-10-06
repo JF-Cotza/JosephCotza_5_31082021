@@ -62,7 +62,7 @@ let testmess = 'test fetch 17';
 
 console.log(testmess);
 */
-async const  fetchCustomer = () => {
+const fetchCustomer = async () => {
     let contacting = {
             firstName: 'string',
             lastName: 'string',
