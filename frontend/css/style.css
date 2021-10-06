@@ -11263,8 +11263,12 @@ img {
   z-index: 2;
 }
 
-#price::after {
+#price::after, #totalPanier::after {
   content: " €";
+}
+
+.total {
+  text-align: right;
 }
 
 /*# sourceMappingURL=style.css.map */
