@@ -11214,6 +11214,8 @@ img {
 
 .card {
   margin-top: 10px;
+  border-color: none;
+  background-color: none;
 }
 
 .h3 {
