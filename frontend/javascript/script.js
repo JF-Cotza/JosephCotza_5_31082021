@@ -25,7 +25,7 @@ if (toConfirmation) {
 
 const fetchCustomer = () => {
     let contacting = getItem('customer');   
-    let productsend = getItem('id');
+    let productsend = []//getItem('id');
     
     fetch(apiLink + '/order', {
         method: "POST",
@@ -37,9 +37,15 @@ const fetchCustomer = () => {
             JSON.stringify({ contact: contacting, products: productsend })
         })
         .then((res) => {
-            //window.location.href = "./confirmation.html";
-            console.log(res.json());
-            return res.json()
+            
+            let data=res.json();
+            if (data.orderId){
+                storage('reponse',data);
+                window.location.href = "./confirmation.html";
+            }
+            else{
+                infos.textContent='Commande échouée'
+            }
         })
         .then((value)=>{
             console.log('produits: ' + value.orderId)
@@ -56,4 +62,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x8');
+console.log('check storage x9');
