@@ -39,13 +39,15 @@ const fetchCustomer = () => {
         .then((res) => {
             
             let data=res.json();
+
             if (data.orderId){
                 localStorage.clear();
                 storage('reponse',data);
                 window.location.href = "./confirmation.html";
             }
             else{
-                infos.textContent='Commande échouée'
+                infos.textContent='Commande échouée';
+                console.log(data);
             }
     
         })
@@ -61,4 +63,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x12');
+console.log('check storage x13');
