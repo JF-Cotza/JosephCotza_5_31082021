@@ -13,6 +13,7 @@ if (toConfirmation) {
         else if (checkValidity().total == 0) {  //il n'y a pas d'erreur
             localStorage.clear();
             storage('totalPanier', totalPanier());
+            fetchCustomer();
         }
     })
 };
