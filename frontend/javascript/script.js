@@ -60,7 +60,7 @@ const fetchCustomer = () => {
     {
     promise
         .then(async (res) => {
-            window.location.href = "./confirmation.html";
+            //window.location.href = "./confirmation.html";
             console.log(res.json());
             return res.json();
         })
@@ -95,4 +95,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x4');
+console.log('check storage x5');
