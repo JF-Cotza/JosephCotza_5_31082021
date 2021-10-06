@@ -62,7 +62,7 @@ let testmess = 'test fetch 17';
 
 console.log(testmess);
 */
-const fetchCustomer = () => {
+async const  fetchCustomer = () => {
     let contacting = {
             firstName: 'string',
             lastName: 'string',
@@ -72,7 +72,7 @@ const fetchCustomer = () => {
          };
 
          //getCustomerDatas();
-    let productsend = idList();
+    let productsend = await idList();
     contacting = contacting;
 
     /*let toSend={'contact':contact,'products':products}
@@ -131,3 +131,5 @@ const fetchCustomer = () => {
     })
     .catch((error)=>mistake(error))
 }*/
+
+console.log('test async 1');
