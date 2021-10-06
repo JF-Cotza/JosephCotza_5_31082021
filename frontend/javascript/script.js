@@ -18,6 +18,21 @@ const testId=()=>{
 testId();
 */
 
+/*
+        try{
+            //storage('datas',res);
+            console.log('in promise '+testmess);
+            if(res.ok){
+                console.log(res.json());
+                return res.json();
+            }
+            else{
+                console.log('pas de res');
+            }
+        }
+        catch(error){
+            console.log(error.message);
+        }*/
 
 
 
@@ -56,11 +71,6 @@ const confirmFill = () => {
     //console.log(testmess);
 }
 
-/*
-let testmess = 'test fetch 17';
-
-console.log(testmess);
-*/
 const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions fléchées on mets le async avant la parenthése de paramétres
     let contacting = {
             firstName: 'string',
@@ -72,7 +82,7 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
 
          //getCustomerDatas();
     let productsend = await param_prod;
-    
+    console.log('productsend '+productsend+' contacting: '+contacting);
 
     /*let toSend={'contact':contact,'products':products}
     let bodyConst = JSON.stringify(toSend); //on stringifie toSend
@@ -101,21 +111,7 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
     promise
         .then(async (res)=>{
         console.log(res.json());
-        /*
-        try{
-            //storage('datas',res);
-            console.log('in promise '+testmess);
-            if(res.ok){
-                console.log(res.json());
-                return res.json();
-            }
-            else{
-                console.log('pas de res');
-            }
-        }    
-        catch(error){
-            console.log(error.message);
-        }*/      
+        
         })
         .catch((error)=>{console.log('catch: '+error.message )})
 }
@@ -131,4 +127,4 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
     .catch((error)=>mistake(error))
 }*/
 
-console.log('test async 3');
+console.log('test async 4');
