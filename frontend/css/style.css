@@ -11192,7 +11192,7 @@ textarea.form-control-lg {
 }
 
 .border-command {
-  border: 1px solid grey;
+  border: 1px solid black;
 }
 
 .input {
@@ -11215,7 +11215,6 @@ img {
 .card {
   margin-top: 10px;
   border-style: none;
-  border-radius: 10px;
 }
 
 .h3 {
