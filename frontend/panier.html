@@ -71,23 +71,26 @@
                     </div>
 
                     <div class='row'>
-                        <label for="lastName" class='col-3'>Votre Nom</label>
+                        <label for="lastName" class='col-3'>Votre Nom
                         <input type="text" name="lastName" id="lastName" pattern='[a-zA-Zéèùäëïöü ]{1,30}' required class='col-9'>
+                        </label>
                     </div>
                 </fieldset>
                 <fieldset class='border-solid flex-column col-lg-6 mx-lg-auto pb-3 px-3'>
-                    <legend>Vos coordonnées</legend>
+                    <legend>Vos coordonnées
                     <div class="row">
                         <label for="mail" class='pb-3 col-3'>Votre Mail</label>
                         <input type="email" name="mail" id="mail" required placeholder="exemple: prénom.nom@gmail.com" class='col-9'>
+                        </legend>
                     </div>
                     <fieldset class='border-solid flex-column mx-lg-auto pb-3 px-3'>
                         <legend>Votre Adresse Postale</legend>
                         <!-- pour les éléments de l'adresse postale, il a été choisi de tous les commencer par adress -->
                         
                         <div class="row">
-                            <label for="adressNumber" class='col-3'>Numéro</label>
+                            <label for="adressNumber" class='col-3'>Numéro
                             <input type="text" name="adressNumber" class='col-9' id="adressNumber" pattern='[a-zA-Z0-9 -]{0,10}' placeholder="exemple: 7, 7-7bis, 7Ter" maxlength=10>
+                        </label>
                         </div>
                         <div class="row">
                             <label for="adressStreet" class="col-3">Voie</label>
