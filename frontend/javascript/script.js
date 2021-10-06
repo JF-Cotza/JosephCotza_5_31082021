@@ -24,17 +24,12 @@ if (toConfirmation) {
 };
 
 const fetchCustomer = () => {
-    let contacting = {
-        firstName: 'string',
-        lastName: 'string',
-        address: 'string',
-        city: 'string',
-        email: 'string'
-    };
+    let contacting = getItem('customer');
+
 
     
-    let productsend = idList();
-    contacting = contacting;
+    let productsend = getItem('id');
+    
 
     /*let toSend={'contact':contact,'products':products}
     let bodyConst = JSON.stringify(toSend); //on stringifie toSend
@@ -66,6 +61,7 @@ const fetchCustomer = () => {
     promise
         .then(async (res) => {
             console.log(res.json());
+            window.location.href = "./frontend/confirmation.html";
             /*
             try{
                 //storage('datas',res);
@@ -94,4 +90,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x1');
+console.log('check storage x2');
