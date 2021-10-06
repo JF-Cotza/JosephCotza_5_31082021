@@ -25,7 +25,7 @@ if (toConfirmation) {
 
 const fetchCustomer = () => {
     let contacting = getItem('customer');   
-    let productsend = []//getItem('id');
+    let productsend = getItem('id');
     
     fetch(apiLink + '/order', {
         method: "POST",
@@ -40,6 +40,7 @@ const fetchCustomer = () => {
             
             let data=res.json();
             if (data.orderId){
+                localStorage.clear();
                 storage('reponse',data);
                 window.location.href = "./confirmation.html";
             }
@@ -60,4 +61,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x9');
+console.log('check storage x12');
