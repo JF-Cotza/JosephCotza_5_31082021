@@ -60,8 +60,9 @@ const fetchCustomer = () => {
     {
     promise
         .then(async (res) => {
+            window.location.href = "./confirmation.html";
             console.log(res.json());
-            window.location.href = "./frontend/confirmation.html";
+            
             /*
             try{
                 //storage('datas',res);
