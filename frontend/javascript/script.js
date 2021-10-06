@@ -1,35 +1,3 @@
-//variables
-
-let toConfirmation = getId('toConfirmation');
-
-if (toConfirmation){
-    toConfirmation.addEventListener('click',(e)=>{
-        if (checkValidity().total!=0){ //il y a au moins 1 erreur
-            e.preventDefault();
-            infos.textContent = checkValidity().message;
-            console.log(getCustomerDatas())
-            console.log(checkValidity().total);
-            console.log('totalPanier'+ totalPanier());
-        }
-        else if (checkValidity().total== 0){  //il n'y a pas d'erreur
-            //e.preventDefault();
-            //console.log(idList()); //génére la liste des id
-            //console.log(getCustomerDatas()); //récupère les données du client
-            localStorage.clear();
-            storage('totalPanier', totalPanier());
-            
-            fetchCustomer();
-            
-                 
-            
-
-        }
-    })
-    
-}
-
-console.log('test direct 7');
-
 /*
 let given_id = '5beaa8bf1c9d440000a57d94';
 
@@ -50,6 +18,37 @@ const testId=()=>{
 testId();
 */
 
+
+
+
+
+
+//variables
+
+let toConfirmation = getId('toConfirmation');
+
+if (toConfirmation){
+    toConfirmation.addEventListener('click',(e)=>{
+        if (checkValidity().total!=0){ //il y a au moins 1 erreur
+            e.preventDefault();
+            infos.textContent = checkValidity().message;
+            console.log(getCustomerDatas())
+            console.log(checkValidity().total);
+            console.log('totalPanier'+ totalPanier());
+        }
+        else if (checkValidity().total== 0){  //il n'y a pas d'erreur
+            //e.preventDefault();
+            let prod=idList(); //génére la liste des id
+            let data=getCustomerDatas(); //récupère les données du client
+            localStorage.clear();
+            storage('totalPanier', totalPanier());
+            
+            fetchCustomer(prod,data);        
+        }
+    })
+    
+}
+
 //remplissage de la page de confirmation
 const confirmFill = () => {
     //getId('customerName').textContent=customer.lastName;
@@ -62,7 +61,7 @@ let testmess = 'test fetch 17';
 
 console.log(testmess);
 */
-const fetchCustomer = async () => {
+const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions fléchées on mets le async avant la parenthése de paramétres
     let contacting = {
             firstName: 'string',
             lastName: 'string',
@@ -72,8 +71,8 @@ const fetchCustomer = async () => {
          };
 
          //getCustomerDatas();
-    let productsend = await idList();
-    contacting = contacting;
+    let productsend = await param_prod;
+    
 
     /*let toSend={'contact':contact,'products':products}
     let bodyConst = JSON.stringify(toSend); //on stringifie toSend
@@ -132,4 +131,4 @@ const fetchCustomer = async () => {
     .catch((error)=>mistake(error))
 }*/
 
-console.log('test async 1');
+console.log('test async 3');
