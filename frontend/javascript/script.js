@@ -54,18 +54,18 @@ const fetchCustomer = () => {
         body:
             JSON.stringify({ contact: contacting, products: productsend })
     });
-    console.log(promise);
+    //console.log(promise);
 
     if(productsend!=[])
     {
     promise
-        .then(async (res) => {
+        .then((res) => {
             //window.location.href = "./confirmation.html";
             console.log(res.json());
-            return res.json();
+            return res.json()
         })
-        .then((data)=>{
-            console.log('produits: ' + data.products)
+        .then((value)=>{
+            console.log('produits: ' + value.products)
           
             /*
             try{
@@ -83,6 +83,7 @@ const fetchCustomer = () => {
                 console.log(error.message);
             }*/
         })
+
         .catch((error) => { console.log('catch: ' + error.message) })
     }
 
@@ -95,4 +96,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x5');
+console.log('check storage x6');
