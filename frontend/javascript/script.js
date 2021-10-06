@@ -66,12 +66,12 @@ if (toConfirmation){
         }
         else if (checkValidity().total== 0){  //il n'y a pas d'erreur
             //e.preventDefault();
-            let prod=idList(); //génére la liste des id
+            //let prod=; //génére la liste des id
             let data=getCustomerDatas(); //récupère les données du client
             localStorage.clear();
             storage('totalPanier', totalPanier());
             
-            fetchCustomer(prod,data);        
+            fetchCustomer(idList(),data);
         }
     })
     
@@ -130,4 +130,4 @@ const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions f
     .catch((error)=>mistake(error))
 }*/
 
-console.log('test async 12');
+console.log('test async 13');
