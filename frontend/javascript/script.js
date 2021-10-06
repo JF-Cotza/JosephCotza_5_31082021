@@ -1,41 +1,36 @@
-/*
-let given_id = '5beaa8bf1c9d440000a57d94';
+//variable
+let toConfirmation = getId('toConfirmation'); //le bouton commander
 
-const testId=()=>{
-    fetch(apiLink +'/'+given_id)
-    .then(function(res){
-        return res.json()
-    })
-    .then((data)=>{
-            console.log(data.name)
-   })
-    .catch((error)=>console.log("pas d'id : "+error.message))
-}
-
-//testingFunction();
-testId();
-*/
-
-/*
-        try{
-            //storage('datas',res);
-            console.log('in promise '+testmess);
-            if(res.ok){
-                console.log(res.json());
-                return res.json();
-            }
-            else{
-                console.log('pas de res');
-            }
+if (toConfirmation) {
+    toConfirmation.addEventListener('click', (e) => {
+        if (checkValidity().total != 0) { //il y a au moins 1 erreur
+            e.preventDefault();
+            infos.textContent = checkValidity().message;
+            console.log(getCustomerDatas())
+            console.log(checkValidity().total);
+            console.log('totalPanier' + totalPanier());
         }
-        catch(error){
-            console.log(error.message);
-        }*/
+        else if (checkValidity().total == 0) {  //il n'y a pas d'erreur
+            localStorage.clear();
+            storage('totalPanier', totalPanier());
+        }
+    })
+};
 
+const fetchCustomer = () => {
+    let contacting = {
+        firstName: 'string',
+        lastName: 'string',
+        address: 'string',
+        city: 'string',
+        email: 'string'
+    };
 
+    //getCustomerDatas();
+    let productsend = idList();
+    contacting = contacting;
 
-
- /*let toSend={'contact':contact,'products':products}
+    /*let toSend={'contact':contact,'products':products}
     let bodyConst = JSON.stringify(toSend); //on stringifie toSend
     
     console.log(testmess+' toSend '+toSend.contact+' '+toSend.products );
@@ -49,80 +44,42 @@ testId();
     !req.body.products) {
 
     */
-//variables
-
-let toConfirmation = getId('toConfirmation');
-
-if (toConfirmation){
-    toConfirmation.addEventListener('click',(e)=>{
-        if (checkValidity().total!=0){ //il y a au moins 1 erreur
-            e.preventDefault();
-            infos.textContent = checkValidity().message;
-            console.log(getCustomerDatas())
-            console.log(checkValidity().total);
-            console.log('totalPanier'+ totalPanier());
-        }
-        else if (checkValidity().total== 0){  //il n'y a pas d'erreur
-            //e.preventDefault();
-            //let prod=; //génére la liste des id
-            let data=getCustomerDatas(); //récupère les données du client
-            localStorage.clear();
-            storage('totalPanier', totalPanier());
-            
-            fetchCustomer(idList(),data);
-        }
-    })
-    
-}
-
-//remplissage de la page de confirmation
-const confirmFill = () => {
-    //getId('customerName').textContent=customer.lastName;
-    getId('totalAmount').textContent = getItem('totalPanier');
-    //console.log(testmess);
-}
-
-const fetchCustomer = async (param_prod, param_data) => { //pour les fonctions fléchées on mets le async avant la parenthése de paramétres
-  /*  let contacting = ;
-
-         //getCustomerDatas();
-    let productsend = ;
-    */
-    let bodyFonction={
-        contact: await param_data,
-        products: await param_prod
-    }
-   
-    /*let promise =*/ fetch(apiLink+'/order', {
+    let promise = fetch(apiLink + '/order', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: 
-            JSON.stringify(bodyFonction)           
-        })//;
-        .then((res)=>{
-            console.log('ok: datas:' + param_data.firstName + ' products ' + param_prod)
+        body:
+            JSON.stringify({ contact: contacting, products: productsend })
+    });
+    console.log(promise);
+    promise
+        .then(async (res) => {
             console.log(res.json());
-        
+            /*
+            try{
+                //storage('datas',res);
+                console.log('in promise '+testmess);
+                if(res.ok){
+                    console.log(res.json());
+                    return res.json();
+                }
+                else{
+                    console.log('pas de res');
+                }
+            }    
+            catch(error){
+                console.log(error.message);
+            }*/
         })
-        .catch((error)=>{
-            console.log('bodyf:'+bodyFonction.contact+' '+bodyFonction.products);
-            console.log('catch: '+error.message );
-            console.log('error datas:'+ param_data.firstName+' products '+param_prod)
-        })
+        .catch((error) => { console.log('catch: ' + error.message) })
 }
 
-    /*(error)=>{
-        console.log(error);
-    })
-    .then(function(value){
-        console.log(value.postData.text);
-        infos.textContent='test fetch post';
-        
-    })
-    .catch((error)=>mistake(error))
-}*/
 
-console.log('test async 15');
+
+
+//remplissage de la page de confirmation avec le total panier
+const confirmFill = () => {
+    getId('totalAmount').textContent = getItem('totalPanier');
+}
