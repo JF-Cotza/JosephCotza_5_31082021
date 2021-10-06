@@ -62,6 +62,7 @@ const fetchCustomer = () => {
         .then(async (res) => {
             window.location.href = "./confirmation.html";
             console.log(res.json());
+            return res.json();
         })
         .then((data)=>{
             console.log('produits: ' + data.products)
@@ -94,4 +95,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x3');
+console.log('check storage x4');
