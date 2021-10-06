@@ -46,9 +46,7 @@ const fetchCustomer = () => {
             else{
                 infos.textContent='Commande échouée'
             }
-        })
-        .then((value)=>{
-            console.log('produits: ' + value.orderId)
+    
         })
         .catch((error) => { console.log('catch: ' + error.message) })
     
