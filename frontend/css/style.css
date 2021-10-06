@@ -11215,7 +11215,7 @@ img {
 .card {
   margin-top: 10px;
   border-style: none;
-  background-color: none;
+  border-radius: 10px;
 }
 
 .h3 {
