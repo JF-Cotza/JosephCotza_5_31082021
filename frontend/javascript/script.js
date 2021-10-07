@@ -36,9 +36,11 @@ const fetchCustomer = () => {
         body:
             JSON.stringify({ contact: contacting, products: productsend })
         })
-        .then((res) => {
-            
-            let data=res.json();
+        .then(function(res){
+            return res.json()
+        })
+        .then(function(data){
+            console.log(data);
             console.log('products '+ res.json().products);
             console.log('contact'+data.contact.value);
             console.log('order'+data[0]);
@@ -64,4 +66,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x17');
+console.log('check storage x18');
