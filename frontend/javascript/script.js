@@ -77,7 +77,7 @@ if(confirmation){
         localStorage.clear();
     });
     // on vide le local storage en fermant l'onglet
-    window.onbeforeunload=localStorage.clear();
+   // window.onbeforeunload=localStorage.clear();
 
     getId('customerName').textContent=getItem('contact').lastName;
     getId('commandNumber').textContent=getItem('order');
@@ -86,4 +86,4 @@ if(confirmation){
 
 
 
-console.log('check storage x27');
+console.log('check storage x28');
