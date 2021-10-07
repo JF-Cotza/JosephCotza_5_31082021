@@ -39,7 +39,9 @@ const fetchCustomer = () => {
         .then((res) => {
             
             let data=res.json();
-
+            console.log('products '+ data.products);
+            console.log('contact'+data.contact);
+            console.log('order'+data.orderId);
             if (data.orderId){
                 localStorage.clear();
                 storage('reponse',data);
@@ -63,4 +65,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x13');
+console.log('check storage x14');
