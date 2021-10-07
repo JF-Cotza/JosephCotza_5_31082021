@@ -42,8 +42,8 @@ const fetchCustomer = () => {
         .then(function(data){
             //console.log(data);
             console.log('products '+ data.products[0]);
-            console.log('contact'+data.contact.firstName);
-            console.log('order'+data.orderId.value);
+            console.log('contact '+data.contact.firstName);
+            console.log('order '+data.orderId);
             /*if (data.orderId){
                 storage('reponse',data);
                 window.location.href = "./confirmation.html";
@@ -66,4 +66,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x21');
+console.log('check storage x23');
