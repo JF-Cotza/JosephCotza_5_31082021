@@ -39,11 +39,10 @@ const fetchCustomer = () => {
         .then((res) => {
             
             let data=res.json();
-            console.log('products '+ data.value.products);
-            console.log('contact'+data.value.contact);
-            console.log('order'+data.value.orderId);
+            console.log('products '+ res.json().products);
+            console.log('contact'+data.contact.value);
+            console.log('order'+data[0]);
             if (data.orderId){
-                localStorage.clear();
                 storage('reponse',data);
                 window.location.href = "./confirmation.html";
             }
