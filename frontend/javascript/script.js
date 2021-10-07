@@ -40,12 +40,15 @@ const fetchCustomer = () => {
             return res.json()
         })
         .then(function(data){
-            //console.log(data);
-            console.log('products ' + data.products[0]._id + ' ' + data.products[1]);
-            console.log('contact '+data.contact.firstName);
-            console.log('order '+data.orderId);
-            /*if (data.orderId){
-                storage('reponse',data);
+            
+            if (data.orderId){
+                let panier = getItem('totalPanier');
+                localStorage.clear();
+                storage('products ', data.products[0]._id);//data.products est un array qui contient les infos du produit
+                storage('contact ', data.contact); //data.contact contient les infos client
+                storage('order ', data.orderId);// data.orderId renvoit un numéro de commande.
+                storage('amount',panier);
+
                 window.location.href = "./confirmation.html";
             }
             else{
@@ -66,4 +69,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x24');
+console.log('check storage x25');
