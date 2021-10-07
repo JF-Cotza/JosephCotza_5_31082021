@@ -44,12 +44,9 @@ const fetchCustomer = () => {
             if (data.orderId){
                 let panier = getItem('totalPanier');
                 localStorage.clear();
-                storage('products ', data.products);//data.products est un array qui contient les infos du produit
-                storage('contact ', data.contact); //data.contact contient les infos client
-                storage('order ', data.orderId);// data.orderId renvoit un numéro de commande.
-                storage('amount',panier);
-                if(getItem('order').value){
-                window.location.href = "./confirmation.html";}
+                storeDataReturn(data,panier);
+                
+                
             }
             else{
                 infos.textContent='Commande échouée';
@@ -62,6 +59,17 @@ const fetchCustomer = () => {
 
 }
 
+const storeDataReturn=(param_data,param_amount)=>{
+    storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
+    storage('contact ', param_data.contact); //data.contact contient les infos client
+    storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
+    storage('amount', param_amount);
+    redirect();
+}
+
+const redirect=async()=>{
+    window.location.href='./confirmation.html';
+}
 
 //remplissage de la page de confirmation avec le total panier
 let confirmation = getId('confirmation')
@@ -80,4 +88,4 @@ if(confirmation){
 
 
 
-console.log('check storage x31');
+console.log('check storage x32');
