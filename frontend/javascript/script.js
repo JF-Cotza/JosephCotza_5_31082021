@@ -69,4 +69,21 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x26');
+
+let confirmation = getId('confirmation')
+if(confirmation){
+    //clicker sur le logo vide le local storage en plus de renvoyer vers l'index
+    getId('logo').addEventListener('click',()=>{
+        localStorage.clear();
+    });
+    // on vide le local storage en fermant l'onglet
+    window.onbeforeunload=localStorage.clear();
+
+    getId('customerName').textContent=getItem('contact').lastName;
+    getId('commandNumber').textContent=getItem('order');
+    getId('totalAmount').textContent = getItem('amount');
+}
+
+
+
+console.log('check storage x27');
