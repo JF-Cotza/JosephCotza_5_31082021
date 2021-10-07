@@ -54,7 +54,7 @@ const fetchCustomer = () => {
             else{
                 infos.textContent='Commande échouée';
                 console.log(data);
-            }*/
+            }
     
         })
         .catch((error) => { console.log('catch: ' + error.message) })
@@ -69,4 +69,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x25');
+console.log('check storage x26');
