@@ -40,8 +40,8 @@ const fetchCustomer = () => {
             return res.json()
         })
         .then(function(data){
-            console.log(data);
-            console.log('products '+ res.json().products[0]);
+            //console.log(data);
+            console.log('products '+ data.products[0]);
             console.log('contact'+data.contact.firstName);
             console.log('order'+data.orderId.value);
             /*if (data.orderId){
@@ -66,4 +66,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x20');
+console.log('check storage x21');
