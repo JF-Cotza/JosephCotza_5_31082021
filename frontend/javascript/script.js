@@ -48,7 +48,7 @@ const fetchCustomer = () => {
                 storage('contact ', data.contact); //data.contact contient les infos client
                 storage('order ', data.orderId);// data.orderId renvoit un numéro de commande.
                 storage('amount',panier);
-                if(getItem('order')){
+                if(getItem('order').value){
                 window.location.href = "./confirmation.html";}
             }
             else{
@@ -80,4 +80,4 @@ if(confirmation){
 
 
 
-console.log('check storage x30');
+console.log('check storage x31');
