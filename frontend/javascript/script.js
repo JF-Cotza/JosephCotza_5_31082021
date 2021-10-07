@@ -41,17 +41,17 @@ const fetchCustomer = () => {
         })
         .then(function(data){
             console.log(data);
-            console.log('products '+ res.json().products);
-            console.log('contact'+data.contact.value);
-            console.log('order'+data[0]);
-            if (data.orderId){
+            console.log('products '+ res.json().products[0]);
+            console.log('contact'+data.contact.firstName);
+            console.log('order'+data.orderId.value);
+            /*if (data.orderId){
                 storage('reponse',data);
                 window.location.href = "./confirmation.html";
             }
             else{
                 infos.textContent='Commande échouée';
                 console.log(data);
-            }
+            }*/
     
         })
         .catch((error) => { console.log('catch: ' + error.message) })
@@ -66,4 +66,4 @@ const confirmFill = () => {
 }
 
 
-console.log('check storage x18');
+console.log('check storage x20');
