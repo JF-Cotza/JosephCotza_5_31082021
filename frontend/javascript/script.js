@@ -44,12 +44,12 @@ const fetchCustomer = () => {
             if (data.orderId){
                 let panier = getItem('totalPanier');
                 localStorage.clear();
-                storage('products ', data.products[0]._id);//data.products est un array qui contient les infos du produit
+                storage('products ', data.products);//data.products est un array qui contient les infos du produit
                 storage('contact ', data.contact); //data.contact contient les infos client
                 storage('order ', data.orderId);// data.orderId renvoit un numéro de commande.
                 storage('amount',panier);
-
-                window.location.href = "./confirmation.html";
+                if(getItem('order')){
+                window.location.href = "./confirmation.html";}
             }
             else{
                 infos.textContent='Commande échouée';
@@ -64,12 +64,6 @@ const fetchCustomer = () => {
 
 
 //remplissage de la page de confirmation avec le total panier
-const confirmFill = () => {
-    getId('totalAmount').textContent = getItem('totalPanier');
-}
-
-
-
 let confirmation = getId('confirmation')
 if(confirmation){
     //clicker sur le logo vide le local storage en plus de renvoyer vers l'index
@@ -80,10 +74,10 @@ if(confirmation){
    // window.onbeforeunload=localStorage.clear();
 
     console.log(getItem('contact'));
-    getId('commandNumber').textContent=getItem('order');
+    getId('commandNumber').textContent=getItem('order').value;
     getId('totalAmount').textContent = getItem('amount');
 }
 
 
 
-console.log('check storage x29');
+console.log('check storage x30');
