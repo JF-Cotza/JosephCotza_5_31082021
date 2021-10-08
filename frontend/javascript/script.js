@@ -73,22 +73,23 @@ const storeDataReturn= async (param_data,param_amount)=>{
 
 const redirect=()=>{
     window.location.href='./confirmation.html';
-//remplissage de la page de confirmation avec le total panier
-    let confirmation = getId('confirmation');
-    if(confirmation){
+    
+    if(getId('confirmation')){
+        getId('customerName').textContent = getItem('contact').lastName;
+        getId('commandNumber').textContent = getItem('order');
+        getId('totalAmount').textContent = getItem('amount');
+    };
+   
         //clicker sur le logo vide le local storage en plus de renvoyer vers l'index
         getId('logo').addEventListener('click',()=>{
             localStorage.clear();
         });
         // on vide le local storage en fermant l'onglet
-    // window.onbeforeunload=localStorage.clear();
+        windows.onbeforeunload=localStorage.clear();
 
-        
-    }
-    getId('customerName').textContent = getItem('contact').lastName;
-    getId('commandNumber').textContent = getItem('order');
-    getId('totalAmount').textContent = getItem('amount');
+
+    
 }
 
 
-console.log('check storage x41')
+console.log('check storage x42')
