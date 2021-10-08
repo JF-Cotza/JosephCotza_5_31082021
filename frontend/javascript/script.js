@@ -60,11 +60,13 @@ const fetchCustomer = () => {
 }
 
 const storeDataReturn= async (param_data,param_amount)=>{
-    await storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
-    await storage('contact ', param_data.contact); //data.contact contient les infos client
-    await storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
-    await storage('amount', param_amount);
-    redirect();
+
+     storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
+     storage('contact ', param_data.contact); //data.contact contient les infos client
+     storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
+     storage('amount', param_amount);
+    
+    await redirect();
 }
 
 const redirect=async()=>{
