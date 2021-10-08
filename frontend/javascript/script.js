@@ -59,7 +59,6 @@ const fetchCustomer = () => {
 }
 
 const storeDataReturn= (param_data,param_amount)=>{
-
      storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
      storage('contact ', param_data.contact); //data.contact contient les infos client
       storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
@@ -72,20 +71,18 @@ const redirect=()=>{
     let commande = getItem('order');
     let cost = getItem('amount');
      window.location.href='./confirmation.html';
-    
     fill(name, commande, cost);
-
+    console.log('redirect');
 }
 
 
 const fill=(param_customer, param_order, param_total)=>{
-   
     if (getId('confirmation')) {
         getId('customerName').textContent = param_customer;
         getId('commandNumber').textContent = param_order;
         getId('totalAmount').textContent = param_total;
     };
-
+    console.log('fill');
     //clicker sur le logo vide le local storage en plus de renvoyer vers l'index
     getId('logo').addEventListener('click', () => {
         localStorage.clear();
@@ -94,4 +91,4 @@ const fill=(param_customer, param_order, param_total)=>{
     window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x52')
+console.log('check storage x53')
