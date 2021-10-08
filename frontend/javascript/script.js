@@ -59,11 +59,11 @@ const fetchCustomer = () => {
 
 }
 
-const storeDataReturn=(param_data,param_amount)=>{
-    storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
-    storage('contact ', param_data.contact); //data.contact contient les infos client
-    storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
-    storage('amount', param_amount);
+const storeDataReturn= async (param_data,param_amount)=>{
+    await storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
+    await storage('contact ', param_data.contact); //data.contact contient les infos client
+    await storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
+    await storage('amount', param_amount);
     redirect();
 }
 
@@ -82,10 +82,10 @@ if(confirmation){
    // window.onbeforeunload=localStorage.clear();
 
     console.log(getItem('contact'));
-    getId('commandNumber').textContent=getItem('order').value;
+    getId('commandNumber').textContent=getItem('order');
     getId('totalAmount').textContent = getItem('amount');
 }
 
 
 
-console.log('check storage x32');
+console.log('check storage x33');

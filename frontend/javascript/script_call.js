@@ -22,6 +22,7 @@ if (getId('forCustomerInformations')){
 }
 
 //Confirmation
+/*
 if (getId('confirmation')){
     confirmFill();
-}
+}*/
