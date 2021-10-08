@@ -81,11 +81,12 @@ const redirect=async()=>{
         // on vide le local storage en fermant l'onglet
     // window.onbeforeunload=localStorage.clear();
 
-        getId('customerName').textContent=await getItem('contact').lastName;
-        getId('commandNumber').textContent= await getItem('order');
-        getId('totalAmount').textContent = await getItem('amount');
+        
     }
+    getId('customerName').textContent = await getItem('contact').lastName;
+    getId('commandNumber').textContent = await getItem('order');
+    getId('totalAmount').textContent = await getItem('amount');
 }
 
 
-console.log('check storage x36')
+console.log('check storage x37')
