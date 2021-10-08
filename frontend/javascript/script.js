@@ -64,6 +64,7 @@ const storeDataReturn= (param_data,param_amount)=>{
      storage('contact ', param_data.contact); //data.contact contient les infos client
       storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
       storage('amount', param_amount);
+      redirect();
 }
 
 const redirect=()=>{
@@ -93,4 +94,4 @@ const fill=(param_customer, param_order, param_total)=>{
     window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x50')
+console.log('check storage x52')
