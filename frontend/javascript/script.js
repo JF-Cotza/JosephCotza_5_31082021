@@ -66,13 +66,13 @@ const storeDataReturn= async (param_data,param_amount)=>{
      storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
      storage('amount', param_amount);
     
-     if(getItem('products') && getItem('contact') && getItem('order') && getItem('amount')){
+     if(await getItem('products') && await getItem('contact') && await getItem('order') && await getItem('amount')){
          redirect();
      }
      
 }
 
-const redirect=async()=>{
+const redirect=()=>{
     window.location.href='./confirmation.html';
 //remplissage de la page de confirmation avec le total panier
     let confirmation = getId('confirmation');
@@ -92,4 +92,4 @@ const redirect=async()=>{
 }
 
 
-console.log('check storage x38')
+console.log('check storage x40')
