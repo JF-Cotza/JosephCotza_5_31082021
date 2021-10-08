@@ -71,7 +71,7 @@ const storeDataReturn= async (param_data,param_amount)=>{
     return true; 
 }
 
-const redirect=async()=>{
+const redirect=()=>{
     let name =  getItem('contact').lastName;
     let commande =  getItem('order');
     let cost =  getItem('amount');
@@ -93,4 +93,4 @@ const redirect=async()=>{
 }
 
 
-console.log('check storage x44')
+console.log('check storage x45')
