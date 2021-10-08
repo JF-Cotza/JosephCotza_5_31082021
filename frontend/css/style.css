@@ -11116,10 +11116,6 @@ textarea.form-control-lg {
   visibility: collapse;
 }
 
-.col-12 {
-  background: yellowgreen;
-}
-
 .truncate-overflow {
   overflow: auto;
   white-space: wrap;
@@ -11262,11 +11258,6 @@ img {
   z-index: 2;
 }
 
-/*
-#price::after, #totalPanier::after{
-    content:' €';
-}
-*/
 .total {
   text-align: right;
 }
