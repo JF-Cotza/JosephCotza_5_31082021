@@ -72,10 +72,10 @@ const storeDataReturn= async (param_data,param_amount)=>{
 }
 
 const redirect=async()=>{
-    let name = await getItem('contact').lastName;
-    let commande = await getItem('order');
-    let cost = await getItem('amount');
-    window.location.href='./confirmation.html';
+    let name =  getItem('contact').lastName;
+    let commande =  getItem('order');
+    let cost =  getItem('amount');
+     window.location.href='./confirmation.html';
     
     if (getId('confirmation')){
         getId('customerName').textContent = name;
@@ -88,9 +88,9 @@ const redirect=async()=>{
             localStorage.clear();
         });
         // on vide le local storage en fermant l'onglet
-        windows.onbeforeunload=localStorage.clear();
+        window.onbeforeunload=localStorage.clear();
 
 }
 
 
-console.log('check storage x43')
+console.log('check storage x44')
