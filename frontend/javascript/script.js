@@ -71,13 +71,16 @@ const storeDataReturn= async (param_data,param_amount)=>{
     return true; 
 }
 
-const redirect=()=>{
+const redirect=async()=>{
+    let name = await getItem('contact').lastName;
+    let commande = await getItem('order');
+    let cost = await getItem('amount');
     window.location.href='./confirmation.html';
     
-    if(getId('confirmation')){
-        getId('customerName').textContent = getItem('contact').lastName;
-        getId('commandNumber').textContent = getItem('order');
-        getId('totalAmount').textContent = getItem('amount');
+    if (getId('confirmation')){
+        getId('customerName').textContent = name;
+        getId('commandNumber').textContent = commande;
+        getId('totalAmount').textContent = cost;
     };
    
         //clicker sur le logo vide le local storage en plus de renvoyer vers l'index
@@ -87,9 +90,7 @@ const redirect=()=>{
         // on vide le local storage en fermant l'onglet
         windows.onbeforeunload=localStorage.clear();
 
-
-    
 }
 
 
-console.log('check storage x42')
+console.log('check storage x43')
