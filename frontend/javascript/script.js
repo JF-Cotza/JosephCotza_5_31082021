@@ -70,20 +70,20 @@ const storeDataReturn= async (param_data,param_amount)=>{
 const redirect=async()=>{
     window.location.href='./confirmation.html';
 //remplissage de la page de confirmation avec le total panier
-let confirmation = getId('confirmation')
-if(confirmation){
-    //clicker sur le logo vide le local storage en plus de renvoyer vers l'index
-    getId('logo').addEventListener('click',()=>{
-        localStorage.clear();
-    });
-    // on vide le local storage en fermant l'onglet
-   // window.onbeforeunload=localStorage.clear();
+    let confirmation = getId('confirmation');
+    if(confirmation){
+        //clicker sur le logo vide le local storage en plus de renvoyer vers l'index
+        getId('logo').addEventListener('click',()=>{
+            localStorage.clear();
+        });
+        // on vide le local storage en fermant l'onglet
+    // window.onbeforeunload=localStorage.clear();
 
-    getId('customerName').textContent=getItem('contact').lastName;
-    getId('commandNumber').textContent=getItem('order');
-    getId('totalAmount').textContent = getItem('amount');
+        getId('customerName').textContent=await getItem('contact').lastName;
+        getId('commandNumber').textContent= await getItem('order');
+        getId('totalAmount').textContent = await getItem('amount');
+    }
 }
-}
 
 
-console.log('check storage x34')
+console.log('check storage x35')
