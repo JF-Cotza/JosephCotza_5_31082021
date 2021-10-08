@@ -66,7 +66,10 @@ const storeDataReturn= async (param_data,param_amount)=>{
      storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
      storage('amount', param_amount);
     
-    await redirect();
+     if(getItem('products') && getItem('contact') && getItem('order') && getItem('amount')){
+         redirect();
+     }
+     
 }
 
 const redirect=async()=>{
@@ -83,10 +86,10 @@ const redirect=async()=>{
 
         
     }
-    getId('customerName').textContent = await getItem('contact').lastName;
-    getId('commandNumber').textContent = await getItem('order');
-    getId('totalAmount').textContent = await getItem('amount');
+    getId('customerName').textContent = getItem('contact').lastName;
+    getId('commandNumber').textContent = getItem('order');
+    getId('totalAmount').textContent = getItem('amount');
 }
 
 
-console.log('check storage x37')
+console.log('check storage x38')
