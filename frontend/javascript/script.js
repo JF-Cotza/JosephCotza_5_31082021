@@ -69,8 +69,6 @@ const storeDataReturn= async (param_data,param_amount)=>{
 
 const redirect=async()=>{
     window.location.href='./confirmation.html';
-}
-
 //remplissage de la page de confirmation avec le total panier
 let confirmation = getId('confirmation')
 if(confirmation){
@@ -81,11 +79,11 @@ if(confirmation){
     // on vide le local storage en fermant l'onglet
    // window.onbeforeunload=localStorage.clear();
 
-    console.log(getItem('contact'));
+    getId('customerName').textContent=getItem('contact').lastName;
     getId('commandNumber').textContent=getItem('order');
     getId('totalAmount').textContent = getItem('amount');
 }
+}
 
 
-
-console.log('check storage x33');
+console.log('check storage x34')
