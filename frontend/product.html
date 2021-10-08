@@ -55,11 +55,13 @@
     <div class="card rounded-lg bg-primary mx-auto ">
         <img src="#" alt="" class='cardImage'>
         <div class="card-body ">
-            <div class="row"></div>
+            <div class="row">
                 <input id='productId' name='productId' class='stealth col-12 cardId'>
                 <div class='d-flex'>
                     <h2 class='h3 col-9 heigth-1 grey-1 border-left cardModelName' id='modele'></h2>                  
-                    <div id='price' class="h3 price col-3 text-center heigth-1 grey-2 border-right cardPrice" ></div>
+                    <div  id='price'class="h3 price col-3 text-center heigth-1 grey-2 border-right " >
+                        <span class='cardPrice'></span>€
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -73,7 +75,6 @@
                                 <option name="" value="" selected disabled>Option du produit</option>
                         </select>
                 </div>     
-            </div>  
         </div><!-- fin card body-->
     </div><!-- fin card -->
 </template><!-- fin producTemplate -->
