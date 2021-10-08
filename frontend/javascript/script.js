@@ -42,7 +42,6 @@ const fetchCustomer = () => {
         .then(function(data){
                 if (data.orderId){
                 let panier = getItem('totalPanier');
-                
                 storeDataReturn(data,panier);
         
                 
@@ -61,35 +60,37 @@ const fetchCustomer = () => {
 
 const storeDataReturn=async (param_data,param_amount)=>{
 
-     let prod = storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
-     let cont= storage('contact ', param_data.contact); //data.contact contient les infos client
-     let ord= storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
-     let amo= storage('amount', param_amount);
-     console.log('store data: produc: '+prod+' contact: '+cont+' order '+ord+' amount '+amo ); 
-
-    return true; 
+     storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
+     storage('contact ', param_data.contact); //data.contact contient les infos client
+      storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
+      storage('amount', param_amount);
 }
 
 const redirect=()=>{
-    let name =  getItem('contact').lastName;
-    let commande =  getItem('order');
-    let cost =  getItem('amount');
+    let name = getItem('contact').lastName;
+    let commande = getItem('order');
+    let cost = getItem('amount');
      window.location.href='./confirmation.html';
     
-    if (getId('confirmation')){
-        getId('customerName').textContent = name;
-        getId('commandNumber').textContent = commande;
-        getId('totalAmount').textContent = cost;
-    };
-   
-        //clicker sur le logo vide le local storage en plus de renvoyer vers l'index
-        getId('logo').addEventListener('click',()=>{
-            localStorage.clear();
-        });
-        // on vide le local storage en fermant l'onglet
-        window.onbeforeunload=localStorage.clear();
+    fill(name, commande, cost);
 
 }
 
 
-console.log('check storage x48')
+const fill=(param_customer, param_order, param_total)=>{
+   
+    if (getId('confirmation')) {
+        getId('customerName').textContent = param_customer;
+        getId('commandNumber').textContent = param_order;
+        getId('totalAmount').textContent = param_total;
+    };
+
+    //clicker sur le logo vide le local storage en plus de renvoyer vers l'index
+    getId('logo').addEventListener('click', () => {
+        localStorage.clear();
+    });
+    // on vide le local storage en fermant l'onglet
+    window.onbeforeunload = localStorage.clear();
+}
+
+console.log('check storage x49')
