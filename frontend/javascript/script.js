@@ -43,7 +43,7 @@ const fetchCustomer = () => {
             
             if (data.orderId){
                 let panier = getItem('totalPanier');
-                localStorage.clear();
+                
                 if (storeDataReturn(data,panier)){
                     redirect();
                 };
@@ -93,4 +93,4 @@ const redirect=()=>{
 }
 
 
-console.log('check storage x46')
+console.log('check storage x47')
