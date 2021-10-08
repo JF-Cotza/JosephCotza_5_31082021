@@ -40,13 +40,11 @@ const fetchCustomer = () => {
             return res.json()
         })
         .then(function(data){
-            
-            if (data.orderId){
+                if (data.orderId){
                 let panier = getItem('totalPanier');
                 
-                if (storeDataReturn(data,panier)){
-                    redirect();
-                };
+                storeDataReturn(data,panier);
+        
                 
                 
             }
@@ -61,13 +59,14 @@ const fetchCustomer = () => {
 
 }
 
-const storeDataReturn= (param_data,param_amount)=>{
+const storeDataReturn=async (param_data,param_amount)=>{
 
-     storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
-     storage('contact ', param_data.contact); //data.contact contient les infos client
-     storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
-     storage('amount', param_amount);
-         
+     let prod = storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
+     let cont= storage('contact ', param_data.contact); //data.contact contient les infos client
+     let ord= storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
+     let amo= storage('amount', param_amount);
+     console.log('store data: produc: '+prod+' contact: '+cont+' order '+ord+' amount '+amo ); 
+
     return true; 
 }
 
@@ -93,4 +92,4 @@ const redirect=()=>{
 }
 
 
-console.log('check storage x47')
+console.log('check storage x48')
