@@ -41,11 +41,7 @@ const fetchCustomer = () => {
         })
         .then(function(data){
                 if (data.orderId){
-                let panier = getItem('totalPanier');
-                storeDataReturn(data,panier);
-        
-                
-                
+                storeDataReturn(data);                       
             }
             else{
                 infos.textContent='Commande échouée';
@@ -58,18 +54,18 @@ const fetchCustomer = () => {
 
 }
 
-const storeDataReturn= (param_data,param_amount)=>{
+const storeDataReturn= (param_data)=>{
      storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
      storage('contact ', param_data.contact); //data.contact contient les infos client
       storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
-      storage('amount', param_amount);
+      //storage('amount', param_amount);
       redirect();
 }
 
 const redirect=()=>{
     let name = getItem('contact').lastName;
     let commande = getItem('order');
-    let cost = getItem('amount');
+    let cost = getItem('totalPanier');
      window.location.href='./confirmation.html';
     fill(name, commande, cost);
     console.log('redirect');
@@ -91,4 +87,4 @@ const fill=(param_customer, param_order, param_total)=>{
     window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x53')
+console.log('check storage x54')
