@@ -58,7 +58,7 @@ const fetchCustomer = () => {
 
 }
 
-const storeDataReturn=async (param_data,param_amount)=>{
+const storeDataReturn= (param_data,param_amount)=>{
 
      storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
      storage('contact ', param_data.contact); //data.contact contient les infos client
@@ -93,4 +93,4 @@ const fill=(param_customer, param_order, param_total)=>{
     window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x49')
+console.log('check storage x50')
