@@ -44,7 +44,9 @@ const fetchCustomer = () => {
             if (data.orderId){
                 let panier = getItem('totalPanier');
                 localStorage.clear();
-                storeDataReturn(data,panier);
+                if (storeDataReturn(data,panier)){
+                    redirect();
+                };
                 
                 
             }
@@ -65,11 +67,8 @@ const storeDataReturn= async (param_data,param_amount)=>{
      storage('contact ', param_data.contact); //data.contact contient les infos client
      storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
      storage('amount', param_amount);
-    
-     if(await getItem('products') && await getItem('contact') && await getItem('order') && await getItem('amount')){
-         redirect();
-     }
-     
+         
+    return true; 
 }
 
 const redirect=()=>{
@@ -92,4 +91,4 @@ const redirect=()=>{
 }
 
 
-console.log('check storage x40')
+console.log('check storage x41')
