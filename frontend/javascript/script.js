@@ -72,11 +72,11 @@ const redirect=()=>{
 
 const fill = (param_customer, param_order, param_total)=>{
     
-    let cust = await getId('customerName');
+    let cust =  getId('customerName');
     cust.textContent = param_customer;
-    let command = await getId('commandNumber');
+    let command =  getId('commandNumber');
     command.textContent = param_order;
-    let cost= await getId('totalAmount');
+    let cost=  getId('totalAmount');
     cost.textContent = param_total;
     
     console.log('fill');
@@ -88,4 +88,4 @@ const fill = (param_customer, param_order, param_total)=>{
     window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x62')
+console.log('check storage x63')
