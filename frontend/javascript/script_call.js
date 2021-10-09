@@ -28,6 +28,6 @@ if (getId('forCustomerInformations')){
 //Confirmation
 
 if (getId('confirmation')){
-    fill('client', 'N° ordre', 'montant');
+    fill(getItem('contact'), getItem('order'), getItem('amount'));
 }
 
