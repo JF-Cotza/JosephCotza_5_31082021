@@ -11,7 +11,7 @@ if (toConfirmation) {
             console.log('totalPanier' + totalPanier());
         }
         else if (checkValidity().total == 0) {  //il n'y a pas d'erreur
-            localStorage.clear();
+           
             storage('totalPanier', totalPanier());
             storage('id',idList());
             storage('customer', getCustomerDatas());
@@ -68,7 +68,7 @@ const redirect=()=>{
     let cost = getItem('totalPanier');
      window.location.href='./confirmation.html';*/
     console.log('redirect');
-    fill(getItem('contact').lastName, 'test order ', 'test cost');
+    fill('test client', 'test order ', 'test cost');
     
 }
 
@@ -88,4 +88,4 @@ const fill=(param_customer, param_order, param_total)=>{
     window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x56')
+console.log('check storage x57')
