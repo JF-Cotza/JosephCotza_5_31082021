@@ -73,11 +73,13 @@ const redirect=()=>{
 }
 
 
-const fill=(param_customer, param_order, param_total)=>{
-   
-        getId('customerName').textContent = param_customer;
-        getId('commandNumber').textContent = param_order;
-        getId('totalAmount').textContent = param_total;
+const fill = async (param_customer, param_order, param_total)=>{
+    let cust = await getId('customerName');
+    cust.textContent = param_customer;
+    let command = await getId('commandNumber');
+    command.textContent = param_order;
+    let cost= await getId('totalAmount');
+    cost.textContent = param_total;
     
     console.log('fill');
     //clicker sur le logo vide le local storage en plus de renvoyer vers l'index
@@ -88,4 +90,4 @@ const fill=(param_customer, param_order, param_total)=>{
     window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x59')
+console.log('check storage x60')
