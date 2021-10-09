@@ -85,7 +85,7 @@ const fill = (param_customer, param_order, param_total)=>{
         localStorage.clear();
     });
     // on vide le local storage en fermant l'onglet
-    window.onbeforeunload = localStorage.clear();
+    //window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x64')
+console.log('check storage x65')
