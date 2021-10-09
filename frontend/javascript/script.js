@@ -88,4 +88,4 @@ const fill = (param_customer, param_order, param_total)=>{
     //window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x65')
+console.log('check storage x66')
