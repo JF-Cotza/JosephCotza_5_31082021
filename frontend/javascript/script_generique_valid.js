@@ -102,5 +102,4 @@ const getInUrl = (param_searched) => {
     let toCaddie = getId('toCaddie');
 
 
-//script lancés qu'une fois
-h1content(entreprise);
+

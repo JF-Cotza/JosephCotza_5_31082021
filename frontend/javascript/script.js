@@ -63,17 +63,15 @@ const storeDataReturn= (param_data)=>{
 }
 
 const redirect=()=>{
-  /*  let name = ;
-    let commande = getItem('order');
-    let cost = getItem('totalPanier');
-     */
+  
     console.log('redirect');
-    fill('test client', 'test order ', 'test cost');
     window.location.href = './confirmation.html';
+   
 }
 
 
-const fill = async (param_customer, param_order, param_total)=>{
+const fill = (param_customer, param_order, param_total)=>{
+    
     let cust = await getId('customerName');
     cust.textContent = param_customer;
     let command = await getId('commandNumber');
@@ -90,4 +88,4 @@ const fill = async (param_customer, param_order, param_total)=>{
     window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x60')
+console.log('check storage x61')

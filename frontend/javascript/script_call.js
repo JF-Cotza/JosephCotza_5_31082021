@@ -1,3 +1,7 @@
+
+//script de titre
+h1content(productType[selectedProduct] + ' ' + entreprise);
+
 /*********************** application lancées depuis les pages ***********************/
 //index.html
 if (getId('allProducts')) {
@@ -22,7 +26,7 @@ if (getId('forCustomerInformations')){
 }
 
 //Confirmation
-/*
+
 if (getId('confirmation')){
-    confirmFill();
-}*/
+    fill('client', 'N° ordre', 'montant');
+}
