@@ -74,11 +74,11 @@ const redirect=()=>{
 
 
 const fill=(param_customer, param_order, param_total)=>{
-    if (getId('confirmation')) {
+   
         getId('customerName').textContent = param_customer;
         getId('commandNumber').textContent = param_order;
         getId('totalAmount').textContent = param_total;
-    };
+    
     console.log('fill');
     //clicker sur le logo vide le local storage en plus de renvoyer vers l'index
     getId('logo').addEventListener('click', () => {
@@ -88,4 +88,4 @@ const fill=(param_customer, param_order, param_total)=>{
     window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x58')
+console.log('check storage x59')
