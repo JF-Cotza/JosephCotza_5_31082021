@@ -92,8 +92,8 @@ const clear=()=>{
         localStorage.clear();
     });
     // on vide le local storage en fermant l'onglet
-    window.onbeforeunload = localStorage.clear();
+    //window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x71')
+console.log('check storage x72')
 
