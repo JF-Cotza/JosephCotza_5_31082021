@@ -95,5 +95,5 @@ const clear=()=>{
     //window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x74')
+console.log('check storage x75')
 
