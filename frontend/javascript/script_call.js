@@ -28,7 +28,7 @@ if (getId('forCustomerInformations')){
 //Confirmation
 
 if (getId('confirmation')){
-    fill('contact', getItem('order'), getItem('totalPanier'));
+    setTimeout(fill('contact', getItem('order'), getItem('totalPanier')),500);
     clear();
 }
 
