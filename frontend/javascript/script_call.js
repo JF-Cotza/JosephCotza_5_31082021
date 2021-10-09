@@ -29,5 +29,6 @@ if (getId('forCustomerInformations')){
 
 if (getId('confirmation')){
     fill('contact', getItem('order'), getItem('totalPanier'));
+    clear();
 }
 
