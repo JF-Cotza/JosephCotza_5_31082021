@@ -66,10 +66,10 @@ const redirect=()=>{
   /*  let name = ;
     let commande = getItem('order');
     let cost = getItem('totalPanier');
-     window.location.href='./confirmation.html';*/
+     */
     console.log('redirect');
     fill('test client', 'test order ', 'test cost');
-    
+    window.location.href = './confirmation.html';
 }
 
 
@@ -88,4 +88,4 @@ const fill=(param_customer, param_order, param_total)=>{
     window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x57')
+console.log('check storage x58')
