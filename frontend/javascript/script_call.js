@@ -30,3 +30,4 @@ if (getId('forCustomerInformations')){
 if (getId('confirmation')){
     fill('client', 'N° ordre', 'montant');
 }
+
