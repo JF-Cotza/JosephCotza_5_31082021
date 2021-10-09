@@ -28,6 +28,6 @@ if (getId('forCustomerInformations')){
 //Confirmation
 
 if (getId('confirmation')){
-    fill(getItem('contact').lastName, getItem('order'), getItem('totalPanier'));
+    fill('contact', getItem('order'), getItem('totalPanier'));
 }
 
