@@ -73,16 +73,16 @@ const redirect=()=>{
 const filling =  (param_customer, param_order, param_total)=>{
     
     let contening = getId('customerName');
-    //let contant = await getItem(param_customer).lastName
-    contening.textContent = 'nom';//contant;
+    let contant = getItem(param_customer).lastName
+    contening.textContent = contant;
     
     let command =   getId('commandNumber');
     let order =  getItem('order');//(param_order);
     command.textContent = order;
     
     let cost=  getId('totalAmount');
-    //let payed = await getItem(param_total);
-    cost.textContent = 'payé'; //payed;
+    let payed = getItem(param_total);
+    cost.textContent = payed;
     
     console.log('fill');
     console.log('customer: ' + getItem('customer').lastName);
