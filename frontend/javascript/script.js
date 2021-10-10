@@ -55,9 +55,9 @@ const fetchCustomer = () => {
 }
 
 const storeDataReturn= (param_data)=>{
-     storage('products ', param_data.products);//data.products est un array qui contient les infos du produit
-     storage('contact ', param_data.contact); //data.contact contient les infos client
-      storage('order ', param_data.orderId);// data.orderId renvoit un numéro de commande.
+     storage('products', param_data.products);//data.products est un array qui contient les infos du produit
+     storage('contact', param_data.contact); //data.contact contient les infos client
+      storage('order', param_data.orderId);// data.orderId renvoit un numéro de commande.
       //storage('amount', param_amount);
       redirect();
 }
