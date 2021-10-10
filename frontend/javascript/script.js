@@ -70,14 +70,14 @@ const redirect=()=>{
 }
 
 
-const filling = async (param_customer, param_order, param_total)=>{
+const filling =  (param_customer, param_order, param_total)=>{
     
     let contening = getId('customerName');
     //let contant = await getItem(param_customer).lastName
     contening.textContent = 'nom';//contant;
     
     let command =   getId('commandNumber');
-    let order = await getItem('order');//(param_order);
+    let order =  getItem('order');//(param_order);
     command.textContent = order;
     
     let cost=  getId('totalAmount');
@@ -87,7 +87,7 @@ const filling = async (param_customer, param_order, param_total)=>{
     console.log('fill');
     console.log('customer: ' + getItem('customer').lastName);
     console.log('amount: ' + getItem('totalPanier'));
-    console.log('order: ' + getItem('order')[0]);
+    console.log('order: ' + getItem('order'));
 }
 
 const clear=()=>{
