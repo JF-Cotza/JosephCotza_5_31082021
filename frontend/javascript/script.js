@@ -70,17 +70,18 @@ const redirect=()=>{
 }
 
 
-const filling =  (param_customer, param_order, param_total)=>{
+const filling = async (param_customer, param_order, param_total)=>{
     
     let contening = getId('customerName');
-    let contant =  getItem(param_customer).lastName
+    let contant =  await getItem(param_customer).lastName
     contening.textContent = contant;
     
     let command =   getId('commandNumber');
-    let order = getItem(param_order);
+    let order = await getItem(param_order);
     command.textContent = order;
+    
     let cost=  getId('totalAmount');
-    let payed =  getItem(param_total);
+    let payed =  await getItem(param_total);
     cost.textContent = payed;
     
     console.log('fill');
@@ -96,5 +97,5 @@ const clear=()=>{
     //window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x77')
+console.log('check storage x78')
 
