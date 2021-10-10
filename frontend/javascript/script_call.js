@@ -29,9 +29,12 @@ if (getId('forCustomerInformations')){
 
 if (getId('confirmation')){
     //setTimeout(filling('contact', getItem('order'), getItem('totalPanier')),500);
-    filling('products', 'contact', 'order');
+    filling('contact', 'order', 'totalPanier');
     clear();
-  
+
+    getId('testF').addEventListener('click', () => filling('contact', 'order','totalPanier'))
+    
 
 }
 
+console.log('check storage x83')
