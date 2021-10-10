@@ -75,6 +75,7 @@ const filling =  (param_customer, param_order, param_total)=>{
     let contening = getId('customerName');
     let contant =  getItem(param_customer).lastName
     contening.textContent = contant;
+    
     let command =   getId('commandNumber');
     let order = getItem(param_order);
     command.textContent = order;
@@ -83,7 +84,7 @@ const filling =  (param_customer, param_order, param_total)=>{
     cost.textContent = payed;
     
     console.log('fill');
-    
+    console.log('order: ' + getItem('order'));
 }
 
 const clear=()=>{
@@ -95,5 +96,5 @@ const clear=()=>{
     //window.onbeforeunload = localStorage.clear();
 }
 
-console.log('check storage x76')
+console.log('check storage x77')
 

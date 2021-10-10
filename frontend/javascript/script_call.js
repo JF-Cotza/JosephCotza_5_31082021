@@ -29,8 +29,9 @@ if (getId('forCustomerInformations')){
 
 if (getId('confirmation')){
     //setTimeout(filling('contact', getItem('order'), getItem('totalPanier')),500);
+    filling('products', 'contact', 'order');
     clear();
-    console.log('order: '+getItem('order'));
+  
 
 }
 
