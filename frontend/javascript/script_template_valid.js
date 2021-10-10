@@ -143,7 +143,7 @@ const optionMaker = (param_produit, param_option,param_quantity) => {
     //définition du label
     label.setAttribute('for', param_produit.colors[param_option.value]);
     label.setAttribute('key', param_option.value);
-    label.classList.add('grey-3');
+    label.classList.add('grey-2');
     label.classList.add('border-optionTop');
     label.classList.add('mt-2');
     label.classList.add('w-95');
