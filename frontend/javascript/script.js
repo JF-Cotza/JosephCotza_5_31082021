@@ -85,9 +85,9 @@ const filling = async (param_customer, param_order, param_total)=>{
     cost.textContent = 'payé'; //payed;
     
     console.log('fill');
-    console.log('customer: ' + getItem('contact'));
+    console.log('customer: ' + getItem('contact').lastName);
     console.log('amount: ' + getItem('totalPanier'));
-    console.log('order: ' + getItem('order'));
+    console.log('order: ' + getItem('order').value);
 }
 
 const clear=()=>{
