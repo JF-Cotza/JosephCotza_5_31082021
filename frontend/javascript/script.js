@@ -87,7 +87,7 @@ const filling = async (param_customer, param_order, param_total)=>{
     console.log('fill');
     console.log('customer: ' + getItem('customer').lastName);
     console.log('amount: ' + getItem('totalPanier'));
-    console.log('order: ' + getItem('order'));
+    console.log('order: ' + getItem('order')[0]);
 }
 
 const clear=()=>{
