@@ -37,4 +37,4 @@ if (getId('confirmation')){
 
 }
 
-console.log('check storage x86')
+console.log('check storage x87')
