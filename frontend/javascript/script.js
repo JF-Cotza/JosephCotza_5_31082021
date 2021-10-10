@@ -96,7 +96,7 @@ const clear=()=>{
         localStorage.clear();
     });
     // on vide le local storage en fermant l'onglet
-    //window.onbeforeunload = localStorage.clear();
+    window.onbeforeunload = localStorage.clear();
 }
 
 

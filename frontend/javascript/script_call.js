@@ -28,13 +28,12 @@ if (getId('forCustomerInformations')){
 //Confirmation
 
 if (getId('confirmation')){
-    //setTimeout(filling('contact', getItem('order'), getItem('totalPanier')),500);
     filling('contact', 'order', 'totalPanier');
     clear();
 
-    getId('testF').addEventListener('click', () => filling('contact', 'order','totalPanier'))
+
     
 
 }
 
-console.log('check storage x92')
+console.log('check storage x93')
