@@ -235,7 +235,7 @@ const productShowing = (param_copy, param_produit, param_body) => {
     let submit = getClass('submit');
 
     for (let btn of submit) {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
             let selectedOptions = getType('input');
             let exist = 0;
             //on vérifie s'il y a une option de produit affichée
@@ -256,6 +256,7 @@ const productShowing = (param_copy, param_produit, param_body) => {
                     storeToLocal(param_produit);
                 }
                 else if (exist == 0) {
+                    e.preventDefault();
                     infos.textContent = 'pas de quantité sélectionnée pour le produit';
                 }
             }

@@ -20,7 +20,12 @@ if (getId('panier')) {
 
 if (getId('forCustomerInformations')){
     getId('forCustomerInformations').addEventListener('click',()=>{
-        getId('customerInformations').classList.remove('d-none');
+        if(idList()){
+            getId('customerInformations').classList.remove('d-none');
+        }
+        else{
+            infos.textContent='Panier vide';
+        }
     })
 }
 
