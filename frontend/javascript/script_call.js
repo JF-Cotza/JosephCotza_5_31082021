@@ -19,11 +19,12 @@ if (getId('panier')) {
 }
 
 if (getId('forCustomerInformations')){
-    getId('forCustomerInformations').addEventListener('click',()=>{
+    getId('forCustomerInformations').addEventListener('click',(e)=>{
         if(idList()!=[]){
             getId('customerInformations').classList.remove('d-none');
         }
         else{
+            e.preventDefault();
             infos.textContent='Panier vide';
         }
     })
@@ -39,3 +40,5 @@ if (getId('confirmation')){
     filling('contact', 'order', 'totalPanier');
     clear();
 }
+
+console.log('desactivation bouton client');
