@@ -1,6 +1,5 @@
-
 //script de titre
-h1content(productType[selectedProduct] + ' ' + entreprise);
+h1content(entreprise);
 
 /*********************** application lancées depuis les pages ***********************/
 //index.html
@@ -25,15 +24,13 @@ if (getId('forCustomerInformations')){
     })
 }
 
+if (getId('toConfirmation')){
+    sendingCommand();
+}
+
 //Confirmation
 
 if (getId('confirmation')){
     filling('contact', 'order', 'totalPanier');
     clear();
-
-
-    
-
 }
-
-console.log('check storage x93')

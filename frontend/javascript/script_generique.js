@@ -97,9 +97,9 @@ const getInUrl = (param_searched) => {
     let look = getId('look'); //bouton pour afficher le panier
     let textLook = getId('textLook'); //zone de texte de look
 //autres   
-    let entreprise = 'Orinoco';
-    let infos = getId('infos');
-    let toCaddie = getId('toCaddie');
+    let entreprise = productType[selectedProduct] + ' ' + 'Orinoco';
+    let infos = getId('infos'); //zone se trouvant dans le footer et où apparaissent principalement les messages d'erreur
+    let toCaddie = getId('toCaddie'); //bouton voir le panier sur la page index et products
 
 
 
