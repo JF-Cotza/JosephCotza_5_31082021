@@ -651,13 +651,6 @@ const filling = (param_customer, param_order, param_total) => {
 
 //vidange du localStorage
 const clear = () => {
-    /*
-    //clicker sur le logo vide le local storage en plus de renvoyer vers l'index
-    getId('logo').addEventListener('click', () => {
-        localStorage.clear();
-    });
-    // on vide le local storage en fermant l'onglet*/
     window.onbeforeunload = localStorage.clear();
 }
 
-console.log('nettoyage script');
