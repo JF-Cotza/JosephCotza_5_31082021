@@ -20,7 +20,7 @@ if (getId('panier')) {
 
 if (getId('forCustomerInformations')){
     getId('forCustomerInformations').addEventListener('click',()=>{
-        if(idList()){
+        if(idList()!=[]){
             getId('customerInformations').classList.remove('d-none');
         }
         else{
