@@ -20,7 +20,6 @@ if (getId('panier')) {
 
 if (getId('forCustomerInformations')){
     getId('forCustomerInformations').addEventListener('click',(e)=>{
-        console.log(idList().length);
         if(idList().length!=0){
             getId('customerInformations').classList.remove('d-none');
         }
@@ -42,4 +41,3 @@ if (getId('confirmation')){
     clear();
 }
 
-console.log('desactivation bouton client 3');

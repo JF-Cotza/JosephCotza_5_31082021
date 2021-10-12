@@ -229,7 +229,6 @@ const productShowing = (param_copy, param_produit, param_body) => {
         allreadyExisting(param_produit);
     }
 
-
     //on regarde si une option est sélectionnée
     productOptionListener(param_produit, option); //surveille si une option est sélectionnée
     let submit = getClass('submit');
@@ -383,7 +382,7 @@ const panierRemoveOption=(param_cible,param_id,param_option)=>{
     for (let opt of optionCostPanier) {
         if (getAttribute(opt, 'keyId') == param_id && getAttribute(opt, 'keyOption') == param_option) {
             opt.remove();
-            console.log('remove cost');
+            
         }
     }
 }
@@ -576,8 +575,6 @@ const totalPanier = () => {
         total +=totalList[i];
     }
 
-    //let tot = 'test 24: '+total;
-
     return total;
 }
 
@@ -622,7 +619,7 @@ const fetchCustomer = () => {
             }
             else {
                 infos.textContent = 'Commande échouée';
-                console.log(data);
+                
             }
 
         })
